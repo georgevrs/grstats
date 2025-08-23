@@ -61,7 +61,14 @@ def parse_bla_sheet(sheet):
     return df
 
 def main():
-    input_file = "assets/BLA/A1302_SOP03_TS_MM_12_2007_03_2025_01_F_Bl.xlsx"
+    import glob
+    import os
+
+    bla_files = glob.glob("assets/BLA/*01_F_Bl.xlsx")
+    if not bla_files:
+        logger.error("No BLA file matching '*01_F_Bl.xlsx' found in assets/BLA")
+        return
+    input_file = max(bla_files, key=os.path.getmtime)
     output_dir = "assets/prepared"
     output_file = os.path.join(output_dir, "BLA.xlsx")
     os.makedirs(output_dir, exist_ok=True)

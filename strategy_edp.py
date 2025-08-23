@@ -3,8 +3,21 @@ import pandas as pd
 import os
 
 def main():
-    file = "assets/EDP/A0701_SEL03_TB_AN_00_2025_06_P_EN.xlsx"
-
+    file_pattern = r"assets/EDP/.*_06_P_EN\.xlsx"
+    files = [os.path.join("assets/EDP", f) for f in os.listdir("assets/EDP") if f.endswith("_06_P_EN.xlsx")]
+    import glob
+    files = glob.glob("assets/EDP/*_06_P_EN.xlsx")
+    if not files:
+        logger.error("No files found matching pattern assets/EDP/*_06_P_EN.xlsx")
+        return
+    file = files[0]
+    logger.info(f"Found file: {file}")
+    try:
+        sheets = pd.ExcelFile(file).sheet_names
+        logger.success(f"Found sheets: {sheets}")
+    except Exception as e:
+        logger.error(f"Failed to read Excel file or list sheets: {e}")
+        return
     logger.info(f"Loading Excel file: {file}")
     try:
         sheets = pd.ExcelFile(file).sheet_names

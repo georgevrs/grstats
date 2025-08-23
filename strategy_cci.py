@@ -214,7 +214,15 @@ def impute_overall_index_q1(df):
     return df_out
 
 def main():
-    input_file = "assets/CCI/A0511_DKT63_TS_QQ_01_2000_01_2025_04_F_EN.xlsx"
+    import glob
+    import os
+
+    cci_files = glob.glob("assets/CCI/*04_F_EN.xlsx")
+    if not cci_files:
+        logger.error("No CCI file matching '*04_F_EN.xlsx' found in assets/CCI")
+        return
+    # Pick the most recent file by modification time
+    input_file = max(cci_files, key=os.path.getmtime)
     output_dir = "assets/prepared"
     output_file = os.path.join(output_dir, "CCI.xlsx")
     os.makedirs(output_dir, exist_ok=True)

@@ -6,7 +6,7 @@ from openpyxl import load_workbook
 # List of datasets to process
 DATASETS = [
     {
-        "base_url": "https://www.statistics.gr/en/statistics/-/publication/DKT90/-",
+        "base_url": "https://www.statistics.gr/en/statistics/-/publication/DKT60/-",
         "folder_name": "MCI"
     },
     {
@@ -32,6 +32,10 @@ DATASETS = [
     {
         "base_url": "https://www.statistics.gr/en/statistics/-/publication/DKT63/-",
         "folder_name": "CCI"
+    },
+    {
+        "base_url": "https://www.statistics.gr/en/statistics/-/publication/DKT90/-",
+        "folder_name": "HICP"
     }
     # Add more datasets here as needed
     # {

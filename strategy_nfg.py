@@ -159,7 +159,13 @@ def merge_and_finalize(df1, df2):
         return pd.DataFrame()
 
 def main():
-    input_file = "assets/NFG/A0701_SEL05_TS_QQ_01_1999_01_2025_01E_F_BI.xlsx"
+    import glob
+    nfg_files = glob.glob("assets/NFG/*_BI.xlsx")
+    if not nfg_files:
+        logger.error("No files found matching pattern assets/NFG/*_BI.xlsx")
+        return
+    input_file = nfg_files[0]
+    logger.info(f"Using input file: {input_file}")
     output_dir = "assets/prepared"
     output_file = os.path.join(output_dir, "NFG.xlsx")
     os.makedirs(output_dir, exist_ok=True)
