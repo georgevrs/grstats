@@ -235,6 +235,8 @@ def main():
         final_df = impute_overall_index_q1(final_df)
         # Clean up
         final_df = final_df.dropna(subset=["Value"]).reset_index(drop=True)
+        # in column "Category" make it "K" + str(int(col))
+        final_df['Category'] = "K" + final_df['Category'].astype(str)
         logger.success(f"Parsed {len(final_df)} rows of CCI data.")
         final_df.to_excel(output_file, index=False)
         logger.success(f"Saved normalized CCI data to {output_file}")

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-CCI" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSCCI_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <!-- Put your CST data here; row 1 has time labels across columns -->
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+
+        <!-- Top-left of the data block (first series row starts at A2).
+             Columns A–H carry series-identifying metadata.
+             From column I onward, header row (row 1) contains TIME_PERIODs; the
+             data cells at the intersections (Row, Column) hold OBS_VALUE. -->
+        <Top-Left  Coord="E2"/>
+        <Bottom-Right Coord="E2244"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- TIME_PERIOD across columns (row 1) -->
+        <Dimension Code="TIME_PERIOD" Coord="Cell(Row, 6)"/>
+
+        <!-- Row-wise dimensions (per series), using columns A–F -->
+        <!-- A -->
+        <Dimension Code="INDEX"           Value="CCPI" IsExpression="false"/>
+        <!-- B -->        <!-- C -->
+        <Dimension Code="WORK_CATEGORY"   Value="Cell(Row, 3).Value"/>
+        <!-- D -->
+        <Dimension Code="FREQ"            Value="Cell(Row, 7).Value"/>
+        <!-- E -->
+        <Dimension Code="ADJUSTMENT"      Value="N" IsExpression="false"/>
+        <!-- F -->
+        <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
+
+        <!-- ======= ATTRIBUTES (optional but recommended) ======= -->
+        <!-- G -->
+        <Dimension Code="UNIT_MEASURE"    Value="PD" IsExpression="false"/>
+        <!-- H -->
+
+        <!-- Notes:
+             - Valid values (per PDFs):
+               FREQ: Q (CSTO, CSTI, CSTL) or M (CSTM)
+               REF_AREA: EL
+               INDEX: CSTO | CSTI | CSTM | CSTL
+               COST_COMPONENT: TOTAL | MATERIAL | LABOUR
+               WORK_CATEGORY: 00..17 (CL_CSTO_17), 00 for non-CSTO
+               ADJUSTMENT: N
+               UNIT_MEASURE: I2021=100 (preferred) or I2015=100 for legacy
+               BASE_YEAR: 2021 (or 2015 for back-series)
+             - TIME_PERIOD header cells (row 1) should be SDMX-compliant:
+               e.g., 2021-Q1, 2021-Q2, ... for quarterly; 2021-01, 2021-02, ... for monthly.
+             - The intersection cells contain OBS_VALUE (numeric). -->
+    </Coord-Mapping>
+</Excel-Data-Description>

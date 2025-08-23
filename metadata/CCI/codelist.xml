@@ -1,0 +1,116 @@
+<!-- NSI Web Service v8.19.6.0 -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>ELSTAT-CSTO-CL-001</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2025-08-23T00:00:00Z</message:Prepared>
+    <message:Sender id="ELSTAT"/>
+    <message:Receiver id="NA"/>
+  </message:Header>
+
+  <message:Structures>
+    <structure:Codelists>
+
+      <structure:Codelist id="CL_CSTO_17" agencyID="ELSTAT" version="1.0" isFinal="true">
+        <common:Name xml:lang="en">Work categories for Construction (CSTO)</common:Name>
+        <common:Name xml:lang="el">Κατηγορίες εργασιών στην οικοδομή (CSTO)</common:Name>
+        <common:Description xml:lang="en">Codelist for ELSTAT Price Index of Work Categories (CSTO), incl. Overall Index (00) and 17 work categories (01–17). Base: national extension.</common:Description>
+
+        <structure:Code id="K0">
+          <common:Name xml:lang="en">Overall Index</common:Name>
+          <common:Name xml:lang="el">Συνολικός Δείκτης</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K1">
+          <common:Name xml:lang="en">Earth-moving</common:Name>
+          <common:Name xml:lang="el">Χωματουργικά</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K2">
+          <common:Name xml:lang="en">Concrete reinforced or not</common:Name>
+          <common:Name xml:lang="el">Σκυροδέματα οπλισμένα ή μη</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K3">
+          <common:Name xml:lang="en">Wall-building</common:Name>
+          <common:Name xml:lang="el">Τοιχοποιία</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K4">
+          <common:Name xml:lang="en">Plastering</common:Name>
+          <common:Name xml:lang="el">Επιχρίσματα</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K5">
+          <common:Name xml:lang="en">Electrical installations</common:Name>
+          <common:Name xml:lang="el">Ηλεκτρολογικές εγκαταστάσεις</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K6">
+          <common:Name xml:lang="en">Hydraulic installations</common:Name>
+          <common:Name xml:lang="el">Υδραυλικές εγκαταστάσεις</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K7">
+          <common:Name xml:lang="en">Central heating installations</common:Name>
+          <common:Name xml:lang="el">Εγκαταστάσεις κεντρικής θέρμανσης</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K8">
+          <common:Name xml:lang="en">Coverings – Coatings</common:Name>
+          <common:Name xml:lang="el">Επενδύσεις – Επικαλύψεις</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K9">
+          <common:Name xml:lang="en">Carpentry</common:Name>
+          <common:Name xml:lang="el">Ξυλουργικές εργασίες</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K10">
+          <common:Name xml:lang="en">Iron and steel structures</common:Name>
+          <common:Name xml:lang="el">Μεταλλικές κατασκευές σιδήρου και χάλυβα</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K11">
+          <common:Name xml:lang="en">Aluminium structures</common:Name>
+          <common:Name xml:lang="el">Κατασκευές αλουμινίου</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K12">
+          <common:Name xml:lang="en">Painting</common:Name>
+          <common:Name xml:lang="el">Βαφές</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K13">
+          <common:Name xml:lang="en">Insulation</common:Name>
+          <common:Name xml:lang="el">Θερμομόνωση</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K14">
+          <common:Name xml:lang="en">Glazing</common:Name>
+          <common:Name xml:lang="el">Υαλοπίνακες</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K15">
+          <common:Name xml:lang="en">Elevators</common:Name>
+          <common:Name xml:lang="el">Ανελκυστήρες</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K16">
+          <common:Name xml:lang="en">Plaster structures</common:Name>
+          <common:Name xml:lang="el">Γυψοκατασκευές</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K17">
+          <common:Name xml:lang="en">Special installations without appliances and accessories</common:Name>
+          <common:Name xml:lang="el">Ειδικές εγκαταστάσεις χωρίς συσκευές και εξαρτήματα</common:Name>
+        </structure:Code>
+
+      </structure:Codelist>
+
+    </structure:Codelists>
+  </message:Structures>
+</message:Structure>
