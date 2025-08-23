@@ -1,0 +1,74 @@
+<!-- SDMX-XML 2.1 – Dataflow SEL03 (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDSEL03_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-07-24T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-EDP" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,ACCOUNTING_ENTRY</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=Y,VALUATION=MKT,UNIT_MEASURE=EUR</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TRANSFORMATION,CUST_BREAKDOWN,OBS_STATUS,CONF_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology ESA 2010|https://www.statistics.gr/en/statistics/esa2010|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name & Description ======== -->
+                <common:Name xml:lang="en">Fiscal Data - Excessive Deficit Procedure (EDP)</common:Name>
+                <common:Description xml:lang="en">
+                    The Hellenic Statistical Authority (ELSTAT) announces fiscal data on a year-on-year (YOY) basis, compiled under the ESA 2010 (Regulation 549/2013) for the System of National Accounts.
+                    These data form part of Greece's first Excessive Deficit Procedure (EDP) notification for 2025, transmitted to Eurostat in accordance with Council Regulation (EC) 479/2009.
+                    Source: ELSTAT, amounts in millions of EUR
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_EDP_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

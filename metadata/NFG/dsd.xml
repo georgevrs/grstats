@@ -1,0 +1,292 @@
+<!-- SDMX-XML 2.1 – DSD SEL03 (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========= HEADER ========= -->
+    <message:Header>
+        <message:ID>IDSEL03</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-07-24T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========= STRUCTURE ========= -->
+    <message:Structures>
+        <structure:DataStructures>
+
+            <structure:DataStructure id="DSD_NFG_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+
+                <common:Name xml:lang="en">Quarterly Non-Financial Accounts of General Government (NFG) DSD</common:Name>
+
+                <!-- ===== COMPONENTS ===== -->
+                <structure:DataStructureComponents>
+
+                    <!-- === DIMENSIONS === -->
+                    <structure:DimensionList id="DimensionDescriptor">
+
+                        <!-- 1 -->
+                        <structure:Dimension id="FREQ" position="1">
+                            <structure:ConceptIdentity>
+                                <Ref id="FREQ" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="1"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 2 -->
+                        <structure:Dimension id="ADJUSTMENT" position="2">
+                            <structure:ConceptIdentity>
+                                <Ref id="ADJUSTMENT" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_ADJUSTMENT" version="1.4" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="7"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 3 -->
+                        <structure:Dimension id="REF_AREA" position="3">
+                            <structure:ConceptIdentity>
+                                <Ref id="REF_AREA" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="GEO" version="25.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="6"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 4 -->
+                        <structure:Dimension id="COUNTERPART_AREA" position="4">
+                            <structure:ConceptIdentity>
+                                <Ref id="COUNTERPART_AREA" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_AREA" version="1.18.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="6"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+
+                        <!-- 5 -->
+                        <structure:Dimension id="COUNTERPART_SECTOR" position="5">
+                            <structure:ConceptIdentity>
+                                <Ref id="COUNTERPART_SECTOR" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_SECTOR" version="1.14" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="8"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 6 -->
+                        <structure:Dimension id="CONSOLIDATION" position="6">
+                            <structure:ConceptIdentity>
+                                <Ref id="CONSOLIDATION" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_NA_CONSOLIDAT" version="1.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="1"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 7 -->
+                        <structure:Dimension id="ACCOUNTING_ENTRY" position="7">
+                            <structure:ConceptIdentity>
+                                <Ref id="ACCOUNTING_ENTRY" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_ACCOUNT_ENTRY" version="1.5.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="5"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 8 -->
+                        <structure:Dimension id="STO" position="8">
+                            <structure:ConceptIdentity>
+                                <Ref id="STO" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_NA_STO" version="2.4.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="3"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 9 -->
+                        <structure:Dimension id="INSTR_ASSET" position="9">
+                            <structure:ConceptIdentity>
+                                <Ref id="INSTR_ASSET" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_INSTR_ASSET" version="1.14.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="9"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 10 -->
+                        <structure:Dimension id="MATURITY" position="10">
+                            <structure:ConceptIdentity>
+                                <Ref id="MATURITY" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_MATURITY" version="1.8" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="6"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                
+
+                        <!-- 11 -->
+                        <structure:Dimension id="PRICES" position="11">
+                            <structure:ConceptIdentity>
+                                <Ref id="PRICES" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_PRICES" version="2.3.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="3"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 12 -->
+                        <structure:Dimension id="CURRENCY_DENOM" position="12">
+                            <structure:ConceptIdentity>
+                                <Ref id="CURRENCY_DENOM" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_UNIT" version="2.7.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="19"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 13 -->
+                        <structure:Dimension id="CUST_BREAKDOWN" position="13">
+                            <structure:ConceptIdentity>
+                                <Ref id="CUST_BREAKDOWN" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_CUST_BREAKDOWN" version="1.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="6"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 14 -->
+                        <structure:Dimension id="TRANSFORMATION" position="14">
+                            <structure:ConceptIdentity>
+                                <Ref id="TRANSFORMATION" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_TRANSFORMATION" version="2.21.0" agencyID="IMF"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="3"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <structure:Dimension id="UNIT_MEASURE" position="15">
+                            <structure:ConceptIdentity>
+                                <Ref id="UNIT_MEASURE" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="UNIT" version="59.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="19"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                
+                        <!-- 15 – mandatory TIME DIMENSION -->
+                        <structure:TimeDimension id="TIME_PERIOD" position="16">
+                            <structure:ConceptIdentity>
+                                <Ref id="TIME_PERIOD" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="ObservationalTimePeriod"/>
+                            </structure:LocalRepresentation>
+                        </structure:TimeDimension>
+
+                    </structure:DimensionList>
+
+                    <!-- === MEASURE === -->
+                    <structure:MeasureList id="MeasureDescriptor">
+                        <structure:PrimaryMeasure id="OBS_VALUE">
+                            <structure:ConceptIdentity>
+                                <Ref id="OBS_VALUE" maintainableParentID="CS_NFG_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="Double"/>
+                            </structure:LocalRepresentation>
+                        </structure:PrimaryMeasure>
+                    </structure:MeasureList>
+
+                    <!-- === (Optional) ATTRIBUTE LIST === -->
+                    <!-- Add OBS_STATUS, UNIT_MULT, etc., here if required. -->
+
+                </structure:DataStructureComponents>
+            </structure:DataStructure>
+
+        </structure:DataStructures>
+    </message:Structures>
+</message:Structure>

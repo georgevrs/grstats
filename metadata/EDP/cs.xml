@@ -1,0 +1,246 @@
+<!-- SDMX-XML 2.1 – Concept Scheme for SEL03 (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDSEL03_CS</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-07-24T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Concepts>
+
+            <structure:ConceptScheme id="CS_EDP_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Fiscal Data - Excessive Deficit Procedure (EDP) – Concept Scheme for EDP</common:Name>
+
+                <!-- ========= CONCEPTS ========= -->
+
+                <!-- 1 -->
+                <structure:Concept id="FREQ">
+                    <common:Name xml:lang="en">Frequency</common:Name>
+                    <common:Description xml:lang="en">Reference period frequency (e.g. annual, quarterly, monthly).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 2 -->
+                <structure:Concept id="ADJUSTMENT">
+                    <common:Name xml:lang="en">Adjustment indicator</common:Name>
+                    <common:Description xml:lang="en">Seasonal or calendar adjustment flag.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_ADJUSTMENT" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 3 -->
+                <structure:Concept id="REF_AREA">
+                    <common:Name xml:lang="en">Reference country / area</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_AREA" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 4 -->
+                <structure:Concept id="COUNTERPART_AREA">
+                    <common:Name xml:lang="en">Counterpart area</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_AREA" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 5 -->
+                <structure:Concept id="REF_SECTOR">
+                    <common:Name xml:lang="en">Reference sector</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_SECTOR" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 6 -->
+                <structure:Concept id="COUNTERPART_SECTOR">
+                    <common:Name xml:lang="en">Counterpart sector</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_SECTOR" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 7 -->
+                <structure:Concept id="CONSOLIDATION">
+                    <common:Name xml:lang="en">Consolidation</common:Name>
+                    <common:Description xml:lang="en">Consolidated / non-consolidated indicator.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_CONSOLIDATION" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 8 -->
+                <structure:Concept id="ACCOUNTING_ENTRY">
+                    <common:Name xml:lang="en">Accounting entry</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_ACCOUNT_ENTRY" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 9 -->
+                <structure:Concept id="STO">
+                    <common:Name xml:lang="en">Stock / flow indicator</common:Name>
+                    <common:Description xml:lang="en">Distinguishes flows, stocks and other adjustments.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_NA_STO" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 10 -->
+                <structure:Concept id="INSTR_ASSET">
+                    <common:Name xml:lang="en">Instrument / asset</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_INSTR_ASSET" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 11 -->
+                <structure:Concept id="MATURITY">
+                    <common:Name xml:lang="en">Maturity</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_MATURITY" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 12 -->
+                <structure:Concept id="VALUATION">
+                    <common:Name xml:lang="en">Valuation</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_VALUATION" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 13 -->
+                <structure:Concept id="PRICES">
+                    <common:Name xml:lang="en">Price type</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_PRICES" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 14 -->
+                <structure:Concept id="CURRENCY_DENOM">
+                    <common:Name xml:lang="en">Currency of denomination</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_UNIT" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 15 -->
+                <structure:Concept id="CUST_BREAKDOWN">
+                    <common:Name xml:lang="en">Custom breakdown</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_CUST_BREAKDOWN" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 16 -->
+                <structure:Concept id="UNIT_MEASURE">
+                    <common:Name xml:lang="en">Unit of measure</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_UNIT" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 17 -->
+                <structure:Concept id="TRANSFORMATION">
+                    <common:Name xml:lang="en">Transformation</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_TRANSFORMATION" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 18 -->
+                <structure:Concept id="CL_NA_TABLEID">
+                    <common:Name xml:lang="en">NA table identifier</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_NA_TABLEID" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 19 -->
+                <structure:Concept id="TIME_PERIOD">
+                    <common:Name xml:lang="en">Time period</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="ObservationalTimePeriod"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 20 -->
+                <structure:Concept id="OBS_VALUE">
+                    <common:Name xml:lang="en">Observation value</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="Double"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+            </structure:ConceptScheme>
+        </structure:Concepts>
+    </message:Structures>
+</message:Structure>

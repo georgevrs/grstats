@@ -1,0 +1,100 @@
+<!-- SDMX-XML 2.1 – Dataflow SEL05 (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDSEL05_DF</message:ID>
+        <message:Test>false</message:Test>
+        <!-- ELSTAT press release date -->
+        <message:Prepared>2025-07-21T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-NFG" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for accounts -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,TRANSACTION</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for debt -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,DEBT_INSTRUMENT</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Defaults: quarterly, EUR, million -->
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=Q,UNIT_MEASURE=EUR,UNIT_MULT=6</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Hide technical columns -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TRANSFORMATION,CUST_BREAKDOWN,OBS_STATUS,CONF_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology ESA 2010|https://www.statistics.gr/en/statistics/esa2010|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Publication (SEL05) – Quarterly Non-Financial Accounts and Debt|http://www.statistics.gr/en/statistics/-/publication/SEL05/-|
+                            https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name and Description ======== -->
+                <common:Name xml:lang="en">Quarterly Non-Financial Accounts of General Government (ESA 2010)</common:Name>
+                <common:Description xml:lang="en">
+                    Quarterly non-financial accounts of General Government, including aggregates for revenue and expenditure
+                    (e.g., taxes, social contributions, compensation of employees, social benefits, goods and services, subsidies),
+                    balances (overall and primary), and the consolidated General Government debt stock by instrument
+                    (currency and deposits, debt securities—short/long term, loans—short/long term). Compiled by ELSTAT under
+                    ESA 2010 (Reg. 549/2013). Amounts are in million EUR. Source: ELSTAT.
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_NFG_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

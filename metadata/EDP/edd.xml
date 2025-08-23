@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-EDP" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSEDP_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+        <!-- Top-left of data block              -->
+        <Top-Left  Coord="A2"/>
+        <!-- Bottom-right of data block (expand if needed) -->
+        <Bottom-Right Coord="D243"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- TIME_PERIOD across columns (row 1) -->
+        <Dimension Code="TIME_PERIOD" Coord="Cell(1, Column)"/>
+
+        <!-- The rest of the dimensions run down the rows -->
+        <Dimension Code="FREQ"                Value="Cell(Row, 5).Value"/>
+        <Dimension Code="ADJUSTMENT"          Value="Cell(Row, 6).Value"/>
+        <Dimension Code="REF_AREA"            Value="Cell(Row, 7).Value"/>
+        <Dimension Code="COUNTERPART_AREA"    Value="Cell(Row, 8).Value"/>
+        <Dimension Code="REF_SECTOR"          Value="Cell(Row, 9).Value"/>
+        <Dimension Code="COUNTERPART_SECTOR"  Value="Cell(Row,10).Value"/>
+        <Dimension Code="CONSOLIDATION"       Value="Cell(Row,11).Value"/>
+        <Dimension Code="ACCOUNTING_ENTRY"    Value="Cell(Row,12).Value"/>
+        <Dimension Code="STO"                 Value="Cell(Row,13).Value"/>
+        <Dimension Code="INSTR_ASSET"         Value="Cell(Row,14).Value"/>
+        <Dimension Code="MATURITY"            Value="Cell(Row,15).Value"/>
+        <Dimension Code="VALUATION"           Value="Cell(Row,16).Value"/>
+        <Dimension Code="PRICES"              Value="Cell(Row,17).Value"/>
+        <Dimension Code="CURRENCY_DENOM"      Value="Cell(Row,18).Value"/>
+        <Dimension Code="CUST_BREAKDOWN"      Value="Cell(Row,19).Value"/>
+        <Dimension Code="UNIT_MEASURE"        Value="Cell(Row,20).Value"/>
+        <Dimension Code="TRANSFORMATION"      Value="Cell(Row,21).Value"/>
+        <Dimension Code="CL_NA_TABLEID"       Value="Cell(Row,22).Value"/>
+
+    </Coord-Mapping>
+</Excel-Data-Description>

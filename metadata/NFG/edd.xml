@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-NFG" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSNFG_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+        <!-- Top-left of data block              -->
+        <Top-Left  Coord="C6"/>
+        <!-- Bottom-right of data block (expand if needed) -->
+        <Bottom-Right Coord="BK109"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- TIME_PERIOD across columns (row 1) -->
+        <Dimension Code="TIME_PERIOD" Coord="Cell(Row, 1)"/>
+
+        <!-- The rest of the dimensions run down the rows -->
+        <Dimension Code="FREQ"                Value="Cell(Row, 2).Value"/> <!--DYNAMIC-->
+        <Dimension Code="ADJUSTMENT"          Value="N" IsExpression="false"/>
+        <Dimension Code="REF_AREA"            Value="EL" IsExpression="false"/>
+        <Dimension Code="COUNTERPART_AREA"    Value="_Z" IsExpression="false"/>
+        <Dimension Code="COUNTERPART_SECTOR"  Value="_Z" IsExpression="false"/>
+        <Dimension Code="CONSOLIDATION"       Value="_Z" IsExpression="false"/>
+        <Dimension Code="ACCOUNTING_ENTRY"    Value="Cell(3,Column).Value"/> <!--DYNAMIC-->
+        <Dimension Code="STO"                 Value="Cell(5,Column).Value"/> <!--DYNAMIC-->
+        <Dimension Code="INSTR_ASSET"         Value="Cell(4,Column).Value"/> <!--DYNAMIC-->
+        <Dimension Code="MATURITY"            Value="Cell(2,Column).Value"/> <!--DYNAMIC-->
+        <Dimension Code="PRICES"              Value="V" IsExpression="false"/>
+        <Dimension Code="CURRENCY_DENOM"      Value="EUR" IsExpression="false"/>
+        <Dimension Code="CUST_BREAKDOWN"      Value="_T" IsExpression="false"/>
+        <Dimension Code="TRANSFORMATION"      Value="N" IsExpression="false"/>
+        <Dimension Code="UNIT_MEASURE"        Value="MIO_EUR" IsExpression="false"/>
+
+
+    </Coord-Mapping>
+</Excel-Data-Description>
