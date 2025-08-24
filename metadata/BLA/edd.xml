@@ -15,7 +15,7 @@
              Row 3: MEASURE (NR, M2, M3 for Number, Square Meters, Cubic Meters)
              Row 4+: Actual data with dimensions in columns A-E and values in columns F-T -->
         <Top-Left  Coord="F6"/>
-        <Bottom-Right Coord="U20216"/>
+        <Bottom-Right Coord="U1345"/>
 
         <!-- ======= DIMENSION MAPPINGS ======= -->
         <!-- Row-wise dimensions (per series), using columns A-E -->
