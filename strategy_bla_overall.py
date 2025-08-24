@@ -256,85 +256,6 @@ def process_dataframe(df):
         df['REGION'] = df['REGION'].map(region_mapping).fillna('_Z')
         print("✓ Applied regions mapping")
     
-    # Apply regional units mapping to convert full names to codes
-    regional_unit_mapping = {
-        'KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
-        'VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
-        'DYTIKOS TOMEAS ATHINON (WESTERN SECTOR OF ATHENS)': 'DYTIKOS_TOMEAS_ATHINON',
-        'NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
-        'ANATOLIKI ATTIKI': 'ANATOLIKI_ATTIKI',
-        'DYTIKI ATTIKI': 'DYTIKI_ATTIKI',
-        'PIREAS': 'PIREAS',
-        'NISIA (ISLANDS)': 'NISIA',
-        'RODOPI': 'RODOPI',
-        'DRAMA': 'DRAMA',
-        'EVROS': 'EVROS',
-        'KAVALA': 'KAVALA',
-        'XANTHI': 'XANTHI',
-        'THESSALONIKI': 'THESSALONIKI',
-        'IMATHIA': 'IMATHIA',
-        'KILKIS': 'KILKIS',
-        'PELLA': 'PELLA',
-        'SERRES': 'SERRES',
-        'KOZANI': 'KOZANI',
-        'GREVENA': 'GREVENA',
-        'KASTORIA': 'KASTORIA',
-        'FLORINA': 'FLORINA',
-        'IOANNINA': 'IOANNINA',
-        'ARTA': 'ARTA',
-        'THESPROTIA': 'THESPROTIA',
-        'PREVEZA': 'PREVEZA',
-        'LARISA': 'LARISA',
-        'KARDITSA': 'KARDITSA',
-        'MAGNISIA': 'MAGNISIA',
-        'SPORADES': 'SPORADES',
-        'TRIKALA': 'TRIKALA',
-        'VOIOTIA': 'VOIOTIA',
-        'EVOIA': 'EVOIA',
-        'FOKIDA': 'FOKIDA',
-        'KERKYRA': 'KERKYRA',
-        'ZAKYNTHOS': 'ZAKYNTHOS',
-        'KEFALLINIA': 'KEFALLINIA',
-        'LEFKADA': 'LEFKADA',
-        'ACHAIA': 'ACHAIA',
-        'ETOLOAKARNANIA': 'ETOLOAKARNANIA',
-        'ILEIA': 'ILEIA',
-        'ARKADIA': 'ARKADIA',
-        'ARGOLIDA': 'ARGOLIDA',
-        'KORINTHIA': 'KORINTHIA',
-        'LAKONIA': 'LAKONIA',
-        'MESSINIA': 'MESSINIA',
-        'LIMNOS': 'LIMNOS',
-        'SAMOS': 'SAMOS',
-        'CHIOS': 'CHIOS',
-        'THIRA': 'THIRA',
-        'KALYMNOS': 'KALYMNOS',
-        'KEA - KYTHNOS': 'KEA_KYTHNOS',
-        'KOS': 'KOS',
-        'MILOS': 'MILOS',
-        'MYKONOS': 'MYKONOS',
-        'NAXOS': 'NAXOS',
-        'PAROS': 'PAROS',
-        'RODOS': 'RODOS',
-        'IRAKLEIO': 'IRAKLEIO',
-        'LASITHI': 'LASITHI',
-        'RETHYMNO': 'RETHYMNO',
-        'CHANIA': 'CHANIA',
-        'THASOS': 'THASOS',
-        'ITHAKI': 'ITHAKI',
-        'LESVOS': 'LESVOS',
-        'IKARIA': 'IKARIA',
-        'SYROS': 'SYROS',
-        'ANDROS': 'ANDROS',
-        'KARPATHOS': 'KARPATHOS',
-        'TINOS': 'TINOS'
-    }
-    
-    # Apply regional units mapping
-    if 'REGIONAL_UNIT' in df.columns:
-        df['REGIONAL_UNIT'] = df['REGIONAL_UNIT'].map(regional_unit_mapping).fillna('_Z')
-        print("✓ Applied regional units mapping")
-    
     print("✓ Dataframe processed according to recipe")
     return df
 
@@ -460,11 +381,26 @@ def main():
                 df_existing.iloc[2, 0] == 'URBAN STATUS' and
                 df_existing.iloc[3, 0] == 'MEASURE'):
                 
-                print("⚠️  Final BLA.xlsx already exists but needs reprocessing for code mapping")
-                print("Proceeding with full reprocessing...")
-                # Remove existing file to force reprocessing
-                os.remove(output_file)
-                print("✓ Removed existing file for reprocessing")
+                print("✓ Final BLA.xlsx already exists and is properly formatted")
+                print("Skipping data processing, proceeding to integrity check...")
+                
+                # Perform data integrity check on existing file
+                print("\n" + "="*60)
+                print("FINAL DATA INTEGRITY CHECK")
+                print("="*60)
+                
+                success = perform_data_integrity_check(df_existing)
+                
+                if success:
+                    print("\n🎉 BLA Overall Strategy completed successfully!")
+                    print(f"Final file: {output_file}")
+                    print(f"Shape: {df_existing.shape}")
+                else:
+                    print("\n⚠️  BLA Overall Strategy completed with issues!")
+                    print("Please review the issues above before proceeding.")
+                
+                print(f"\nCompleted at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                return success
                 
         except Exception as e:
             print(f"⚠️  Error reading existing file: {str(e)}")
@@ -487,7 +423,43 @@ def main():
     # Step 4: Process dataframe according to exact recipe
     df_final = process_dataframe(df_merged)
     
-    # Step 5: Save final output
+    # Step 5: DEDUPLICATE AT THE VERY FUCKING END - AFTER ROW 6 (HEADERS)
+    print("Deduplicating data rows (after header rows)...")
+    
+    # Get header rows (first 4 rows) and data rows (from row 5 onwards)
+    header_rows = df_final.iloc[:4].copy()
+    data_rows = df_final.iloc[4:].copy()
+    
+    print(f"  - Header rows: {len(header_rows)}")
+    print(f"  - Data rows before deduplication: {len(data_rows)}")
+    
+    # Deduplicate data rows based on key dimensions
+    key_columns = ['FREQ', 'time_period', 'REGION', 'REGIONAL_UNIT', 'CATEGORY']
+    existing_key_columns = [col for col in key_columns if col in data_rows.columns]
+    
+    if existing_key_columns:
+        print(f"  - Deduplicating based on: {existing_key_columns}")
+        
+        # Count duplicates before
+        duplicates_before = data_rows.duplicated(subset=existing_key_columns).sum()
+        print(f"  - Duplicates found: {duplicates_before}")
+        
+        # Remove duplicates, keeping first occurrence
+        data_rows_deduped = data_rows.drop_duplicates(subset=existing_key_columns, keep='first')
+        
+        # Count duplicates after
+        duplicates_after = data_rows_deduped.duplicated(subset=existing_key_columns).sum()
+        print(f"  - Duplicates after deduplication: {duplicates_after}")
+        print(f"  - Rows removed: {len(data_rows) - len(data_rows_deduped)}")
+        
+        # Reconstruct the final dataframe
+        df_final = pd.concat([header_rows, data_rows_deduped], ignore_index=True)
+        
+        print(f"  - Final dataframe shape: {df_final.shape}")
+    else:
+        print("  - Warning: Key columns for deduplication not found!")
+    
+    # Step 6: Save final output
     try:
         df_final.to_excel(output_file, index=False)
         print(f"✓ Final output saved to: {output_file}")
