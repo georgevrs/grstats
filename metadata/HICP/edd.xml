@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-HICP" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSHICP_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <!-- Put your HICP data here; row 1 has time labels across columns -->
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+
+        <!-- Top-left of the data block (first series row starts at A2).
+             Columns A–E carry series-identifying metadata.
+             From column F onward, header row (row 1) contains TIME_PERIODs; the
+             data cells at the intersections (Row, Column) hold OBS_VALUE. -->
+        <Top-Left  Coord="F3"/>
+        <Bottom-Right Coord="J398"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- TIME_PERIOD across columns (row 1) -->
+        <Dimension Code="TIME_PERIOD" Coord="Cell(Row, 4)"/>
+
+        <!-- Row-wise dimensions (per series), using columns A–E -->
+        <!-- A -->
+        <Dimension Code="FREQ"            Value="M" IsExpression="false"/>
+        <!-- B -->
+        <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
+        <!-- C -->
+        <Dimension Code="ICP_SUFFIX"      Value="Cell(2, Column).Value"/>
+        <!-- D -->
+        <Dimension Code="UNIT_MEASURE"    Value="PD" IsExpression="false"/>
+
+        <!-- Notes:
+             - Valid values (per HICP concept scheme):
+               FREQ: M (Monthly)
+               REF_AREA: EL (Greece)
+               ICP_SUFFIX: INX (Index), MOR (Monthly rate), ANR (Annual rate), etc.
+               UNIT_MEASURE: INX (Index), PC (Percentage), etc.
+               TIME_PERIOD: 1995-01, 1995-02, ... (YYYY-MM format)
+             - TIME_PERIOD header cells (row 1) should be SDMX-compliant:
+               e.g., 1995-01, 1995-02, 1995-03, ... for monthly data.
+             - The intersection cells contain OBS_VALUE (numeric).
+             - ICP_SUFFIX values should match CL_ICP_SUFFIX codelist:
+               INX: Index, MOR: Monthly rate of change, ANR: Annual rate of change,
+               AVX: Annual average index, AVR: Annual average rate of change -->
+    </Coord-Mapping>
+</Excel-Data-Description>

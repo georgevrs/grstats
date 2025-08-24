@@ -1,0 +1,95 @@
+<!-- SDMX-XML 2.1 – Concept Scheme for MCI (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDMCI_CS</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Concepts>
+
+            <structure:ConceptScheme id="CS_MCI_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Material Cost Index (MCI) – Concept Scheme</common:Name>
+                <common:Description xml:lang="en">Concepts for ELSTAT Material Cost Index data with essential dimensions.</common:Description>
+
+                <!-- ========= CONCEPTS ========= -->
+
+                <!-- 1 -->
+                <structure:Concept id="FREQ">
+                    <common:Name xml:lang="en">Frequency</common:Name>
+                    <common:Description xml:lang="en">Reference period frequency (e.g. monthly, annual).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 2 -->
+                <structure:Concept id="TIME_PERIOD">
+                    <common:Name xml:lang="en">Time period</common:Name>
+                    <common:Description xml:lang="en">Reference time period for the observation (e.g., 2000, 2000-01).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="ObservationalTimePeriod"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 3 -->
+                <structure:Concept id="MCI_SERIES">
+                    <common:Name xml:lang="en">MCI Series</common:Name>
+                    <common:Description xml:lang="en">Material Cost Index series classification (MCI01-MCI16).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_MCI_SERIES" version="1.0" agencyID="BOG"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 4 -->
+                <structure:Concept id="ICP_SUFFIX">
+                    <common:Name xml:lang="en">ICP Suffix</common:Name>
+                    <common:Description xml:lang="en">HICP series variation code (e.g., INX, MOR, ANR, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_ICP_SUFFIX" version="1.0" agencyID="ECB"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 5 -->
+                <structure:Concept id="REF_AREA">
+                    <common:Name xml:lang="en">Reference country / area</common:Name>
+                    <common:Description xml:lang="en">Geographic reference area for the MCI data (Greece).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_AREA" version="1.0" agencyID="ESTAT"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 6 -->
+                <structure:Concept id="OBS_VALUE">
+                    <common:Name xml:lang="en">Observation value</common:Name>
+                    <common:Description xml:lang="en">Material Cost Index observation value.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="Double"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+            </structure:ConceptScheme>
+        </structure:Concepts>
+    </message:Structures>
+</message:Structure>

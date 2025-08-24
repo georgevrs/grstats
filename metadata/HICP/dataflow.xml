@@ -1,0 +1,90 @@
+<!-- SDMX-XML 2.1 – Dataflow HICP (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDHICP_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-HICP" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Layout suggestion: time period and ICP suffix as columns -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,ICP_SUFFIX</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Defaults: monthly, Greece, index values -->
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=M,REF_AREA=EL,UNIT_MEASURE=INX</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Hide technical fields in UI -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>OBS_STATUS,CONF_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology — Harmonized Index of Consumer Prices|https://www.statistics.gr/en/statistics/-/publication/DKT90/-|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata — ELSTAT Publications|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Publication (DKT90) – Monthly HICP|https://www.statistics.gr/en/statistics/-/publication/DKT90/-|
+                            https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name and Description ======== -->
+                <common:Name xml:lang="en">Harmonized Index of Consumer Prices (HICP) — Greece</common:Name>
+                <common:Description xml:lang="en">
+                    Monthly Harmonized Index of Consumer Prices (HICP) for Greece, providing comprehensive price inflation measures.
+                    Coverage includes overall HICP index, monthly and annual rate changes, and annual averages. The data follows
+                    Eurostat methodology and is used for European Central Bank (ECB) monetary policy decisions. 
+                    Frequency: Monthly (M). Reference area: EL (Greece). Source: Hellenic Statistical Authority (ELSTAT).
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_HICP_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

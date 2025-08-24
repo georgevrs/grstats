@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDMCI_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_MCI_SERIES" agencyID="BOG" version="1.0">
+                <common:Name>MCI Series Codelist</common:Name>
+                <common:Description>Material Cost Index Series Classification</common:Description>
+                <structure:Code id="MCI01">
+                    <common:Name>OVERALL INDEX</common:Name>
+                    <common:Description>Overall Material Cost Index</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI02">
+                    <common:Name>Timber and builders' carpentry</common:Name>
+                    <common:Description>Timber and builders' carpentry materials</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI03">
+                    <common:Name>Marble products, granites</common:Name>
+                    <common:Description>Marble products and granites</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI04">
+                    <common:Name>Basic metals</common:Name>
+                    <common:Description>Basic metal materials</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI05">
+                    <common:Name>Plumbing, heating and drainage equipment and supplies</common:Name>
+                    <common:Description>Plumbing, heating and drainage equipment and supplies</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI06">
+                    <common:Name>Natural stone</common:Name>
+                    <common:Description>Natural stone materials</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI07">
+                    <common:Name>Door and window fittings</common:Name>
+                    <common:Description>Door and window fittings</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI08">
+                    <common:Name>Electrical equipment</common:Name>
+                    <common:Description>Electrical equipment</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI09">
+                    <common:Name>Glass products</common:Name>
+                    <common:Description>Glass products</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI10">
+                    <common:Name>Cement, mortars and ready mixed concrete</common:Name>
+                    <common:Description>Cement, mortars and ready mixed concrete</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI11">
+                    <common:Name>Paints and varnishes</common:Name>
+                    <common:Description>Paints and varnishes</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI12">
+                    <common:Name>Floor and wall tiles and sanitary ware</common:Name>
+                    <common:Description>Floor and wall tiles and sanitary ware</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI13">
+                    <common:Name>Artificial stone</common:Name>
+                    <common:Description>Artificial stone materials</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI14">
+                    <common:Name>Elevators</common:Name>
+                    <common:Description>Elevator equipment</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI15">
+                    <common:Name>Insulating materials</common:Name>
+                    <common:Description>Insulating materials</common:Description>
+                </structure:Code>
+                <structure:Code id="MCI16">
+                    <common:Name>Fuel for machinery (diesel), electricity, water</common:Name>
+                    <common:Description>Fuel for machinery (diesel), electricity, water</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

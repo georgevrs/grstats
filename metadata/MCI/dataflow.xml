@@ -1,0 +1,91 @@
+<!-- SDMX-XML 2.1 – Dataflow MCI (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDMCI_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-MCI" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Layout suggestion: time period and MCI series as columns -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,MCI_SERIES</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Defaults: monthly, Greece, cost indices -->
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=M,REF_AREA=EL,ICP_SUFFIX=CTX</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Hide technical fields in UI -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>OBS_STATUS,CONF_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology — Material Cost Index|https://www.statistics.gr/en/statistics/-/publication/DKT60/-|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata — ELSTAT Publications|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Publication (DKT60) – Monthly Material Cost Index|https://www.statistics.gr/en/statistics/-/publication/DKT60/-|
+                            https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name and Description ======== -->
+                <common:Name xml:lang="en">Material Cost Index (MCI) — Greece</common:Name>
+                <common:Description xml:lang="en">
+                    Monthly Material Cost Index (MCI) for Greece, providing comprehensive construction material cost measures.
+                    Coverage includes 16 material groups (MCI01-MCI16) such as timber, marble, metals, electrical equipment,
+                    and overall index. The data includes both cost indices (base year 2021=100) and percentage changes.
+                    Frequency: Monthly (M) and Annual (A). Reference area: EL (Greece). 
+                    Source: Hellenic Statistical Authority (ELSTAT).
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_MCI_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

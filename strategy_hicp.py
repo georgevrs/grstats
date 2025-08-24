@@ -285,42 +285,60 @@ def main():
             # Check if at least one HICP column has data
             final_df = final_df.dropna(subset=essential_columns).reset_index(drop=True)
             
+            # Add the required row after the header: _Z, _Z, _Z, _Z, _Z, MOR, ANR, AVX, AVR, CTX
+            # Create a new row with the specified values
+            header_row = pd.DataFrame([['_Z', '_Z', '_Z', '_Z', '_Z', 'MOR', 'ANR', 'AVX', 'AVR', 'CTX']], 
+                                    columns=final_df.columns)
+            
+            # Concatenate the header row with the existing dataframe
+            final_df = pd.concat([header_row, final_df], ignore_index=True)
+            
             # Save to Excel
             final_df.to_excel(output_file, index=False)
             logger.success(f"Saved merged MCI and HICP data to {output_file}")
             
             # Log comprehensive statistics
             logger.info(f"Final merged dataset shape: {final_df.shape}")
-            logger.info(f"Year range: {final_df['YEAR'].min()}-{final_df['YEAR'].max()}")
-            logger.info(f"Number of data points: {len(final_df)}")
             
-            # MCI statistics
-            if 'OVERALL_HICP' in final_df.columns:
-                mci_data = final_df.dropna(subset=['OVERALL_HICP'])
-                if not mci_data.empty:
-                    logger.info(f"MCI data points: {len(mci_data)}")
-                    logger.info(f"Average MCI HICP: {mci_data['OVERALL_HICP'].mean():.2f}")
-                    logger.info(f"MCI HICP range: {mci_data['OVERALL_HICP'].min():.2f} - {mci_data['OVERALL_HICP'].max():.2f}")
+            # Filter out the header row for statistics (first row contains _Z values)
+            data_rows = final_df.iloc[1:].copy()
             
-            # HICP statistics
-            if 'HICP' in final_df.columns:
-                hicp_data = final_df.dropna(subset=['HICP'])
-                if not hicp_data.empty:
-                    logger.info(f"HICP data points: {len(hicp_data)}")
-                    logger.info(f"Average HICP: {hicp_data['HICP'].mean():.2f}")
-                    logger.info(f"HICP range: {hicp_data['HICP'].min():.2f} - {hicp_data['HICP'].max():.2f}")
+            # Convert YEAR back to numeric for calculations
+            data_rows['YEAR'] = pd.to_numeric(data_rows['YEAR'], errors='coerce')
             
-            # Data completeness analysis
-            total_possible = len(final_df)
-            mci_complete = len(final_df.dropna(subset=['OVERALL_HICP']))
-            hicp_complete = len(final_df.dropna(subset=['HICP']))
-            both_complete = len(final_df.dropna(subset=['OVERALL_HICP', 'HICP']))
-            
-            logger.info(f"Data completeness:")
-            logger.info(f"  - Total rows: {total_possible}")
-            logger.info(f"  - MCI data available: {mci_complete} ({mci_complete/total_possible*100:.1f}%)")
-            logger.info(f"  - HICP data available: {hicp_complete} ({hicp_complete/total_possible*100:.1f}%)")
-            logger.info(f"  - Both datasets available: {both_complete} ({both_complete/total_possible*100:.1f}%)")
+            if not data_rows.empty:
+                valid_years = data_rows.dropna(subset=['YEAR'])
+                if not valid_years.empty:
+                    logger.info(f"Year range: {valid_years['YEAR'].min():.0f}-{valid_years['YEAR'].max():.0f}")
+                logger.info(f"Number of data points: {len(data_rows)}")
+                
+                # MCI statistics
+                if 'OVERALL_HICP' in data_rows.columns:
+                    mci_data = data_rows.dropna(subset=['OVERALL_HICP'])
+                    if not mci_data.empty:
+                        logger.info(f"MCI data points: {len(mci_data)}")
+                        logger.info(f"Average MCI HICP: {mci_data['OVERALL_HICP'].mean():.2f}")
+                        logger.info(f"MCI HICP range: {mci_data['OVERALL_HICP'].min():.2f} - {mci_data['OVERALL_HICP'].max():.2f}")
+                
+                # HICP statistics
+                if 'HICP' in data_rows.columns:
+                    hicp_data = data_rows.dropna(subset=['HICP'])
+                    if not hicp_data.empty:
+                        logger.info(f"HICP data points: {len(hicp_data)}")
+                        logger.info(f"Average HICP: {hicp_data['HICP'].mean():.2f}")
+                        logger.info(f"HICP range: {hicp_data['HICP'].min():.2f} - {hicp_data['HICP'].max():.2f}")
+                
+                # Data completeness analysis
+                total_possible = len(data_rows)
+                mci_complete = len(data_rows.dropna(subset=['OVERALL_HICP']))
+                hicp_complete = len(data_rows.dropna(subset=['HICP']))
+                both_complete = len(data_rows.dropna(subset=['OVERALL_HICP', 'HICP']))
+                
+                logger.info(f"Data completeness:")
+                logger.info(f"  - Total rows: {total_possible}")
+                logger.info(f"  - MCI data available: {mci_complete} ({mci_complete/total_possible*100:.1f}%)")
+                logger.info(f"  - HICP data available: {hicp_complete} ({hicp_complete/total_possible*100:.1f}%)")
+                logger.info(f"  - Both datasets available: {both_complete} ({both_complete/total_possible*100:.1f}%)")
             
         else:
             logger.error("No data to save")

@@ -417,14 +417,152 @@ def clean_time_periods(df: pd.DataFrame) -> pd.DataFrame:
     
     return df
 
+def standardize_series_labels(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Standardize series labels by removing "(Change)" suffix and other variations
+    to ensure consistent material names across different data types.
+    """
+    print("Standardizing series labels...")
+    
+    # Create a copy to avoid modifying the original
+    df_standardized = df.copy()
+    
+    # Show original labels before standardization
+    print("Original unique labels:", sorted(df_standardized['series_label'].unique()))
+    
+    # Remove "(Change)" suffix from series labels
+    df_standardized['series_label'] = df_standardized['series_label'].str.replace(r'\s*\(Change\)\s*', '', regex=True)
+    
+    # Also remove any trailing whitespace
+    df_standardized['series_label'] = df_standardized['series_label'].str.strip()
+    
+    # Normalize quotes (convert curly quotes to straight quotes)
+    # Replace curly apostrophes with straight ones
+    df_standardized['series_label'] = df_standardized['series_label'].str.replace('\u2019', "'")  # Right single quotation mark
+    df_standardized['series_label'] = df_standardized['series_label'].str.replace('\u2018', "'")  # Left single quotation mark
+    df_standardized['series_label'] = df_standardized['series_label'].str.replace('\u201D', '"')  # Right double quotation mark
+    df_standardized['series_label'] = df_standardized['series_label'].str.replace('\u201C', '"')  # Left double quotation mark
+    
+    # Filter out invalid labels like "MATERIAL GROUPS"
+    df_standardized = df_standardized[df_standardized['series_label'] != 'MATERIAL GROUPS']
+    
+    # Get unique labels after standardization
+    unique_labels = df_standardized['series_label'].unique()
+    
+    # Standardize common variations - this ensures exact matches
+    # Note: We don't need to change the labels here since they're already correct
+    # This is just for verification that all labels are in our expected set
+    expected_labels = {
+        'Timber and builders\' carpentry',
+        'Marble products, granites',
+        'Basic metals',
+        'Plumbing, heating and drainage equipment and supplies',
+        'Natural stone',
+        'Door and window fittings',
+        'Electrical equipment',
+        'Glass products',
+        'Cement, mortars and ready mixed concrete',
+        'Paints and varnishes',
+        'Floor and wall tiles and sanitary ware',
+        'Artificial stone',
+        'Elevators',
+        'Insulating materials',
+        'OVERALL INDEX',
+        'Fuel for machinery (diesel), electricity, water'
+    }
+    
+    # Verify all labels are in our expected set
+    unmapped = [label for label in unique_labels if label not in expected_labels]
+    if unmapped:
+        print(f"Warning: Found unexpected labels after standardization: {unmapped}")
+        print("These will need to be added to the series_mapping in add_series_codes function")
+    
+    # Log the standardization results
+    print(f"Standardized series labels: {len(unique_labels)} unique labels")
+    print(f"Labels: {sorted(unique_labels)}")
+    
+    return df_standardized
+
+def convert_index_mode(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Convert index_mode values based on frequency:
+    - CHANGES -> MOR if freq is "M", ANR if freq is "A"
+    - COST_INDICES -> CTX if freq is "M", AVX if freq is "A"
+    """
+    print("Converting index_mode values based on frequency...")
+    
+    # Create a copy to avoid modifying the original
+    df_converted = df.copy()
+    
+    # Convert CHANGES based on frequency
+    mask_changes = df_converted['index_mode'] == 'CHANGES'
+    df_converted.loc[mask_changes & (df_converted['freq'] == 'M'), 'index_mode'] = 'MOR'
+    df_converted.loc[mask_changes & (df_converted['freq'] == 'A'), 'index_mode'] = 'ANR'
+    
+    # Convert COST_INDICES based on frequency
+    mask_cost_indices = df_converted['index_mode'] == 'COST_INDICES'
+    df_converted.loc[mask_cost_indices & (df_converted['freq'] == 'M'), 'index_mode'] = 'CTX'
+    df_converted.loc[mask_cost_indices & (df_converted['freq'] == 'A'), 'index_mode'] = 'AVX'
+    
+    # Log the conversion results
+    conversion_counts = df_converted['index_mode'].value_counts()
+    print(f"Index mode conversion completed:")
+    print(f"  - MOR (Monthly Changes): {conversion_counts.get('MOR', 0)}")
+    print(f"  - ANR (Annual Changes): {conversion_counts.get('ANR', 0)}")
+    print(f"  - CTX (Monthly Cost Indices): {conversion_counts.get('CTX', 0)}")
+    print(f"  - AVX (Annual Cost Indices): {conversion_counts.get('AVX', 0)}")
+    
+    return df_converted
+
 def add_series_codes(df: pd.DataFrame) -> pd.DataFrame:
-    """Add K1, K2, K3, etc. codes for each unique series_label."""
-    # Get unique series labels and create mapping
-    unique_series = df['series_label'].unique()
-    series_mapping = {series: f"K{i+1}" for i, series in enumerate(unique_series)}
+    """Add proper MCI series codes based on the standardized codelist."""
+    # Create a mapping from series labels to proper MCI codes
+    # This eliminates duplicates and uses consistent codes
+    series_mapping = {
+        'OVERALL INDEX': 'MCI01',
+        'Timber and builders\' carpentry': 'MCI02',
+        'Marble products, granites': 'MCI03',
+        'Basic metals': 'MCI04',
+        'Plumbing, heating and drainage equipment and supplies': 'MCI05',
+        'Natural stone': 'MCI06',
+        'Door and window fittings': 'MCI07',
+        'Electrical equipment': 'MCI08',
+        'Glass products': 'MCI09',
+        'Cement, mortars and ready mixed concrete': 'MCI10',
+        'Paints and varnishes': 'MCI11',
+        'Floor and wall tiles and sanitary ware': 'MCI12',
+        'Artificial stone': 'MCI13',
+        'Elevators': 'MCI14',
+        'Insulating materials': 'MCI15',
+        'Fuel for machinery (diesel), electricity, water': 'MCI16'
+    }
     
     # Add the series_code column
     df['series_code'] = df['series_label'].map(series_mapping)
+    
+    # Verify all series have codes
+    unmapped_mask = df['series_code'].isna()
+    if unmapped_mask.any():
+        unmapped_series = df[unmapped_mask]['series_label'].unique()
+        print(f"Warning: Found unmapped series labels: {unmapped_series}")
+        print("This should not happen after standardization. Adding fallback codes...")
+        
+        # Force mapping to prevent errors
+        for series in unmapped_series:
+            if series not in series_mapping:
+                print(f"Adding missing mapping for: {series}")
+                # Find next available code
+                next_code = f"MCI{len(series_mapping) + 1:02d}"
+                series_mapping[series] = next_code
+                print(f"Mapped {series} -> {next_code}")
+        
+        # Re-apply mapping
+        df['series_code'] = df['series_label'].map(series_mapping)
+    
+    # Final verification - ensure all codes are assigned
+    if df['series_code'].isna().any():
+        print("CRITICAL ERROR: Some series still have no codes after mapping!")
+        print("Unmapped series:", df[df['series_code'].isna()]['series_label'].unique())
     
     return df
 
@@ -690,9 +828,15 @@ def excel_to_tidy(path: Path) -> pd.DataFrame:
     # Clean and fix time periods
     out = clean_time_periods(out)
     
-    # Add series codes (K1, K2, K3, etc.)
+    # Standardize series labels to eliminate duplicates
+    out = standardize_series_labels(out)
+    
+    # Add series codes (MCI01, MCI02, MCI03, etc.)
     out = add_series_codes(out)
-
+    
+    # Convert index_mode values based on frequency
+    out = convert_index_mode(out)
+    
     # Remove duplicates based on time_period, series_label, and index_mode
     # This handles cases where the same data appears in multiple source files
     # but preserves different data types (COST_INDICES vs CHANGES)
@@ -724,6 +868,7 @@ def excel_to_tidy(path: Path) -> pd.DataFrame:
         if c not in out.columns:
             out[c] = pd.NA
     out = out[cols]
+    
     # Optional: drop rows with all-null values
     out = out.dropna(subset=["value"], how="all")
     return out
@@ -766,6 +911,22 @@ def main():
 
     unified = pd.concat(frames, ignore_index=True)
 
+    # Drop the specified columns as requested
+    columns_to_drop = [
+        "dataset_id", "vintage", "sheet", "series_id", 
+        "series_label", "series_label_raw", "unit", "adjustment",
+        "source_file", "last_updated"
+    ]
+    
+    # Only drop columns that exist
+    existing_columns_to_drop = [col for col in columns_to_drop if col in unified.columns]
+    if existing_columns_to_drop:
+        print(f"Dropping columns from final output: {existing_columns_to_drop}")
+        unified = unified.drop(columns=existing_columns_to_drop)
+    
+    print(f"Final columns: {unified.columns.tolist()}")
+    print(f"Final shape: {unified.shape}")
+
     # Persist (Excel only, do not save parquet)
     try:
         # Excel for hand-off
@@ -777,9 +938,10 @@ def main():
 
     print(f"\nSummary:")
     print(f"Total rows: {len(unified):,}")
-    print(f"Unique datasets: {unified['dataset_id'].nunique()}")
-    print(f"Unique series: {unified['series_id'].nunique()}")
+    print(f"Unique series codes: {unified['series_code'].nunique()}")
     print(f"Date range: {unified['time_period'].min()} to {unified['time_period'].max()}")
+    print(f"Index mode distribution:")
+    print(unified['index_mode'].value_counts())
 
 if __name__ == "__main__":
     main()

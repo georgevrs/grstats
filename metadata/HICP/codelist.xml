@@ -1,0 +1,171 @@
+<!-- NSI Web Service v8.19.7.0 -->
+<message:Structure
+	xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+	xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+	xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+	<message:Header>
+		<message:ID>IDREF8083</message:ID>
+		<message:Test>false</message:Test>
+		<message:Prepared>2025-08-24T15:26:43.3145224+00:00</message:Prepared>
+		<message:Sender id="Unknown"/>
+		<message:Receiver id="Unknown"/>
+	</message:Header>
+	<message:Structures>
+		<structure:Codelists>
+			<structure:Codelist id="CL_ICP_SUFFIX" agencyID="ECB" version="1.0" isFinal="true">
+				<common:Name xml:lang="en">Indices of Consumer Prices series variation code list</common:Name>
+				<structure:Code id="3MM">
+					<common:Name xml:lang="en">Three-month moving average</common:Name>
+				</structure:Code>
+				<structure:Code id="A6W">
+					<common:Name xml:lang="en">EEA Country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="A99">
+					<common:Name xml:lang="en">Average annual inflation since 1999</common:Name>
+				</structure:Code>
+				<structure:Code id="ACR">
+					<common:Name xml:lang="en">Annual rate of change corrected for the effect of methodological changes where applicable</common:Name>
+				</structure:Code>
+				<structure:Code id="ANR">
+					<common:Name xml:lang="en">Annual rate of change</common:Name>
+				</structure:Code>
+				<structure:Code id="AVC">
+					<common:Name xml:lang="en">Annual average rate of change at constant tax rates</common:Name>
+				</structure:Code>
+				<structure:Code id="AVR">
+					<common:Name xml:lang="en">Annual average rate of change</common:Name>
+				</structure:Code>
+				<structure:Code id="AVX">
+					<common:Name xml:lang="en">Annual average index</common:Name>
+				</structure:Code>
+				<structure:Code id="CTG">
+					<common:Name xml:lang="en">Contribution to growth rate</common:Name>
+				</structure:Code>
+				<structure:Code id="CTM">
+					<common:Name xml:lang="en">Monthly rate of change at constant tax rates (HICP-CT)</common:Name>
+				</structure:Code>
+				<structure:Code id="CTR">
+					<common:Name xml:lang="en">Annual rate of change at constant tax rates (HICP-CT)</common:Name>
+				</structure:Code>
+				<structure:Code id="CTX">
+					<common:Name xml:lang="en">Monthly index at constant tax rates (HICP-CT)</common:Name>
+				</structure:Code>
+				<structure:Code id="D0W">
+					<common:Name xml:lang="en">EU (changing composition) country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="D2W">
+					<common:Name xml:lang="en">EU-15 Country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="D3W">
+					<common:Name xml:lang="en">EU 25 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="ECX">
+					<common:Name xml:lang="en">Monthly index, backdated, ECU (to 1989) and fixed euro conversion rate (from 1990) used for weights</common:Name>
+				</structure:Code>
+				<structure:Code id="EPX">
+					<common:Name xml:lang="en">Monthly index, backdated, PPP exchange rates used for weights</common:Name>
+				</structure:Code>
+				<structure:Code id="ERX">
+					<common:Name xml:lang="en">Monthly index, backdated, fixed euro conversion rate used for weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I1W">
+					<common:Name xml:lang="en">Euro 11 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I2W">
+					<common:Name xml:lang="en">Euro 12 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I3W">
+					<common:Name xml:lang="en">Euro area 13 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I4W">
+					<common:Name xml:lang="en">Euro 15 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I5W">
+					<common:Name xml:lang="en">Euro 16 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I6W">
+					<common:Name xml:lang="en">Euro 17 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I7W">
+					<common:Name xml:lang="en">Euro 18 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="I8W">
+					<common:Name xml:lang="en">Euro 19 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="ICX">
+					<common:Name xml:lang="en">Monthly Index, with corrected German package holidays</common:Name>
+				</structure:Code>
+				<structure:Code id="INW">
+					<common:Name xml:lang="en">Sub-index weight</common:Name>
+				</structure:Code>
+				<structure:Code id="INX">
+					<common:Name xml:lang="en">Index</common:Name>
+				</structure:Code>
+				<structure:Code id="MAC">
+					<common:Name xml:lang="en">12-month average rate of change at constant tax rates</common:Name>
+				</structure:Code>
+				<structure:Code id="MAR">
+					<common:Name xml:lang="en">12-month average rate of change</common:Name>
+				</structure:Code>
+				<structure:Code id="MOR">
+					<common:Name xml:lang="en">Monthly rate of change</common:Name>
+				</structure:Code>
+				<structure:Code id="U2W">
+					<common:Name xml:lang="en">Euro area country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="V1W">
+					<common:Name xml:lang="en">EU 27 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="V3W">
+					<common:Name xml:lang="en">EU 28 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="V5W">
+					<common:Name xml:lang="en">EU 27 (as of brexit) country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="QUR">
+					<common:Name xml:lang="en">Quarterly rate of change</common:Name>
+				</structure:Code>
+				<structure:Code id="OHW">
+					<common:Name xml:lang="en">OOHPI weight (all OOHPI items = 1000)</common:Name>
+				</structure:Code>
+				<structure:Code id="I9W">
+					<common:Name xml:lang="en">Euro area 20 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="G0W">
+					<common:Name xml:lang="en">EEA Country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B0W">
+					<common:Name xml:lang="en">EU (changing composition) country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B2W">
+					<common:Name xml:lang="en">EU 15 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B3W">
+					<common:Name xml:lang="en">EU 25 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B4W">
+					<common:Name xml:lang="en">EU 27 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B5W">
+					<common:Name xml:lang="en">EU 28 country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="B6W">
+					<common:Name xml:lang="en">EU 27 (as of BrExit) country weights</common:Name>
+				</structure:Code>
+				<structure:Code id="HHW">
+					<common:Name xml:lang="en">Item weight for HICP-H</common:Name>
+				</structure:Code>
+				<structure:Code id="HRW">
+					<common:Name xml:lang="en">Item weight for HICP-R</common:Name>
+				</structure:Code>
+				<structure:Code id="HXW">
+					<common:Name xml:lang="en">Item weight for HICPx-H</common:Name>
+				</structure:Code>
+				<structure:Code id="RXW">
+					<common:Name xml:lang="en">Item weight for HICPx-R</common:Name>
+				</structure:Code>
+			</structure:Codelist>
+		</structure:Codelists>
+	</message:Structures>
+</message:Structure>
+ 

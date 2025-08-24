@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-MCI" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSMCI_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <!-- Put your MCI data here; row 1 has time labels across columns -->
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+
+        <!-- Top-left of the data block (first series row starts at A2).
+             Columns A–E carry series-identifying metadata.
+             From column F onward, header row (row 1) contains TIME_PERIODs; the
+             data cells at the intersections (Row, Column) hold OBS_VALUE. -->
+        <Top-Left  Coord="E2"/>
+        <Bottom-Right Coord="E8537"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- TIME_PERIOD across columns (row 1) -->
+        <Dimension Code="TIME_PERIOD" Coord="Cell(Row, 1)"/>
+
+        <!-- Row-wise dimensions (per series), using columns A–E -->
+        <!-- A -->
+        <Dimension Code="FREQ"           Coord="Cell(Row, 2).Value"/>
+        <!-- B -->
+        <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
+        <!-- C -->
+        <Dimension Code="MCI_SERIES"      Coord="Cell(Row, 3).Value"/>
+        <!-- D -->
+        <Dimension Code="ICP_SUFFIX"      Coord="Cell(Row, 4).Value"/>
+
+        <!-- Notes:
+             - Valid values (per MCI concept scheme):
+               FREQ: M (Monthly), A (Annual)
+               REF_AREA: EL (Greece)
+               MCI_SERIES: MCI01 (Overall Index), MCI02 (Timber), MCI03 (Marble), etc.
+               ICP_SUFFIX: CTX (Monthly Cost Indices), MOR (Monthly Changes), 
+                          AVX (Annual Cost Indices), ANR (Annual Changes)
+               TIME_PERIOD: 2000, 2000-01, 2000-02, ... (YYYY or YYYY-MM format)
+             - TIME_PERIOD header cells (row 1) should be SDMX-compliant:
+               e.g., 2000, 2000-01, 2000-02, ... for monthly data.
+             - The intersection cells contain OBS_VALUE (numeric).
+             - MCI_SERIES values should match CL_MCI_SERIES codelist:
+               MCI01: Overall Index, MCI02: Timber and builders' carpentry,
+               MCI03: Marble products, granites, MCI04: Basic metals, etc.
+             - ICP_SUFFIX values should match CL_ICP_SUFFIX codelist:
+               CTX: Monthly Cost Indices (base year 2021=100),
+               MOR: Monthly rate of change (percentage),
+               AVX: Annual average cost indices,
+               ANR: Annual rate of change (percentage) -->
+    </Coord-Mapping>
+</Excel-Data-Description>
