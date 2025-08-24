@@ -1,0 +1,129 @@
+<!-- SDMX-XML 2.1 – Dataflow LFS (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDLFS_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-LFS" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for employment analysis -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,REGION,SEX,AGE_GROUP,MAIN_EMPLOYMENT_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for education analysis -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,REGION,SEX,AGE_GROUP,EDUCATION_LEVEL_MAIN</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for regional analysis -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,REGION,URBANIZATION,SEX,AGE_GROUP</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Layout suggestions for sector analysis -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,REGION,SECTOR,SECTOR_SUB,SEX,AGE_GROUP</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Defaults: annual, Greece total, thousands of persons -->
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=A,REGION=EL,UNIT_OF_MEASURE=THS</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Hide technical columns -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>OBS_STATUS,CONF_STATUS,CONF_STATUS_SUB</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology — Labour Force Survey|https://www.statistics.gr/en/statistics/-/publication/SJO01/-|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata — ELSTAT Publications|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Publication (SJO01) – Labour Force Survey|https://www.statistics.gr/en/statistics/-/publication/SJO01/-|
+                            https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Eurostat LFS Methodology|https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Labour_force_survey_(LFS)_overview|
+                            https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_article-ltr.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            ILO Labour Statistics|https://ilostat.ilo.org/|
+                            https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_article-ltr.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name and Description ======== -->
+                <common:Name xml:lang="en">Labour Force Survey (LFS) — Greece</common:Name>
+                <common:Description xml:lang="en">
+                    Labour Force Survey (LFS) for Greece, providing comprehensive statistics on employment, unemployment, 
+                    education, demographics, and regional classifications. The survey covers the entire population aged 15 
+                    and over, collecting detailed information on labour force status, employment characteristics, working 
+                    conditions, education levels, and demographic breakdowns. Coverage includes regional analysis at NUTS 2 
+                    level, urbanization classifications, sectoral breakdowns (NACE-based), occupational classifications 
+                    (ISCO-based), and various employment dimensions such as working hours, job permanency, atypical work 
+                    arrangements, and reasons for part-time or temporary employment. The data includes counts in thousands 
+                    of persons and percentages, with breakdowns by sex, age groups, nationality, marital status, education 
+                    levels, and various employment characteristics. Frequency: Annual (A), Quarterly (Q), and Monthly (M). 
+                    Reference area: EL (Greece) and regional breakdowns. Source: Hellenic Statistical Authority (ELSTAT), 
+                    following Eurostat LFS methodology and ILO standards.
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_LFS_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>
