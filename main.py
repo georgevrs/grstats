@@ -22,6 +22,10 @@ DATASETS = [
         "folder_name": "LFS"
     },
     {
+        "base_url": "https://www.statistics.gr/en/statistics/-/publication/SJO03/-",
+        "folder_name": "LFS"
+    },
+    {
         "base_url": "https://www.statistics.gr/en/statistics/-/publication/SEL03/-",
         "folder_name": "EDP"
     },

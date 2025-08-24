@@ -3,6 +3,37 @@ import pandas as pd
 import os
 import re
 
+def create_time_period(df):
+    """
+    Create proper time_period column from YEAR and MONTH columns.
+    - If freq is 'A' (annual), time_period = YEAR only (e.g., '2022')
+    - If freq is 'M' (monthly), time_period = YEAR-MXX format (e.g., '2022-M02')
+    """
+    time_periods = []
+    
+    for _, row in df.iterrows():
+        year = str(row['YEAR'])
+        month = row['MONTH']
+        freq = row['FREQ']
+        
+        if freq == 'A':
+            # Annual data: only year
+            time_periods.append(year)
+        elif freq == 'M' and pd.notna(month) and month is not None:
+            # Monthly data: YEAR-MXX format
+            try:
+                month_int = int(month)
+                month_str = f"M{month_int:02d}"
+                time_periods.append(f"{year}-{month_str}")
+            except (ValueError, TypeError):
+                # Fallback for invalid month data
+                time_periods.append(None)
+        else:
+            # Fallback for invalid data
+            time_periods.append(None)
+    
+    return time_periods
+
 def parse_bla_sheet(sheet):
     """
     Parse the BLA sheet to extract monthly building activity data.
@@ -85,6 +116,12 @@ def main():
             # Clean up - remove any rows with missing data, but keep annual rows (MONTH=None)
             # Only drop rows where essential data is missing
             final_df = final_df.dropna(subset=['FREQ', 'YEAR', 'LICENCES', 'AREA', 'VOLUME']).reset_index(drop=True)
+            
+            # Create proper time_period column
+            final_df['time_period'] = create_time_period(final_df)
+            
+            # Reorder columns to include time_period
+            final_df = final_df[['FREQ', 'YEAR', 'MONTH', 'time_period', 'LICENCES', 'AREA', 'VOLUME']]
             
             # Save to Excel
             final_df.to_excel(output_file, index=False)

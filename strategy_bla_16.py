@@ -3,6 +3,37 @@ import pandas as pd
 import os
 import re
 
+def create_time_period(df):
+    """
+    Create proper time_period column from YEAR and MONTH columns.
+    - If freq is 'A' (annual), time_period = YEAR only (e.g., '2022')
+    - If freq is 'M' (monthly), time_period = YEAR-MXX format (e.g., '2022-M02')
+    """
+    time_periods = []
+    
+    for _, row in df.iterrows():
+        year = str(row['YEAR'])
+        month = row['MONTH']
+        freq = row['FREQ']
+        
+        if freq == 'A':
+            # Annual data: only year
+            time_periods.append(year)
+        elif freq == 'M' and pd.notna(month) and month is not None:
+            # Monthly data: YEAR-MXX format
+            try:
+                month_int = int(month)
+                month_str = f"M{month_int:02d}"
+                time_periods.append(f"{year}-{month_str}")
+            except (ValueError, TypeError):
+                # Fallback for invalid month data
+                time_periods.append(None)
+        else:
+            # Fallback for invalid data
+            time_periods.append(None)
+    
+    return time_periods
+
 def parse_bla_16_sheet(sheet):
     """
     Parse the BLA Table 16 sheet to extract new establishments data.
@@ -184,6 +215,12 @@ def main():
         if not final_df.empty:
             # Clean up - remove any rows with missing essential data
             final_df = final_df.dropna(subset=['YEAR', 'MONTH', 'FREQ', 'CATEGORY']).reset_index(drop=True)
+            
+            # Create proper time_period column
+            final_df['time_period'] = create_time_period(final_df)
+            
+            # Reorder columns to include time_period
+            final_df = final_df[['YEAR', 'MONTH', 'FREQ', 'time_period', 'CATEGORY', 'TOTAL_NUMBER', 'TOTAL_VOLUME', 'URBAN_NUMBER', 'URBAN_VOLUME', 'SEMI_URBAN_NUMBER', 'SEMI_URBAN_VOLUME', 'RURAL_NUMBER', 'RURAL_VOLUME']]
             
             # Save to Excel
             final_df.to_excel(output_file, index=False)
