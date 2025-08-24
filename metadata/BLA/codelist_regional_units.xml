@@ -353,11 +353,6 @@
                     <common:Description>Thasos regional unit.</common:Description>
                 </structure:Code>
                 
-                <structure:Code id="GREVENA">
-                    <common:Name>GREVENA</common:Name>
-                    <common:Description>Grevena regional unit.</common:Description>
-                </structure:Code>
-                
                 <structure:Code id="ITHAKI">
                     <common:Name>ITHAKI</common:Name>
                     <common:Description>Ithaki regional unit.</common:Description>
