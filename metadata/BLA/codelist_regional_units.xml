@@ -244,6 +244,16 @@
                     <common:Description>South sector of Athens regional unit in Attiki.</common:Description>
                 </structure:Code>
                 
+                <structure:Code id="DYTIKOS_TOMEAS_ATHINON">
+                    <common:Name>DYTIKOS TOMEAS ATHINON (WEST SECTOR OF ATHENS)</common:Name>
+                    <common:Description>West sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ANATOLIKOS_TOMEAS_ATHINON">
+                    <common:Name>ANATOLIKOS TOMEAS ATHINON (EAST SECTOR OF ATHENS)</common:Name>
+                    <common:Description>East sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
                 <structure:Code id="ANATOLIKI_ATTIKI">
                     <common:Name>ANATOLIKI ATTIKI</common:Name>
                     <common:Description>Eastern Attiki regional unit.</common:Description>
@@ -253,7 +263,6 @@
                     <common:Name>DYTIKI ATTIKI</common:Name>
                     <common:Description>Western Attiki regional unit.</common:Description>
                 </structure:Code>
-                
                 <structure:Code id="PIREAS">
                     <common:Name>PIREAS</common:Name>
                     <common:Description>Pireas regional unit in Attiki.</common:Description>

@@ -233,6 +233,148 @@ def process_dataframe(df):
     # fill in <NA> in REGIONAL_UNIT AS _Z
     df['REGIONAL_UNIT'] = df['REGIONAL_UNIT'].fillna('_Z')
     
+    # NOW APPLY REGIONAL UNIT MAPPING TO CONVERT NAMES TO CODELIST CODES
+    print("Applying regional unit mapping to convert names to codelist codes...")
+    
+    # Comprehensive mapping from actual names to codelist codes
+    regional_unit_mapping = {
+        # Eastern Macedonia and Thrace (EL11)
+        'RODOPI': 'RODOPI',
+        'DRAMA': 'DRAMA', 
+        'EVROS': 'EVROS',
+        'KAVALA': 'KAVALA',
+        'XANTHI': 'XANTHI',
+        
+        # Central Macedonia (EL12)
+        'THESSALONIKI': 'THESSALONIKI',
+        'IMATHIA': 'IMATHIA',
+        'KILKIS': 'KILKIS',
+        'PELLA': 'PELLA',
+        'SERRES': 'SERRES',
+        'PIERIA': 'PIERIA',
+        'CHALKIDIKI': 'CHALKIDIKI',
+        
+        # Western Macedonia (EL13)
+        'KOZANI': 'KOZANI',
+        'GREVENA': 'GREVENA',
+        'KASTORIA': 'KASTORIA',
+        'FLORINA': 'FLORINA',
+        
+        # Epirus (EL21)
+        'IOANNINA': 'IOANNINA',
+        'ARTA': 'ARTA',
+        'THESPROTIA': 'THESPROTIA',
+        'PREVEZA': 'PREVEZA',
+        
+        # Thessaly (EL14)
+        'LARISA': 'LARISA',
+        'KARDITSA': 'KARDITSA',
+        'MAGNISIA': 'MAGNISIA',
+        'SPORADES': 'SPORADES',
+        'TRIKALA': 'TRIKALA',
+        
+        # Central Greece (EL24)
+        'VOIOTIA': 'VOIOTIA',
+        'EVOIA': 'EVOIA',
+        'FOKIDA': 'FOKIDA',
+        
+        # Ionian Islands (EL22)
+        'KERKYRA': 'KERKYRA',
+        'ZAKYNTHOS': 'ZAKYNTHOS',
+        'KEFALLINIA': 'KEFALLINIA',
+        'LEFKADA': 'LEFKADA',
+        
+        # Western Greece (EL23)
+        'ACHAIA': 'ACHAIA',
+        'ETOLOAKARNANIA': 'ETOLOAKARNANIA',
+        'ILEIA': 'ILEIA',
+        
+        # Peloponnese (EL25)
+        'ARKADIA': 'ARKADIA',
+        'ARGOLIDA': 'ARGOLIDA',
+        'KORINTHIA': 'KORINTHIA',
+        'LAKONIA': 'LAKONIA',
+        'MESSINIA': 'MESSINIA',
+        
+        # Attiki (EL30)
+        'KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
+        'VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
+        'NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
+        'ANATOLIKI ATTIKI': 'ANATOLIKI_ATTIKI',
+        'DYTIKI ATTIKI': 'DYTIKI_ATTIKI',
+        'PIREAS': 'PIREAS',
+        
+        # North Aegean (EL41)
+        'NISIA (ISLANDS)': 'NISIA',
+        'LIMNOS': 'LIMNOS',
+        'SAMOS': 'SAMOS',
+        'CHIOS': 'CHIOS',
+        'THIRA': 'THIRA',
+        
+        # South Aegean (EL42)
+        'KALYMNOS': 'KALYMNOS',
+        'KEA - KYTHNOS': 'KEA_KYTHNOS',
+        'KOS': 'KOS',
+        'MILOS': 'MILOS',
+        'MYKONOS': 'MYKONOS',
+        'NAXOS': 'NAXOS',
+        'PAROS': 'PAROS',
+        'RODOS': 'RODOS',
+        
+        # Crete (EL43)
+        'IRAKLEIO': 'IRAKLEIO',
+        'LASITHI': 'LASITHI',
+        'RETHYMNO': 'RETHYMNO',
+        'CHANIA': 'CHANIA',
+        
+        # Additional regional units
+        'THASOS': 'THASOS',
+        'ITHAKI': 'ITHAKI',
+        'LESVOS': 'LESVOS',
+        'IKARIA': 'IKARIA',
+        'SYROS': 'SYROS',
+        'ANDROS': 'ANDROS',
+        'KARPATHOS': 'KARPATHOS',
+        'TINOS': 'TINOS',
+        
+        # Handle variations and clean names
+        'REGIONAL UNIT OF RODOPI': 'RODOPI',
+        'REGIONAL UNIT OF DRAMA': 'DRAMA',
+        'REGIONAL UNIT OF EVROS': 'EVROS',
+        'REGIONAL UNIT OF KAVALA': 'KAVALA',
+        'REGIONAL UNIT OF XANTHI': 'XANTHI',
+        'REGIONAL UNIT OF THESSALONIKI': 'THESSALONIKI',
+        'REGIONAL UNIT OF IOANNINA': 'IOANNINA',
+        'REGIONAL UNIT OF LARISA': 'LARISA',
+        'REGIONAL UNIT OF ATHENS': 'KENTRIKOS_TOMEAS_ATHINON',
+        'ATHENS': 'KENTRIKOS_TOMEAS_ATHINON',
+        'ATHINA': 'KENTRIKOS_TOMEAS_ATHINON',
+        
+        # Handle newlines and extra spaces
+        'KENTRIKOS TOMEAS ATHINON\n (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
+        'VOREIOS TOMEAS ATHINON\n (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
+        'NOTIOS TOMEAS ATHINON\n (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
+        'DYTIKOS TOMEAS ATHINON\n (WESTERN SECTOR OF ATHENS)': 'DYTIKOS_TOMEAS_ATHINON',
+        'NISIA (ISLANDS)': 'NISIA'
+    }
+    
+    # Apply regional unit mapping IMMEDIATELY
+    if 'REGIONAL_UNIT' in df.columns:
+        # Clean the REGIONAL_UNIT values first
+        df['REGIONAL_UNIT'] = df['REGIONAL_UNIT'].astype(str).str.strip()
+        
+        # Apply mapping
+        df['REGIONAL_UNIT'] = df['REGIONAL_UNIT'].map(regional_unit_mapping).fillna('_Z')
+        
+        # Report mapping results
+        mapped_count = (df['REGIONAL_UNIT'] != '_Z').sum()
+        total_count = len(df)
+        print(f"✓ Applied regional unit mapping: {mapped_count}/{total_count} rows mapped to codes")
+        
+        # Show some examples of what was mapped
+        unique_codes = df['REGIONAL_UNIT'].unique()
+        print(f"✓ Regional unit codes found: {sorted([code for code in unique_codes if code != '_Z'])}")
+    
     # Now apply regions mapping AFTER regional unit detection
     region_mapping = {
         'REGION OF ATTIKI': 'EL30',
@@ -405,6 +547,8 @@ def main():
         except Exception as e:
             print(f"⚠️  Error reading existing file: {str(e)}")
             print("Proceeding with full data processing...")
+    
+    print("⚠️  Processing data to apply regional unit mapping and deduplication")
     
     # Step 1: Run individual strategies to generate their Excel files
     if not run_individual_strategies():
