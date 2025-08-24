@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDSECTOR_SUB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_SECTOR_SUB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Economic Sub-Sector Classification</common:Name>
+                <common:Description>Classification of economic sub-sector categories providing detailed breakdown of economic activities within broader sector groupings for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Sector total categories -->
+                <structure:Code id="TERTIARY_SECTOR_TOTAL">
+                    <common:Name>Tertiary sector total</common:Name>
+                    <common:Description>Total for all tertiary sector activities including services, trade, and public administration.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SECONDARY_SECTOR_TOTAL">
+                    <common:Name>Secondary sector total</common:Name>
+                    <common:Description>Total for all secondary sector activities including manufacturing, construction, and utilities.</common:Description>
+                </structure:Code>
+                
+                <!-- Primary sector subcategories -->
+                <structure:Code id="AGRICULTURE_FORESTRY_FISHING">
+                    <common:Name>Agriculture, forestry and fishing</common:Name>
+                    <common:Description>Primary economic activities including crop production, animal husbandry, forestry, and fishing.</common:Description>
+                </structure:Code>
+                
+                <!-- Secondary sector subcategories -->
+                <structure:Code id="INDUSTRY_INCLUDING_ENERGY">
+                    <common:Name>Industry including energy</common:Name>
+                    <common:Description>Industrial activities including manufacturing and energy production and distribution.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="CONSTRUCTION">
+                    <common:Name>Construction</common:Name>
+                    <common:Description>Construction activities including building construction, civil engineering, and specialized construction activities.</common:Description>
+                </structure:Code>
+                
+                <!-- Tertiary sector subcategories -->
+                <structure:Code id="TRADE_HOTELS_RESTAURANTS_TRANSPORT_COMMUNICATION">
+                    <common:Name>Trade, hotels and restaurants, transport and communication</common:Name>
+                    <common:Description>Commercial activities including wholesale and retail trade, accommodation and food services, transportation, and communication.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="FINANCIAL_REAL_ESTATE_RENTING_BUSINESS_ACTIVITIES">
+                    <common:Name>Financial, real estate, renting and business activities</common:Name>
+                    <common:Description>Financial services, real estate activities, and business support services.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OTHER_SERVICE_ACTIVITIES">
+                    <common:Name>Other service activities</common:Name>
+                    <common:Description>Other service activities not covered by other categories, including public administration, education, health, and social work.</common:Description>
+                </structure:Code>
+                
+                <!-- Special categories -->
+                <structure:Code id="DID_NOT_ANSWER">
+                    <common:Name>Did not answer</common:Name>
+                    <common:Description>Respondents who did not answer the sub-sector question.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

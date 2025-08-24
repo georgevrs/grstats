@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDMARITAL_STATUS_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_MARITAL_STATUS" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Marital Status Classification</common:Name>
+                <common:Description>Classification of marital status categories including single, married, and other relationship statuses for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Marital status categories -->
+                <structure:Code id="SINGLE">
+                    <common:Name>Single</common:Name>
+                    <common:Description>Persons who have never been married or are not currently in a marital relationship.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="MARRIED">
+                    <common:Name>Married</common:Name>
+                    <common:Description>Persons who are currently married and living with their spouse.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="WIDOWED_DIVORCED_LEGALLY_SEPARATED">
+                    <common:Name>Widowed, divorced or legally separated</common:Name>
+                    <common:Description>Persons who are widowed, divorced, or legally separated from their previous spouse.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

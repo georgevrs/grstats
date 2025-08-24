@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDLABOUR_FORCE_STATUS_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_LABOUR_FORCE_STATUS" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Labour Force Status Classification</common:Name>
+                <common:Description>Classification of labour force status categories including employment, unemployment, inactivity, and other population groups for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Employment status -->
+                <structure:Code id="EMPLOYED">
+                    <common:Name>Employed</common:Name>
+                    <common:Description>Persons who are currently employed, including employees, self-employed, and family workers.</common:Description>
+                </structure:Code>
+                
+                <!-- Unemployment status -->
+                <structure:Code id="UNEMPLOYED">
+                    <common:Name>Unemployed</common:Name>
+                    <common:Description>Persons who are without work, available for work, and actively seeking employment.</common:Description>
+                </structure:Code>
+                
+                <!-- Labour force total -->
+                <structure:Code id="LABOUR_FORCE">
+                    <common:Name>Labour Force</common:Name>
+                    <common:Description>Total of employed and unemployed persons, representing the economically active population.</common:Description>
+                </structure:Code>
+                
+                <!-- Inactivity status -->
+                <structure:Code id="INACTIVE">
+                    <common:Name>Inactive</common:Name>
+                    <common:Description>Persons who are neither employed nor unemployed, including students, retirees, and others not seeking work.</common:Description>
+                </structure:Code>
+                
+                <!-- Inactivity with reasons -->
+                <structure:Code id="REASONS_FOR_NOT_SEEKING_EMPLOYMENT_INACTIVE">
+                    <common:Name>Reasons for not seeking employment (inactive)</common:Name>
+                    <common:Description>Inactive persons with specific reasons for not seeking employment, such as education, family responsibilities, or health issues.</common:Description>
+                </structure:Code>
+                
+                <!-- Total population -->
+                <structure:Code id="TOTAL_POPULATION">
+                    <common:Name>Total Population</common:Name>
+                    <common:Description>Total population aged 15 and over, including all labour force status categories.</common:Description>
+                </structure:Code>
+                
+                <!-- Jobless households -->
+                <structure:Code id="POPULATION_LIVING_IN_JOBLESS_HOUSEHOLDS">
+                    <common:Name>Population living in jobless households</common:Name>
+                    <common:Description>Persons living in households where no member is employed, including children and other dependents.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

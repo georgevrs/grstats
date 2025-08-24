@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDREGION_1981_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_REGION_1981" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek 1981 Regional Classification</common:Name>
+                <common:Description>Classification of Greek regions according to the 1981 administrative and statistical regional structure for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Regional categories -->
+                <structure:Code id="KENTRIKI_DYTIKI_MAKEDONIA">
+                    <common:Name>Kentriki & Dytiki Makedonia</common:Name>
+                    <common:Description>Central and Western Macedonia region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ANATOLIKI_STEREA_NISSIA">
+                    <common:Name>Anatoliki Sterea & Nissia</common:Name>
+                    <common:Description>Eastern Central Greece and Islands region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PELOPONNISOS_DYTIKI_STEREA">
+                    <common:Name>Peloponnisos & Dytiki Sterea</common:Name>
+                    <common:Description>Peloponnese and Western Central Greece region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="IPEIROS">
+                    <common:Name>Ipeiros</common:Name>
+                    <common:Description>Epirus region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="THESSALIA">
+                    <common:Name>Thessalia</common:Name>
+                    <common:Description>Thessaly region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="KRITI">
+                    <common:Name>Kriti</common:Name>
+                    <common:Description>Crete region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ANATOLIKI_MAKEDONIA">
+                    <common:Name>Anatoliki Makedonia</common:Name>
+                    <common:Description>Eastern Macedonia region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NISSIA_ANATOLIKOU_AIGAIOU">
+                    <common:Name>Nissia Anatolikou Aigaiou</common:Name>
+                    <common:Description>Eastern Aegean Islands region according to 1981 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="THRAKI">
+                    <common:Name>Thraki</common:Name>
+                    <common:Description>Thrace region according to 1981 classification.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

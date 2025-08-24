@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDNR_PERSONS_LOCAL_UNIT_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_NR_PERSONS_LOCAL_UNIT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Number of Persons in Local Unit Classification</common:Name>
+                <common:Description>Classification of local unit size categories based on the number of persons employed, following European business statistics standards.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Local unit size categories -->
+                <structure:Code id="UP_TO_10">
+                    <common:Name>Up to 10 persons</common:Name>
+                    <common:Description>Local units with 1 to 10 persons employed, typically micro-enterprises.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="11_TO_19">
+                    <common:Name>11 to 19 persons</common:Name>
+                    <common:Description>Local units with 11 to 19 persons employed, typically small enterprises.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="20_TO_49">
+                    <common:Name>20 to 49 persons</common:Name>
+                    <common:Description>Local units with 20 to 49 persons employed, typically small to medium enterprises.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="50_OR_MORE">
+                    <common:Name>50 persons or more</common:Name>
+                    <common:Description>Local units with 50 or more persons employed, typically medium to large enterprises.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="UNKNOWN_MORE_THAN_10">
+                    <common:Name>Unknown but more than 10 persons</common:Name>
+                    <common:Description>Local units where the exact number of persons is unknown but confirmed to be more than 10.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

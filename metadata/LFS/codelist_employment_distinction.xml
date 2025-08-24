@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDEMPLOYMENT_DISTINCTION_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_EMPLOYMENT_DISTINCTION" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Employment Distinction Classification</common:Name>
+                <common:Description>Classification of employment distinction categories based on working time arrangements for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Employment distinction categories -->
+                <structure:Code id="FULL_TIME_EMPLOYED">
+                    <common:Name>Full-time employed</common:Name>
+                    <common:Description>Persons employed on a full-time basis according to standard working hours.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PART_TIME_EMPLOYED">
+                    <common:Name>Part-time employed</common:Name>
+                    <common:Description>Persons employed on a part-time basis with reduced working hours.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDLABOUR_FORCE_SUBCATEGORY_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_LABOUR_FORCE_SUBCATEGORY" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Labour Force Subcategory Classification</common:Name>
+                <common:Description>Classification of labour force subcategories including rates, percentages, specific reasons for inactivity, and demographic breakdowns for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Unit of measure -->
+                <structure:Code id="PERSONS">
+                    <common:Name>persons</common:Name>
+                    <common:Description>Count of individuals in absolute numbers.</common:Description>
+                </structure:Code>
+                
+                <!-- Demographic percentages -->
+                <structure:Code id="PERCENT_AGED_20_64">
+                    <common:Name>% aged 20-64</common:Name>
+                    <common:Description>Percentage of population aged 20 to 64 years.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PERCENT_AGED_15_PLUS_1981_97_14_PLUS">
+                    <common:Name>% aged 15+ (1981-97: 14+)</common:Name>
+                    <common:Description>Percentage of population aged 15 and over, with historical reference to 14+ for 1981-97 period.</common:Description>
+                </structure:Code>
+                
+                <!-- Labour force rates -->
+                <structure:Code id="ACTIVITY_RATE">
+                    <common:Name>activity rate</common:Name>
+                    <common:Description>Labour force participation rate as percentage of working-age population.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="EMPLOYMENT_RATE">
+                    <common:Name>employment rate</common:Name>
+                    <common:Description>Employment rate as percentage of working-age population.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="UNEMPLOYMENT_RATE">
+                    <common:Name>unemployment rate</common:Name>
+                    <common:Description>Unemployment rate as percentage of labour force.</common:Description>
+                </structure:Code>
+                
+                <!-- Employment status subcategories -->
+                <structure:Code id="EMPLOYED_NOT_UNDEREMPLOYED">
+                    <common:Name>Employed, not undermployed</common:Name>
+                    <common:Description>Persons who are employed and working their desired number of hours.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="UNDEREMPLOYED_PART_TIME_WORKERS">
+                    <common:Name>Undermployed part-time workers</common:Name>
+                    <common:Description>Part-time workers who would prefer to work more hours.</common:Description>
+                </structure:Code>
+                
+                <!-- Unemployment subcategories -->
+                <structure:Code id="SEEKING_WORK_BUT_NOT_IMMEDIATELY_AVAILABLE">
+                    <common:Name>Seeking work but not immediately available</common:Name>
+                    <common:Description>Unemployed persons actively seeking work but not available to start immediately.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="AVAILABLE_TO_WORK_BUT_NOT_SEEKING">
+                    <common:Name>Available to work but not seeking</common:Name>
+                    <common:Description>Persons available for work but not actively seeking employment.</common:Description>
+                </structure:Code>
+                
+                <!-- Inactivity reasons -->
+                <structure:Code id="EDUCATION_OR_TRAINING">
+                    <common:Name>Education or training</common:Name>
+                    <common:Description>Inactive persons due to participation in education or training programs.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OWN_ILLNESS_OR_DISABILITY">
+                    <common:Name>Own illness or disability</common:Name>
+                    <common:Description>Inactive persons due to personal health conditions or disabilities.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PERSONAL_OR_FAMILY_RESPONSIBILITIES">
+                    <common:Name>Personal or family responsibilities</common:Name>
+                    <common:Description>Inactive persons due to caregiving or other family obligations.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="RETIREMENT">
+                    <common:Name>Retirement</common:Name>
+                    <common:Description>Inactive persons who have retired from the labour force.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OTHER_INACTIVE">
+                    <common:Name>Other inactive</common:Name>
+                    <common:Description>Inactive persons for reasons not covered by other categories.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OTHER_REASONS">
+                    <common:Name>Other reasons</common:Name>
+                    <common:Description>Other reasons for inactivity not covered by specific categories.</common:Description>
+                </structure:Code>
+                
+                <!-- Age group breakdowns -->
+                <structure:Code id="PERSONS_AGED_0_17">
+                    <common:Name>Persons aged 0-17</common:Name>
+                    <common:Description>Population aged 0 to 17 years, typically outside labour force.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PERSONS_AGED_18_59">
+                    <common:Name>Persons aged 18-59</common:Name>
+                    <common:Description>Population aged 18 to 59 years, prime working age group.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

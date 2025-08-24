@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDUNDERMP_PT_WORK_SUB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_UNDERMP_PT_WORK_SUB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Underemployment Part-Time Work Sub-Classification</common:Name>
+                <common:Description>Classification of underemployment part-time work subcategories indicating whether individuals working part-time are doing so due to underemployment reasons.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Underemployment part-time work categories -->
+                <structure:Code id="YES">
+                    <common:Name>Yes</common:Name>
+                    <common:Description>Individuals working part-time due to underemployment reasons (e.g., could not find full-time work, economic reasons, etc.).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NO">
+                    <common:Name>No</common:Name>
+                    <common:Description>Individuals working part-time for reasons other than underemployment (e.g., personal choice, education, family responsibilities, etc.).</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDEDUCATION_SUB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_EDUCATION_SUB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Education Sub-Level Classification</common:Name>
+                <common:Description>Detailed classification of education sub-levels following Greek educational system standards.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Primary education sub-levels -->
+                <structure:Code id="ekp1">
+                    <common:Name>Primary education - Year 1</common:Name>
+                    <common:Description>First year of primary education (6-7 years old).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ekp2">
+                    <common:Name>Primary education - Year 2</common:Name>
+                    <common:Description>Second year of primary education (7-8 years old).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ekp3">
+                    <common:Name>Primary education - Year 3</common:Name>
+                    <common:Description>Third year of primary education (8-9 years old).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ekp4">
+                    <common:Name>Primary education - Year 4</common:Name>
+                    <common:Description>Fourth year of primary education (9-10 years old).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ekp7">
+                    <common:Name>Primary education - Year 7</common:Name>
+                    <common:Description>Seventh year of primary education (12-13 years old).</common:Description>
+                </structure:Code>
+                
+                <!-- Secondary education sub-levels -->
+                <structure:Code id="UPPER_SEC">
+                    <common:Name>Upper secondary education</common:Name>
+                    <common:Description>Upper secondary education level (typically ages 15-18).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="POST_SEC_VOC">
+                    <common:Name>Post-secondary vocational education</common:Name>
+                    <common:Description>Post-secondary non-tertiary vocational education and training.</common:Description>
+                </structure:Code>
+                
+                <!-- Tertiary education sub-levels -->
+                <structure:Code id="UNIV_DEGREE">
+                    <common:Name>University degree</common:Name>
+                    <common:Description>Bachelor's degree or equivalent university qualification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="POSTGRAD_DEGREE">
+                    <common:Name>Postgraduate degrees (Master's/PhD)</common:Name>
+                    <common:Description>Master's degree, PhD, or other postgraduate qualifications.</common:Description>
+                </structure:Code>
+                
+                <!-- Additional categories -->
+                <structure:Code id="Other">
+                    <common:Name>Other education levels</common:Name>
+                    <common:Description>Other education levels not specifically classified above.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

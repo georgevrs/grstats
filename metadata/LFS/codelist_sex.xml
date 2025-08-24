@@ -1,0 +1,127 @@
+<!-- NSI Web Service v8.19.7.0 -->
+<message:Structure
+	xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+	xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+	xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+	<message:Header>
+		<message:ID>IDREF8110</message:ID>
+		<message:Test>false</message:Test>
+		<message:Prepared>2025-08-24T22:59:36.7999273+00:00</message:Prepared>
+		<message:Sender id="Unknown"/>
+		<message:Receiver id="Unknown"/>
+	</message:Header>
+	<message:Structures>
+		<structure:Codelists>
+			<structure:Codelist id="SEX" agencyID="ESTAT" version="1.13" isFinal="true">
+				<common:Annotations>
+					<common:Annotation>
+						<common:AnnotationTitle>2023-08-09T23:00:00+0200</common:AnnotationTitle>
+						<common:AnnotationType>LAST_UPDATED</common:AnnotationType>
+					</common:Annotation>
+					<common:Annotation>
+						<common:AnnotationTitle>C</common:AnnotationTitle>
+						<common:AnnotationType>IS_STANDARD_CODE_LIST</common:AnnotationType>
+						<common:AnnotationText xml:lang="en">Combined code list, contains standard codes and codes not associated with the concept of the code list</common:AnnotationText>
+					</common:Annotation>
+					<common:Annotation>
+						<common:AnnotationType>ARTEFACT_SOURCE</common:AnnotationType>
+						<common:AnnotationText xml:lang="en">Eurostat Standard Code Lists</common:AnnotationText>
+					</common:Annotation>
+					<common:Annotation>
+						<common:AnnotationTitle>N</common:AnnotationTitle>
+						<common:AnnotationType>DERIVED</common:AnnotationType>
+						<common:AnnotationText xml:lang="en">Not derived</common:AnnotationText>
+					</common:Annotation>
+				</common:Annotations>
+				<common:Name xml:lang="en">Sex</common:Name>
+				<common:Name xml:lang="de">Geschlecht</common:Name>
+				<common:Name xml:lang="fr">Sexe</common:Name>
+				<common:Description xml:lang="en">This code list provides information about the state of being male or female and refers to their biological and physiological characteristics.</common:Description>
+				<structure:Code id="T">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Total</common:Name>
+					<common:Name xml:lang="de">Insgesamt</common:Name>
+					<common:Name xml:lang="fr">Total</common:Name>
+				</structure:Code>
+				<structure:Code id="M">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Males</common:Name>
+					<common:Name xml:lang="de">Männer</common:Name>
+					<common:Name xml:lang="fr">Hommes</common:Name>
+				</structure:Code>
+				<structure:Code id="F">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Females</common:Name>
+					<common:Name xml:lang="de">Frauen</common:Name>
+					<common:Name xml:lang="fr">Femmes</common:Name>
+				</structure:Code>
+				<structure:Code id="DIFF">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>M</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Code not associated with the concept of the code list, but following Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Absolute difference between males and females</common:Name>
+					<common:Name xml:lang="de">Absolute Differenz zwischen Männern und Frauen</common:Name>
+					<common:Name xml:lang="fr">Différence absolue entre hommes et femmes</common:Name>
+				</structure:Code>
+				<structure:Code id="NAP">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Not applicable</common:Name>
+					<common:Name xml:lang="de">Nicht anwendbar</common:Name>
+					<common:Name xml:lang="fr">Non applicable</common:Name>
+				</structure:Code>
+				<structure:Code id="NRP">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">No response</common:Name>
+					<common:Name xml:lang="de">Keine Antwort</common:Name>
+					<common:Name xml:lang="fr">Sans réponse</common:Name>
+				</structure:Code>
+				<structure:Code id="UNK">
+					<common:Annotations>
+						<common:Annotation>
+							<common:AnnotationTitle>Y</common:AnnotationTitle>
+							<common:AnnotationType>IS_STANDARD_CODE</common:AnnotationType>
+							<common:AnnotationText xml:lang="en">Standard code, follows Eurostat Standard Code List Guidelines</common:AnnotationText>
+						</common:Annotation>
+					</common:Annotations>
+					<common:Name xml:lang="en">Unknown</common:Name>
+					<common:Name xml:lang="de">Unbekannt</common:Name>
+					<common:Name xml:lang="fr">Inconnu</common:Name>
+				</structure:Code>
+			</structure:Codelist>
+		</structure:Codelists>
+	</message:Structures>
+</message:Structure>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDLFS_CS</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Concepts>
+            <structure:ConceptScheme id="CS_LFS_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Labour Force Survey Concept Scheme</common:Name>
+                <common:Description xml:lang="en">Concept scheme for Greek Labour Force Survey (LFS) data, covering employment, unemployment, education, demographics, and regional classifications.</common:Description>
+                
+                <!-- Time dimension -->
+                <structure:Concept id="TIME_PERIOD">
+                    <common:Name xml:lang="en">Time period</common:Name>
+                    <common:Description xml:lang="en">Reference period for the labour force survey data (year, quarter, month).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="String"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!--freq-->
+                <structure:Concept id="FREQ">
+                    <common:Name xml:lang="en">Frequency</common:Name>
+                    <common:Description xml:lang="en">Reference period frequency (e.g. monthly, annual).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Geographic dimensions -->
+                <structure:Concept id="REGION">
+                    <common:Name xml:lang="en">Region</common:Name>
+                    <common:Description xml:lang="en">Greek administrative regions at NUTS 2 level.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_REGIONS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="REGION_1981">
+                    <common:Name xml:lang="en">Region (1981 classification)</common:Name>
+                    <common:Description xml:lang="en">Greek administrative regions according to 1981 classification system.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_REGION_1981" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="URBANIZATION">
+                    <common:Name xml:lang="en">Urbanization</common:Name>
+                    <common:Description xml:lang="en">Urbanization level classification (Athens agglomeration, Thessaloniki agglomeration, other urban, semi-urban, rural areas).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_URBANIZATION" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Demographic dimensions -->
+                <structure:Concept id="SEX">
+                    <common:Name xml:lang="en">Sex</common:Name>
+                    <common:Description xml:lang="en">Biological sex classification (Males, Females, Total).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="SEX" version="1.13" agencyID="ESTAT" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="AGE_GROUP">
+                    <common:Name xml:lang="en">Age group</common:Name>
+                    <common:Description xml:lang="en">Age group classification for labour force statistics.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="AGE" version="11.0" agencyID="ESTAT" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="NATIONALITY">
+                    <common:Name xml:lang="en">Nationality</common:Name>
+                    <common:Description xml:lang="en">Nationality classification (Greek, EU country, Other).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_NATIONALITY" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="MARITAL_STATUS">
+                    <common:Name xml:lang="en">Marital status</common:Name>
+                    <common:Description xml:lang="en">Marital status classification (Single, Married, Widowed/Divorced/Legally separated).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_MARITAL_STATUS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Education dimensions -->
+                <structure:Concept id="EDUCATION_LEVEL_MAIN">
+                    <common:Name xml:lang="en">Education level (main)</common:Name>
+                    <common:Description xml:lang="en">Main education level classification following international standards.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_EDUCATION" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="EDUCATION_LEVEL_SUB">
+                    <common:Name xml:lang="en">Education level (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-education level classification with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_EDUCATION_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="FORMAL_INFORMAL_EDUCATION">
+                    <common:Name xml:lang="en">Formal/Informal education</common:Name>
+                    <common:Description xml:lang="en">Classification of formal vs informal education participation.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_FORMAL_INFORMAL_EDUCATION" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="NEET_CATEGORY">
+                    <common:Name xml:lang="en">NEET category</common:Name>
+                    <common:Description xml:lang="en">Not in Education, Employment or Training (NEET) classification.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_NEET_CATEGORY" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Employment status dimensions -->
+                <structure:Concept id="LABOUR_FORCE_STATUS">
+                    <common:Name xml:lang="en">Labour force status</common:Name>
+                    <common:Description xml:lang="en">Main labour force status classification (Employed, Unemployed, Inactive, Total Population).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_LABOUR_FORCE_STATUS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="LABOUR_FORCE_SUBCATEGORY">
+                    <common:Name xml:lang="en">Labour force subcategory</common:Name>
+                    <common:Description xml:lang="en">Detailed subcategories of labour force status including rates, percentages, and specific reasons.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_LABOUR_FORCE_SUBCATEGORY" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="MAIN_EMPLOYMENT_STATUS">
+                    <common:Name xml:lang="en">Main employment status</common:Name>
+                    <common:Description xml:lang="en">Main employment status classification (Employed, Employees, Self-employed, Family workers, Inactive, Unemployed).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_MAIN_EMPLOYMENT_STATUS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="SUB_EMPLOYMENT_STATUS">
+                    <common:Name xml:lang="en">Sub employment status</common:Name>
+                    <common:Description xml:lang="en">Sub-employment status classification with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_SUB_EMPLOYMENT_STATUS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="EMPLOYMENT_DISTINCTION">
+                    <common:Name xml:lang="en">Employment distinction</common:Name>
+                    <common:Description xml:lang="en">Employment distinction classification (Full-time, Part-time).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_EMPLOYMENT_DISTINCTION" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Job characteristics dimensions -->
+                <structure:Concept id="SECTOR">
+                    <common:Name xml:lang="en">Economic sector</common:Name>
+                    <common:Description xml:lang="en">Economic sector classification according to NACE standards (Primary, Secondary, Tertiary, and detailed NACE codes).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_SECTOR" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="SECTOR_SUB">
+                    <common:Name xml:lang="en">Economic sector (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-economic sector classification with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_SECTOR_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="TYPE_OCCUPATION">
+                    <common:Name xml:lang="en">Type of occupation</common:Name>
+                    <common:Description xml:lang="en">Occupation classification according to ISCO standards and skill levels.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_TYPE_OCCUPATION" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="BO">
+                    <common:Name xml:lang="en">Business ownership</common:Name>
+                    <common:Description xml:lang="en">Business ownership classification (Private sector, Public sector).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_BUSINESS_OWNERSHIP" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="NR_PERSONS_LOCAL_UNIT">
+                    <common:Name xml:lang="en">Number of persons in local unit</common:Name>
+                    <common:Description xml:lang="en">Classification of local unit size by number of persons employed.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_NR_PERSONS_LOCAL_UNIT" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Working conditions dimensions -->
+                <structure:Concept id="HOURS_ACTUALLY_WORK">
+                    <common:Name xml:lang="en">Hours actually worked</common:Name>
+                    <common:Description xml:lang="en">Classification of actual working hours (Less than 35 hours, More than 35 hours, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_HOURS_ACTUALLY_WORK" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="HOURS_ACTUALLY_WORK_SUB">
+                    <common:Name xml:lang="en">Hours actually worked (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-classification of actual working hours with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_HOURS_ACTUALLY_WORK_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="HOURS_USUAL_WORK">
+                    <common:Name xml:lang="en">Hours usually worked</common:Name>
+                    <common:Description xml:lang="en">Classification of usual working hours (Worked usual hours, Worked less/more than usual).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_HOURS_USUAL_WORK" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="HOURS_USUAL_WORK_SUB">
+                    <common:Name xml:lang="en">Hours usually worked (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-classification of usual working hours with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_HOURS_USUAL_WORK_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="ATYPICAL_WORK">
+                    <common:Name xml:lang="en">Atypical work</common:Name>
+                    <common:Description xml:lang="en">Classification of atypical working arrangements (Work at home, Evening work, Sunday work, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_ATYPICAL_WORK" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="ATYPICAL_WORK_SUB">
+                    <common:Name xml:lang="en">Atypical work (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-classification of atypical working arrangements with detailed breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_ATYPICAL_WORK_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Job search and preferences dimensions -->
+                <structure:Concept id="UNDERMP_PT_WORK_SUB">
+                    <common:Name xml:lang="en">Undermployed part-time work (sub)</common:Name>
+                    <common:Description xml:lang="en">Classification of undermployment in part-time work (Yes, No).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_UNDERMP_PT_WORK_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="WORK_FOR_MORE_HOURS">
+                    <common:Name xml:lang="en">Work for more hours</common:Name>
+                    <common:Description xml:lang="en">Classification of willingness to work more hours (Available, Wish, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_WORK_FOR_MORE_HOURS" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="LOOKING_FOR_ANOTHER_JOB">
+                    <common:Name xml:lang="en">Looking for another job</common:Name>
+                    <common:Description xml:lang="en">Classification of job search behavior and reasons (Better conditions, Job loss risk, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_LOOKING_FOR_ANOTHER_JOB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Job permanency dimensions -->
+                <structure:Concept id="PERMANENCY_FOR_EMPLOYEES">
+                    <common:Name xml:lang="en">Permanency for employees</common:Name>
+                    <common:Description xml:lang="en">Classification of job permanency (Permanent job, Temporary/contract of limited duration).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_PERMANENCY_FOR_EMPLOYEES" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="PERMANENCY_FOR_EMPLOYEES_SUB">
+                    <common:Name xml:lang="en">Permanency for employees (sub)</common:Name>
+                    <common:Description xml:lang="en">Sub-classification of job permanency with duration breakdowns.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_PERMANENCY_FOR_EMPLOYEES_SUB" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="REASONS_PT">
+                    <common:Name xml:lang="en">Reasons for part-time work</common:Name>
+                    <common:Description xml:lang="en">Classification of reasons for part-time employment (Could not find full-time job, Education, Illness, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_REASONS_PT" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <structure:Concept id="REASONS_TEMP">
+                    <common:Name xml:lang="en">Reasons for temporary work</common:Name>
+                    <common:Description xml:lang="en">Classification of reasons for temporary employment (Could not find permanent job, Did not want permanent job, etc.).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_REASONS_TEMP" version="1.0" agencyID="BOG" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Measurement dimensions -->
+                <structure:Concept id="UNIT_OF_MEASURE">
+                    <common:Name xml:lang="en">Unit of measure</common:Name>
+                    <common:Description xml:lang="en">Unit of measurement for the LFS values (THS for thousands of persons, PC for percentage).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="UNIT" version="64.0" agencyID="ESTAT" package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+                <!-- Observation value -->
+                <structure:Concept id="OBS_VALUE">
+                    <common:Name xml:lang="en">Observation value</common:Name>
+                    <common:Description xml:lang="en">LFS observation value (counts, percentages, rates).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="String"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+                
+            </structure:ConceptScheme>
+        </structure:Concepts>
+    </message:Structures>
+</message:Structure>

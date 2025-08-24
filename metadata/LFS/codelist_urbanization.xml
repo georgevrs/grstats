@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDURBANIZATION_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_URBANIZATION" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Urbanization Classification</common:Name>
+                <common:Description>Classification of urbanization levels including major metropolitan areas, urban centers, semi-urban areas, and rural areas for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Major metropolitan areas -->
+                <structure:Code id="ATHENS_AGGLOMERATION">
+                    <common:Name>Athens agglomeration</common:Name>
+                    <common:Description>Greater Athens metropolitan area including the capital city and surrounding municipalities.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="THESSALONIKI_AGGLOMERATION">
+                    <common:Name>Thessaloniki agglomeration</common:Name>
+                    <common:Description>Greater Thessaloniki metropolitan area including the second largest city and surrounding municipalities.</common:Description>
+                </structure:Code>
+                
+                <!-- Urban categories -->
+                <structure:Code id="OTHER_URBAN_AREAS">
+                    <common:Name>Other urban areas</common:Name>
+                    <common:Description>Other urban centers and cities outside of the major metropolitan areas.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SEMI_URBAN_AREAS">
+                    <common:Name>Semi-urban areas</common:Name>
+                    <common:Description>Areas with characteristics between urban and rural, including small towns and suburban areas.</common:Description>
+                </structure:Code>
+                
+                <!-- Rural areas -->
+                <structure:Code id="RURAL_AREAS">
+                    <common:Name>Rural areas</common:Name>
+                    <common:Description>Predominantly agricultural and sparsely populated areas with limited urban development.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

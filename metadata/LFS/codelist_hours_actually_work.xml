@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDHOURS_ACTUALLY_WORK_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_HOURS_ACTUALLY_WORK" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Actual Working Hours Classification</common:Name>
+                <common:Description>Classification of actual working hours categories including specific hour ranges and statistical groupings for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Specific hour ranges -->
+                <structure:Code id="LESS_THAN_35_HOURS">
+                    <common:Name>Less than 35 hours</common:Name>
+                    <common:Description>Actual working hours less than 35 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="MORE_THAN_35_HOURS">
+                    <common:Name>More than 35 hours</common:Name>
+                    <common:Description>Actual working hours exceeding 35 hours per week.</common:Description>
+                </structure:Code>
+                
+                <!-- Hour group categories -->
+                <structure:Code id="HOUR_GROUP_A">
+                    <common:Name>Hour group A</common:Name>
+                    <common:Description>Statistical grouping A for actual working hours classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOUR_GROUP_B">
+                    <common:Name>Hour group B</common:Name>
+                    <common:Description>Statistical grouping B for actual working hours classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOUR_GROUP_35_PLUS">
+                    <common:Name>Hour group 35+</common:Name>
+                    <common:Description>Statistical grouping for actual working hours of 35 or more hours per week.</common:Description>
+                </structure:Code>
+                
+                <!-- Statistical measures -->
+                <structure:Code id="AVERAGE_NUMBER_OF_HOURS">
+                    <common:Name>Average number of hours</common:Name>
+                    <common:Description>Statistical measure representing the average actual working hours across the dataset.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDLOOKING_FOR_ANOTHER_JOB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_LOOKING_FOR_ANOTHER_JOB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Looking for Another Job Classification</common:Name>
+                <common:Description>Classification of job search motivation categories indicating why employed individuals are seeking alternative employment opportunities.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Total categories -->
+                <structure:Code id="TOTAL">
+                    <common:Name>Total</common:Name>
+                    <common:Description>Total for the specified category or dimension.</common:Description>
+                </structure:Code>
+                
+                <!-- Job search motivation categories -->
+                <structure:Code id="BETTER_WORKING_CONDITIONS">
+                    <common:Name>Better working conditions</common:Name>
+                    <common:Description>Individuals seeking another job to improve their working conditions, such as better hours, environment, or workplace policies.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TRANSITIONAL_JOB">
+                    <common:Name>Transitional job</common:Name>
+                    <common:Description>Individuals whose current job is considered temporary or transitional while seeking more permanent or suitable employment.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SEEKING_ADDITIONAL_JOB">
+                    <common:Name>Seeking additional job</common:Name>
+                    <common:Description>Individuals looking for an additional job to supplement their current income or gain additional work experience.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OTHER_REASONS">
+                    <common:Name>Other reasons</common:Name>
+                    <common:Description>Individuals seeking another job for reasons not covered by other categories, such as personal development, career change, or location preferences.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="JOB_LOSS_RISK">
+                    <common:Name>Job loss risk or certainty</common:Name>
+                    <common:Description>Individuals seeking another job due to risk or certainty of losing their current position, including termination, layoffs, or business closure.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

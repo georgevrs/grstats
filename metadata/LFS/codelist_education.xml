@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDEDUCATION_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_EDUCATION" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Education Level Classification</common:Name>
+                <common:Description>Classification of education levels following international standards for statistical purposes.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data.</common:Description>
+                </structure:Code>
+                
+                <!-- Education levels -->
+                <structure:Code id="ED0">
+                    <common:Name>No formal education</common:Name>
+                    <common:Description>Attended no school or did not complete primary education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED1">
+                    <common:Name>Primary education</common:Name>
+                    <common:Description>Primary education level (typically 6 years).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED2">
+                    <common:Name>Lower secondary education</common:Name>
+                    <common:Description>Lower secondary education level (typically 3 years).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED3">
+                    <common:Name>Upper secondary and post-secondary</common:Name>
+                    <common:Description>Upper secondary education and post-secondary non-tertiary education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED4">
+                    <common:Name>Short-cycle tertiary education</common:Name>
+                    <common:Description>Short-cycle tertiary education (typically 2-3 years).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED5">
+                    <common:Name>Bachelor's or equivalent level</common:Name>
+                    <common:Description>Bachelor's degree or equivalent level tertiary education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED6">
+                    <common:Name>Master's or equivalent level</common:Name>
+                    <common:Description>Master's degree or equivalent level tertiary education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED7">
+                    <common:Name>Doctoral or equivalent level</common:Name>
+                    <common:Description>Doctoral degree or equivalent level tertiary education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ED8">
+                    <common:Name>Not elsewhere classified</common:Name>
+                    <common:Description>Education levels not elsewhere classified in this codelist.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

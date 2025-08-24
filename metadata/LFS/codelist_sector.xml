@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDSECTOR_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_SECTOR" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Economic Sector Classification</common:Name>
+                <common:Description>Comprehensive classification of economic sectors following NACE (Nomenclature statistique des activités économiques dans la Communauté européenne) standards and broad sector groupings for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Total categories -->
+                <structure:Code id="TOTAL_EMPLOYED">
+                    <common:Name>Total employed</common:Name>
+                    <common:Description>Total for all employed persons across all sectors.</common:Description>
+                </structure:Code>
+                
+                <!-- Broad sector groupings -->
+                <structure:Code id="PRIMARY">
+                    <common:Name>Primary sector</common:Name>
+                    <common:Description>Primary economic activities including agriculture, forestry, fishing, and mining.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SECONDARY">
+                    <common:Name>Secondary sector</common:Name>
+                    <common:Description>Secondary economic activities including manufacturing, construction, and utilities.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TERTIARY">
+                    <common:Name>Tertiary sector</common:Name>
+                    <common:Description>Tertiary economic activities including services, trade, and public administration.</common:Description>
+                </structure:Code>
+                
+                <!-- NACE-68 classifications -->
+                <structure:Code id="NACE68_AGRICULTURE">
+                    <common:Name>NACE-68: Agriculture, Forestry, Hunting and Fishing</common:Name>
+                    <common:Description>Agricultural, forestry, hunting and fishing activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_MINING">
+                    <common:Name>NACE-68: Mining and Quarrying</common:Name>
+                    <common:Description>Mining and quarrying activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_MANUFACTURING">
+                    <common:Name>NACE-68: Manufacturing</common:Name>
+                    <common:Description>Manufacturing activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_ELECTRICITY">
+                    <common:Name>NACE-68: Electricity, Gas, Steam and Water</common:Name>
+                    <common:Description>Electricity, gas, steam and water supply activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_CONSTRUCTION">
+                    <common:Name>NACE-68: Construction</common:Name>
+                    <common:Description>Construction activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_TRADE">
+                    <common:Name>NACE-68: Wholesale and Retail Trade and Restaurants and Hotels</common:Name>
+                    <common:Description>Wholesale and retail trade, restaurants and hotels according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_TRANSPORT">
+                    <common:Name>NACE-68: Transport, Storage and Communication</common:Name>
+                    <common:Description>Transport, storage and communication activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_FINANCE">
+                    <common:Name>NACE-68: Financing, Insurance, Real Estate and Business Services</common:Name>
+                    <common:Description>Financing, insurance, real estate and business services according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_SERVICES">
+                    <common:Name>NACE-68: Services</common:Name>
+                    <common:Description>General services activities according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE68_ACTIVITIES_NAD">
+                    <common:Name>NACE-68: Activities not adequately described</common:Name>
+                    <common:Description>Activities not adequately described according to NACE-68 classification.</common:Description>
+                </structure:Code>
+                
+                <!-- NACE rev2 classifications -->
+                <structure:Code id="NACE2_AGRICULTURE">
+                    <common:Name>NACE rev2: Agriculture, forestry and fishing</common:Name>
+                    <common:Description>Agriculture, forestry and fishing activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_MINING">
+                    <common:Name>NACE rev2: Mining and quarrying</common:Name>
+                    <common:Description>Mining and quarrying activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_MANUFACTURING">
+                    <common:Name>NACE rev2: Manufacturing</common:Name>
+                    <common:Description>Manufacturing activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_ELECTRICITY">
+                    <common:Name>NACE rev2: Electricity, gas, steam and air conditioning supply</common:Name>
+                    <common:Description>Electricity, gas, steam and air conditioning supply activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_WATER">
+                    <common:Name>NACE rev2: Water supply; sewerage, waste management and remediation activities</common:Name>
+                    <common:Description>Water supply, sewerage, waste management and remediation activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_CONSTRUCTION">
+                    <common:Name>NACE rev2: Construction</common:Name>
+                    <common:Description>Construction activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_TRADE">
+                    <common:Name>NACE rev2: Wholesale and retail trade; repair of motor vehicles and motorcycles</common:Name>
+                    <common:Description>Wholesale and retail trade, repair of motor vehicles and motorcycles according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_ACCOMMODATION">
+                    <common:Name>NACE rev2: Accommodation and food service activities</common:Name>
+                    <common:Description>Accommodation and food service activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_TRANSPORT">
+                    <common:Name>NACE rev2: Transportation and storage</common:Name>
+                    <common:Description>Transportation and storage activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_COMMUNICATION">
+                    <common:Name>NACE rev2: Information and communication</common:Name>
+                    <common:Description>Information and communication activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_FINANCE">
+                    <common:Name>NACE rev2: Financial and insurance activities</common:Name>
+                    <common:Description>Financial and insurance activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_REAL_ESTATE">
+                    <common:Name>NACE rev2: Real estate activities</common:Name>
+                    <common:Description>Real estate activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_PROFESSIONAL">
+                    <common:Name>NACE rev2: Professional, scientific and technical activities</common:Name>
+                    <common:Description>Professional, scientific and technical activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_ADMINISTRATIVE">
+                    <common:Name>NACE rev2: Administrative and support service activities</common:Name>
+                    <common:Description>Administrative and support service activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_PUBLIC_ADMIN">
+                    <common:Name>NACE rev2: Public administration and defence; compulsory social security</common:Name>
+                    <common:Description>Public administration and defence, compulsory social security according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_EDUCATION">
+                    <common:Name>NACE rev2: Education</common:Name>
+                    <common:Description>Education activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_HEALTH">
+                    <common:Name>NACE rev2: Human health and social work activities</common:Name>
+                    <common:Description>Human health and social work activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_ENTERTAINMENT">
+                    <common:Name>NACE rev2: Arts, entertainment and recreation</common:Name>
+                    <common:Description>Arts, entertainment and recreation activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_OTHER_SERVICES">
+                    <common:Name>NACE rev2: Other service activities</common:Name>
+                    <common:Description>Other service activities according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_HOUSEHOLDS">
+                    <common:Name>NACE rev2: Activities of households as employers; undifferentiated goods- and services-producing activities of households</common:Name>
+                    <common:Description>Activities of households as employers, undifferentiated goods- and services-producing activities of households according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_EXTRATERRITORIAL">
+                    <common:Name>NACE rev2: Activities of extraterritorial organisations and bodies</common:Name>
+                    <common:Description>Activities of extraterritorial organisations and bodies according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE2_DID_NOT_ANSWER">
+                    <common:Name>NACE rev2: Did not answer</common:Name>
+                    <common:Description>Respondents who did not answer the sector question according to NACE rev2 classification.</common:Description>
+                </structure:Code>
+                
+                <!-- NACE rev1 classifications -->
+                <structure:Code id="NACE1_AGRICULTURE">
+                    <common:Name>NACE rev1: Agriculture, animal husbandry, hunting and forestry</common:Name>
+                    <common:Description>Agriculture, animal husbandry, hunting and forestry activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_FISHING">
+                    <common:Name>NACE rev1: Fishing</common:Name>
+                    <common:Description>Fishing activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_MINING">
+                    <common:Name>NACE rev1: Mining and quarrying</common:Name>
+                    <common:Description>Mining and quarrying activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_ELECTRICITY">
+                    <common:Name>NACE rev1: Electricity, gas and water supply</common:Name>
+                    <common:Description>Electricity, gas and water supply activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_MANUFACTURING">
+                    <common:Name>NACE rev1: Manufacturing</common:Name>
+                    <common:Description>Manufacturing activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_CONSTRUCTION">
+                    <common:Name>NACE rev1: Construction</common:Name>
+                    <common:Description>Construction activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_TRADE">
+                    <common:Name>NACE rev1: Wholesale and retail trade; repair of motor vehicles, motorcycles and personal and household goods</common:Name>
+                    <common:Description>Wholesale and retail trade, repair of motor vehicles, motorcycles and personal and household goods according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_HOTELS">
+                    <common:Name>NACE rev1: Hotels and restaurants</common:Name>
+                    <common:Description>Hotels and restaurants activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_TRANSPORT">
+                    <common:Name>NACE rev1: Transport, storage and communication</common:Name>
+                    <common:Description>Transport, storage and communication activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_FINANCE">
+                    <common:Name>NACE rev1: Financial intermediation</common:Name>
+                    <common:Description>Financial intermediation activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_REAL_ESTATE">
+                    <common:Name>NACE rev1: Real estate, renting and business activities</common:Name>
+                    <common:Description>Real estate, renting and business activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_PUBLIC_ADMIN">
+                    <common:Name>NACE rev1: Public administration and defence; compulsory social security</common:Name>
+                    <common:Description>Public administration and defence, compulsory social security according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_EDUCATION">
+                    <common:Name>NACE rev1: Education</common:Name>
+                    <common:Description>Education activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_HEALTH">
+                    <common:Name>NACE rev1: Health and social work</common:Name>
+                    <common:Description>Health and social work activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_OTHER_SERVICES">
+                    <common:Name>NACE rev1: Other community, social and personal service activities</common:Name>
+                    <common:Description>Other community, social and personal service activities according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_HOUSEHOLDS">
+                    <common:Name>NACE rev1: Private households with employed persons</common:Name>
+                    <common:Description>Private households with employed persons according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NACE1_EXTRATERRITORIAL">
+                    <common:Name>NACE rev1: Extra – territorial organizations and bodies</common:Name>
+                    <common:Description>Extra-territorial organizations and bodies according to NACE rev1 classification.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

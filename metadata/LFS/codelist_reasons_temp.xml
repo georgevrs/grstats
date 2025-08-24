@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDREASONS_TEMP_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_REASONS_TEMP" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Temporary Employment Reasons Classification</common:Name>
+                <common:Description>Classification of reasons for temporary employment including economic constraints, personal preferences, and training arrangements for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Economic and availability reasons -->
+                <structure:Code id="COULD_NOT_FIND_PERMANENT_JOB">
+                    <common:Name>Could not find a permanent job</common:Name>
+                    <common:Description>Temporary employment due to inability to find permanent work opportunities.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="OTHER_REASONS">
+                    <common:Name>Other reasons</common:Name>
+                    <common:Description>Other reasons for temporary employment not covered by specific categories.</common:Description>
+                </structure:Code>
+                
+                <!-- Personal preference reasons -->
+                <structure:Code id="DID_NOT_WANT_PERMANENT_JOB">
+                    <common:Name>Did not want a permanent job</common:Name>
+                    <common:Description>Temporary employment by personal choice rather than economic necessity.</common:Description>
+                </structure:Code>
+                
+                <!-- Training and development reasons -->
+                <structure:Code id="CONTRACT_COVERING_TRAINING_PERIOD">
+                    <common:Name>Contract covering a period of training</common:Name>
+                    <common:Description>Temporary employment contract specifically designed to cover training or development periods.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDHOURS_ACTUALLY_WORK_SUB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_HOURS_ACTUALLY_WORK_SUB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Detailed Actual Working Hours Classification</common:Name>
+                <common:Description>Detailed classification of actual working hours subcategories including specific hour ranges and totals for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Total categories -->
+                <structure:Code id="TOTAL_LESS_THAN_35">
+                    <common:Name>Total &lt;35</common:Name>
+                    <common:Description>Total for all actual working hours less than 35 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TOTAL_35_PLUS">
+                    <common:Name>Total 35+</common:Name>
+                    <common:Description>Total for all actual working hours of 35 or more hours per week.</common:Description>
+                </structure:Code>
+                
+                <!-- Specific hour ranges -->
+                <structure:Code id="HOURS_0_9">
+                    <common:Name>0-9</common:Name>
+                    <common:Description>Actual working hours between 0 and 9 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_0_14">
+                    <common:Name>0-14</common:Name>
+                    <common:Description>Actual working hours between 0 and 14 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_10_19">
+                    <common:Name>10-19</common:Name>
+                    <common:Description>Actual working hours between 10 and 19 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_15_24">
+                    <common:Name>15-24</common:Name>
+                    <common:Description>Actual working hours between 15 and 24 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_20_34">
+                    <common:Name>20-34</common:Name>
+                    <common:Description>Actual working hours between 20 and 34 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_25_34">
+                    <common:Name>25-34</common:Name>
+                    <common:Description>Actual working hours between 25 and 34 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_35_39">
+                    <common:Name>35-39</common:Name>
+                    <common:Description>Actual working hours between 35 and 39 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_40_47">
+                    <common:Name>40-47</common:Name>
+                    <common:Description>Actual working hours between 40 and 47 hours per week.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HOURS_48_PLUS">
+                    <common:Name>48+</common:Name>
+                    <common:Description>Actual working hours of 48 or more hours per week.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

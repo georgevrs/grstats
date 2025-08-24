@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDHOURS_USUAL_WORK_SUB_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_HOURS_USUAL_WORK_SUB" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Usual Working Hours Reasons Classification</common:Name>
+                <common:Description>Classification of reasons affecting usual working hours including environmental, technical, economic, health, and other factors for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Environmental and technical reasons -->
+                <structure:Code id="BAD_WEATHER_TECHNICAL_ECONOMIC">
+                    <common:Name>Bad weather, technical or economic</common:Name>
+                    <common:Description>Deviation from usual working hours due to adverse weather conditions, technical problems, or economic factors.</common:Description>
+                </structure:Code>
+                
+                <!-- Health and personal reasons -->
+                <structure:Code id="ILLNESS_INJURY_ANNUAL_HOLIDAYS">
+                    <common:Name>Illness, injury, annual holidays</common:Name>
+                    <common:Description>Deviation from usual working hours due to personal health issues, injuries, or scheduled annual leave.</common:Description>
+                </structure:Code>
+                
+                <!-- Other reasons -->
+                <structure:Code id="OTHER_REASON">
+                    <common:Name>Other reason</common:Name>
+                    <common:Description>Other reasons for deviation from usual working hours not covered by specific categories.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDREASONS_PT_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_REASONS_PT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Part-Time Work Reasons Classification</common:Name>
+                <common:Description>Classification of reasons for part-time employment including economic, educational, health, and caregiving factors for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Economic reasons -->
+                <structure:Code id="OTHER_REASONS">
+                    <common:Name>Other reasons</common:Name>
+                    <common:Description>Other reasons for part-time employment not covered by specific categories.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="COULD_NOT_FIND_FULL_TIME_JOB">
+                    <common:Name>Could not find a full-time job</common:Name>
+                    <common:Description>Part-time employment due to inability to find full-time work opportunities.</common:Description>
+                </structure:Code>
+                
+                <!-- Educational reasons -->
+                <structure:Code id="SCHOOL_EDUCATION_TRAINING">
+                    <common:Name>School education or training</common:Name>
+                    <common:Description>Part-time employment to accommodate ongoing education or training commitments.</common:Description>
+                </structure:Code>
+                
+                <!-- Health and caregiving reasons -->
+                <structure:Code id="OWN_ILLNESS_DISABILITY">
+                    <common:Name>Of own illness or disability</common:Name>
+                    <common:Description>Part-time employment due to personal health conditions or disabilities.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="LOOKING_AFTER_CHILDREN_INCAPACITATED_ADULTS">
+                    <common:Name>Of them, looking after children or incapacitated adults</common:Name>
+                    <common:Description>Part-time employment due to caregiving responsibilities for children or incapacitated adults.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDATYPICAL_WORK_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_ATYPICAL_WORK" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Atypical Working Arrangements Classification</common:Name>
+                <common:Description>Classification of atypical working arrangements including non-standard work locations, schedules, and time patterns for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Work location arrangements -->
+                <structure:Code id="WORK_AT_HOME">
+                    <common:Name>Work at home</common:Name>
+                    <common:Description>Persons who perform their work primarily from their home or residence.</common:Description>
+                </structure:Code>
+                
+                <!-- Time-based arrangements -->
+                <structure:Code id="EVENING_WORK">
+                    <common:Name>Evening work</common:Name>
+                    <common:Description>Persons who work during evening hours outside of standard daytime working periods.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="NIGHT_WORK">
+                    <common:Name>Night work</common:Name>
+                    <common:Description>Persons who work during night hours, typically between 10 PM and 6 AM.</common:Description>
+                </structure:Code>
+                
+                <!-- Weekend work arrangements -->
+                <structure:Code id="SATURDAY_WORK">
+                    <common:Name>Saturday work</common:Name>
+                    <common:Description>Persons who work on Saturdays as part of their regular or occasional work schedule.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SUNDAY_WORK">
+                    <common:Name>Sunday work</common:Name>
+                    <common:Description>Persons who work on Sundays as part of their regular or occasional work schedule.</common:Description>
+                </structure:Code>
+                
+                <!-- Shift work arrangements -->
+                <structure:Code id="SHIFT_WORK_EMPLOYEES_ONLY">
+                    <common:Name>Shift-work (employees only)</common:Name>
+                    <common:Description>Employees who work in rotating or fixed shift patterns, excluding self-employed persons.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDFORMAL_INFORMAL_EDUCATION_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_FORMAL_INFORMAL_EDUCATION" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Formal and Informal Education Classification</common:Name>
+                <common:Description>Classification of formal and informal education participation status following Greek educational system standards.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Education participation categories -->
+                <structure:Code id="TOTAL">
+                    <common:Name>Total population in education</common:Name>
+                    <common:Description>Total population participating in any form of education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="FORMAL_EDU">
+                    <common:Name>In formal education</common:Name>
+                    <common:Description>Population participating in formal education programs.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="INFORMAL_EDU">
+                    <common:Name>In informal education</common:Name>
+                    <common:Description>Population participating in informal education activities.</common:Description>
+                </structure:Code>
+                
+                <!-- Employment status subcategories -->
+                <structure:Code id="INACTIVE">
+                    <common:Name>Of them - Inactive</common:Name>
+                    <common:Description>Population in education who are economically inactive.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="UNEMPLOYED">
+                    <common:Name>Of them - Unemployed</common:Name>
+                    <common:Description>Population in education who are unemployed.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="EMPLOYED">
+                    <common:Name>Of them - Employed</common:Name>
+                    <common:Description>Population in education who are employed.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDTYPE_OCCUPATION_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_TYPE_OCCUPATION" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Occupation Type Classification</common:Name>
+                <common:Description>Comprehensive classification of occupation types following ISCO (International Standard Classification of Occupations) standards and skill level groupings for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Total categories -->
+                <structure:Code id="TOTAL_EMPLOYED">
+                    <common:Name>Total employed</common:Name>
+                    <common:Description>Total for all employed persons across all occupation types.</common:Description>
+                </structure:Code>
+                
+                <!-- ISCO-68 classifications -->
+                <structure:Code id="ISCO68_DID_NOT_ANSWER_NOT_POSSIBLE_TO_CLASSIFY">
+                    <common:Name>ISCO-68: Did not answer/not possible to classify</common:Name>
+                    <common:Description>Respondents who did not answer or whose occupation could not be classified according to ISCO-68.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_ADMINISTRATIVE_MANAGERIAL_WORKERS">
+                    <common:Name>ISCO-68: Administrative and Managerial Workers</common:Name>
+                    <common:Description>Administrative and managerial occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_PROFESSIONAL_TECHNICAL_RELATED_WORKERS">
+                    <common:Name>ISCO-68: Professional, Technical and Related Workers</common:Name>
+                    <common:Description>Professional, technical and related occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_CLERICAL_RELATED_WORKERS">
+                    <common:Name>ISCO-68: Clerical and Related Workers</common:Name>
+                    <common:Description>Clerical and related occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_AGRICULTURAL_ANIMAL_HUSBANDRY_FORESTRY_WORKERS_FISHERMEN_HUNTERS">
+                    <common:Name>ISCO-68: Agricultural, Animal Husbandry and Forestry Workers, Fishermen and Hunters</common:Name>
+                    <common:Description>Agricultural, animal husbandry, forestry, fishing and hunting occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_PRODUCTION_RELATED_WORKERS_TRANSPORT_EQUIPMENT_OPERATORS_LABOURERS">
+                    <common:Name>ISCO-68: Production and Related Workers, Transport Equipment Operators and Labourers</common:Name>
+                    <common:Description>Production, transport equipment operation and labor occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_SALES_WORKERS">
+                    <common:Name>ISCO-68: Sales Workers</common:Name>
+                    <common:Description>Sales occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO68_SERVICE_WORKERS">
+                    <common:Name>ISCO-68: Service Workers</common:Name>
+                    <common:Description>Service occupations according to ISCO-68 classification.</common:Description>
+                </structure:Code>
+                
+                <!-- ISCO-88 (COM) classifications -->
+                <structure:Code id="ISCO88_DID_NOT_ANSWER_NOT_POSSIBLE_TO_CLASSIFY">
+                    <common:Name>ISCO-88 (COM): Did not answer/not possible to classify</common:Name>
+                    <common:Description>Respondents who did not answer or whose occupation could not be classified according to ISCO-88 (COM).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_PROFESSIONALS">
+                    <common:Name>ISCO-88 (COM): Professionals</common:Name>
+                    <common:Description>Professional occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_PLANT_MACHINE_OPERATORS_ASSEMBLERS">
+                    <common:Name>ISCO-88 (COM): Plant and machine operators and assemblers</common:Name>
+                    <common:Description>Plant and machine operation and assembly occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_SKILLED_AGRICULTURAL_FORESTRY_FISHERY_WORKERS">
+                    <common:Name>ISCO-88 (COM): Skilled agricultural, forestry and fishery workers</common:Name>
+                    <common:Description>Skilled agricultural, forestry and fishery occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_TECHNICIANS_ASSOCIATE_PROFESSIONALS">
+                    <common:Name>ISCO-88 (COM): Technicians and associate professionals</common:Name>
+                    <common:Description>Technician and associate professional occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_MANAGERS">
+                    <common:Name>ISCO-88 (COM): Managers</common:Name>
+                    <common:Description>Managerial occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_ELEMENTARY_OCCUPATIONS">
+                    <common:Name>ISCO-88 (COM): Elementary occupations</common:Name>
+                    <common:Description>Elementary occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_CLERICAL_SUPPORT_WORKERS">
+                    <common:Name>ISCO-88 (COM): Clerical support workers</common:Name>
+                    <common:Description>Clerical support occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_CRAFT_RELATED_TRADES_WORKERS">
+                    <common:Name>ISCO-88 (COM): Craft and related trades workers</common:Name>
+                    <common:Description>Craft and related trades occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO88_SERVICE_SALES_WORKERS">
+                    <common:Name>ISCO-88 (COM): Service and sales workers</common:Name>
+                    <common:Description>Service and sales occupations according to ISCO-88 (COM) classification.</common:Description>
+                </structure:Code>
+                
+                <!-- ISCO-08 classifications -->
+                <structure:Code id="ISCO08_MANAGERS">
+                    <common:Name>ISCO-08: Managers</common:Name>
+                    <common:Description>Managerial occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_TECHNICIANS_ASSOCIATE_PROFESSIONALS">
+                    <common:Name>ISCO-08: Technicians and associate professionals</common:Name>
+                    <common:Description>Technician and associate professional occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_PROFESSIONALS">
+                    <common:Name>ISCO-08: Professionals</common:Name>
+                    <common:Description>Professional occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_CLERICAL_SUPPORT_WORKERS">
+                    <common:Name>ISCO-08: Clerical support workers</common:Name>
+                    <common:Description>Clerical support occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_PLANT_MACHINE_OPERATORS_ASSEMBLERS">
+                    <common:Name>ISCO-08: Plant and machine operators and assemblers</common:Name>
+                    <common:Description>Plant and machine operation and assembly occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_ELEMENTARY_OCCUPATIONS">
+                    <common:Name>ISCO-08: Elementary occupations</common:Name>
+                    <common:Description>Elementary occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_SERVICE_SALES_WORKERS">
+                    <common:Name>ISCO-08: Service and sales workers</common:Name>
+                    <common:Description>Service and sales occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_SKILLED_AGRICULTURAL_FORESTRY_FISHERY_WORKERS">
+                    <common:Name>ISCO-08: Skilled agricultural, forestry and fishery workers</common:Name>
+                    <common:Description>Skilled agricultural, forestry and fishery occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_CRAFT_RELATED_TRADES_WORKERS">
+                    <common:Name>ISCO-08: Craft and related trades workers</common:Name>
+                    <common:Description>Craft and related trades occupations according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_DID_NOT_ANSWER">
+                    <common:Name>ISCO-08: Did not answer</common:Name>
+                    <common:Description>Respondents who did not answer the occupation question according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ISCO08_NOT_POSSIBLE_TO_CLASSIFY">
+                    <common:Name>ISCO-08: Not possible to classify</common:Name>
+                    <common:Description>Occupations that could not be classified according to ISCO-08 classification.</common:Description>
+                </structure:Code>
+                
+                <!-- Skill level groupings -->
+                <structure:Code id="SKILLED_MANUAL">
+                    <common:Name>Skilled manual</common:Name>
+                    <common:Description>Skilled manual occupations requiring specific technical skills and training.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="LOW_SKILLED_NON_MANUAL">
+                    <common:Name>Low skilled non-manual</common:Name>
+                    <common:Description>Low skilled non-manual occupations requiring minimal training or education.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="AGRICULTURE_FORESTRY_ANIMAL_HUSBANDRY_FISHING">
+                    <common:Name>Agriculture, forestry, animal husbandry, fishing</common:Name>
+                    <common:Description>Agricultural, forestry, animal husbandry and fishing occupations.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ELEMENTARY_OCCUPATIONS">
+                    <common:Name>Elementary occupations</common:Name>
+                    <common:Description>Elementary occupations requiring basic skills and minimal training.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="HIGHLY_SKILLED_NON_MANUAL">
+                    <common:Name>Highly skilled non-manual</common:Name>
+                    <common:Description>Highly skilled non-manual occupations requiring advanced education and specialized knowledge.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDMAIN_EMPLOYMENT_STATUS_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_MAIN_EMPLOYMENT_STATUS" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Greek Main Employment Status Classification</common:Name>
+                <common:Description>Classification of main employment status following International Labour Organization (ILO) standards for labor force statistics.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Not applicable</common:Name>
+                    <common:Description>Not applicable to the data or special processing code.</common:Description>
+                </structure:Code>
+                
+                <!-- Employment status categories -->
+                <structure:Code id="EMPLOYED">
+                    <common:Name>Employed</common:Name>
+                    <common:Description>Persons who worked for pay or profit during the reference period.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="EMPLOYEES">
+                    <common:Name>Employees</common:Name>
+                    <common:Description>Persons who work for a public or private employer and receive remuneration in wages, salary, commission, tips, piece-rates, or pay in kind.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SELF_EMPLOYED_NO_EMP">
+                    <common:Name>Self-employed without employees</common:Name>
+                    <common:Description>Persons who work on their own account or with one or more partners, holding the type of job defined as a 'self-employment job', and have not engaged on a continuous basis any employees to work for them during the reference period.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SELF_EMPLOYED_WITH_EMP">
+                    <common:Name>Self-employed with employees</common:Name>
+                    <common:Description>Persons who work on their own account or with one or more partners, holding the type of job defined as a 'self-employment job', and have engaged on a continuous basis one or more employees to work for them during the reference period.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="FAMILY_WORKERS">
+                    <common:Name>Family workers</common:Name>
+                    <common:Description>Persons who work without pay in an economic enterprise operated by a related person living in the same household.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="UNEMPLOYED">
+                    <common:Name>Unemployed</common:Name>
+                    <common:Description>Persons who are without work, available for work, and actively seeking work during the reference period.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="INACTIVE">
+                    <common:Name>Inactive</common:Name>
+                    <common:Description>Persons who are neither employed nor unemployed, including students, homemakers, retired persons, and others not in the labor force.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TOTAL_POP_15PLUS">
+                    <common:Name>Total population aged 15+</common:Name>
+                    <common:Description>Total population aged 15 years and over, including all employment status categories.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>
