@@ -24,6 +24,12 @@
                     <common:Name>New Dwellings</common:Name>
                     <common:Description>Newly constructed dwelling units and buildings.</common:Description>
                 </structure:Code>
+
+                <!-- Dwelling type codes -->
+                <structure:Code id="DR">
+                    <common:Name>New Rooms</common:Name>
+                    <common:Description>Newly constructed rooms.</common:Description>
+                </structure:Code>
                 
                 <structure:Code id="I">
                     <common:Name>Improvements</common:Name>

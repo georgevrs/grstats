@@ -152,7 +152,7 @@ def process_dataframe(df):
     
     df.iloc[1, 0] = 'DWELLINGS'
     
-    dwellings_values = ['_Z', '_Z', '_Z', '_Z', '_Z', '_Z',  'D', 'D', 'D', 'D', 'I', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z']
+    dwellings_values = ['_Z', '_Z', '_Z', '_Z', '_Z', '_Z',  'D', 'DR', 'D', 'D', 'I', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z']
     df.iloc[1, 1:len(dwellings_values)+1] = dwellings_values[:len(df.columns)-1]
     
     df.iloc[2, 0] = 'URBAN STATUS'
