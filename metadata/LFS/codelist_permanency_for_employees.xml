@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDLFS_CL_PERMANENCY_EMPLOYEES</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_PERMANENCY_FOR_EMPLOYEES" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Permanency for Employees</common:Name>
+                <common:Description xml:lang="en">Classification of job permanency for employees, distinguishing between permanent and temporary employment arrangements.</common:Description>
+                
+                <structure:Code id="_Z">
+                    <common:Name xml:lang="en">Not applicable</common:Name>
+                    <common:Description xml:lang="en">Not applicable or not specified</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="PERMANENT_JOB">
+                    <common:Name xml:lang="en">Permanent job</common:Name>
+                    <common:Description xml:lang="en">Employment with no predetermined end date or with a contract of unlimited duration</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TEMPORARY_CONTRACT">
+                    <common:Name xml:lang="en">Temporary/contract of limited duration</common:Name>
+                    <common:Description xml:lang="en">Employment with a predetermined end date or contract of limited duration</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="DURATION_TEMPORARY">
+                    <common:Name xml:lang="en">Duration of temporary job</common:Name>
+                    <common:Description xml:lang="en">Specific duration classification for temporary employment arrangements</common:Description>
+                </structure:Code>
+                
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

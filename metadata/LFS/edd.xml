@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-LFS" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSLFS_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <!-- Put your LFS data here; rows 0-4 are header rows, data starts at row 5 -->
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+
+        <!-- Top-left of the data block (first data row starts at row 5, after header rows 0-4).
+             Row 0: FREQ (A, Q, M for Annual, Quarterly, Monthly)
+             Row 1: UNIT_OF_MEASURE (THS, PC for Thousands of persons, Percentage)
+             Row 2: REGION (EL, EL30, EL11, EL12, etc. - NUTS 2 level)
+             Row 3: SEX (T, M, F for Total, Males, Females)
+             Row 4: AGE_GROUP (TOTAL, Y15_24, Y25_34, Y35_44, Y45_54, Y55_64, Y65_74, Y75_MAX)
+             Row 5+: Actual data with dimensions in columns A-H and values in columns I onwards -->
+        <Top-Left  Coord="I6"/>
+        <Bottom-Right Coord="Z1000"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- Row-wise dimensions (per series), using columns A-H -->
+        <Dimension Code="TIME_PERIOD"     Coord="Cell(Row, 2)"/>
+
+        <!-- A: FREQ -->
+        <Dimension Code="FREQ"            Value="Cell(Row, 1).Value"/>
+        <!-- B: TIME_PERIOD -->
+        <!-- C: REGION -->
+        <Dimension Code="REGION"          Value="Cell(Row, 3).Value"/>
+        <!-- D: REGION_1981 -->
+        <Dimension Code="REGION_1981"     Value="Cell(Row, 4).Value"/>
+        <!-- E: URBANIZATION -->
+        <Dimension Code="URBANIZATION"    Value="Cell(Row, 5).Value"/>
+        <!-- F: SEX -->
+        <Dimension Code="SEX"             Value="Cell(Row, 6).Value"/>
+        <!-- G: AGE_GROUP -->
+        <Dimension Code="AGE_GROUP"       Value="Cell(Row, 7).Value"/>
+        <!-- H: NATIONALITY -->
+        <Dimension Code="NATIONALITY"     Value="Cell(Row, 8).Value"/>
+
+        <!-- Header row-based dimensions (from rows 0-4) -->
+        <!-- FREQ from row 0 -->
+        <Dimension Code="FREQ"            Value="Cell(1, Column).Value"/>
+        <!-- UNIT_OF_MEASURE from row 1 -->
+        <Dimension Code="UNIT_OF_MEASURE" Value="Cell(2, Column).Value"/>
+        <!-- REGION from row 2 -->
+        <Dimension Code="REGION"          Value="Cell(3, Column).Value"/>
+        <!-- SEX from row 3 -->
+        <Dimension Code="SEX"             Value="Cell(4, Column).Value"/>
+        <!-- AGE_GROUP from row 4 -->
+        <Dimension Code="AGE_GROUP"       Value="Cell(5, Column).Value"/>
+
+        <!-- Additional dimensions that may vary by column -->
+        <!-- Education dimensions -->
+        <Dimension Code="EDUCATION_LEVEL_MAIN"      Value="Cell(Row, 9).Value"/>
+        <Dimension Code="EDUCATION_LEVEL_SUB"       Value="Cell(Row, 10).Value"/>
+        <Dimension Code="FORMAL_INFORMAL_EDUCATION" Value="Cell(Row, 11).Value"/>
+        <Dimension Code="NEET_CATEGORY"             Value="Cell(Row, 12).Value"/>
+
+        <!-- Employment status dimensions -->
+        <Dimension Code="LABOUR_FORCE_STATUS"       Value="Cell(Row, 13).Value"/>
+        <Dimension Code="LABOUR_FORCE_SUBCATEGORY" Value="Cell(Row, 14).Value"/>
+        <Dimension Code="MAIN_EMPLOYMENT_STATUS"    Value="Cell(Row, 15).Value"/>
+        <Dimension Code="SUB_EMPLOYMENT_STATUS"     Value="Cell(Row, 16).Value"/>
+        <Dimension Code="EMPLOYMENT_DISTINCTION"    Value="Cell(Row, 17).Value"/>
+
+        <!-- Job characteristics dimensions -->
+        <Dimension Code="SECTOR"                    Value="Cell(Row, 18).Value"/>
+        <Dimension Code="SECTOR_SUB"                Value="Cell(Row, 19).Value"/>
+        <Dimension Code="TYPE_OCCUPATION"           Value="Cell(Row, 20).Value"/>
+        <Dimension Code="BO"                        Value="Cell(Row, 21).Value"/>
+        <Dimension Code="NR_PERSONS_LOCAL_UNIT"     Value="Cell(Row, 22).Value"/>
+
+        <!-- Working conditions dimensions -->
+        <Dimension Code="HOURS_ACTUALLY_WORK"       Value="Cell(Row, 23).Value"/>
+        <Dimension Code="HOURS_ACTUALLY_WORK_SUB"   Value="Cell(Row, 24).Value"/>
+        <Dimension Code="HOURS_USUAL_WORK"          Value="Cell(Row, 25).Value"/>
+        <Dimension Code="HOURS_USUAL_WORK_SUB"      Value="Cell(Row, 26).Value"/>
+        <Dimension Code="ATYPICAL_WORK"             Value="Cell(Row, 27).Value"/>
+        <Dimension Code="ATYPICAL_WORK_SUB"         Value="Cell(Row, 28).Value"/>
+
+        <!-- Job preferences and permanency dimensions -->
+        <Dimension Code="UNDERMP_PT_WORK_SUB"      Value="Cell(Row, 29).Value"/>
+        <Dimension Code="WORK_FOR_MORE_HOURS"       Value="Cell(Row, 30).Value"/>
+        <Dimension Code="LOOKING_FOR_ANOTHER_JOB"   Value="Cell(Row, 31).Value"/>
+        <Dimension Code="PERMANENCY_FOR_EMPLOYEES"  Value="Cell(Row, 32).Value"/>
+        <Dimension Code="PERMANENCY_FOR_EMPLOYEES_SUB" Value="Cell(Row, 33).Value"/>
+        <Dimension Code="REASONS_PT"                Value="Cell(Row, 34).Value"/>
+        <Dimension Code="REASONS_TEMP"              Value="Cell(Row, 35).Value"/>
+
+        <!-- Demographic dimensions -->
+        <Dimension Code="MARITAL_STATUS"            Value="Cell(Row, 36).Value"/>
+
+        <!-- Notes:
+             - Valid values (per LFS concept scheme):
+               FREQ: A (Annual), Q (Quarterly), M (Monthly)
+               TIME_PERIOD: 2001, 2001-Q1, 2001-M01, etc. (YYYY, YYYY-QQ, or YYYY-MM format)
+               REGION: _Z, EL, EL30, EL11, EL12, etc. (NUTS 2 level)
+               REGION_1981: _Z, KENTRIKI_DYTIKI_MAKEDONIA, etc. (1981 classification)
+               URBANIZATION: _Z, ATHENS_AGGLOMERATION, THESSALONIKI_AGGLOMERATION, OTHER_URBAN, SEMI_URBAN, RURAL
+               SEX: T (Total), M (Males), F (Females) - ESTAT SEX 1.13 reference
+               AGE_GROUP: TOTAL, Y15_24, Y25_34, Y35_44, Y45_54, Y55_64, Y65_74, Y75_MAX - ESTAT AGE 11.0 reference
+               NATIONALITY: _Z, GREEK, EU_COUNTRY, OTHER
+               UNIT_OF_MEASURE: THS (Thousands of persons), PC (Percentage) - ESTAT UNIT 64.0 reference
+               
+               Education dimensions:
+               EDUCATION_LEVEL_MAIN: _Z, ED0, ED1, ED2, ED3, ED4, ED5, ED6, ED7, ED8
+               EDUCATION_LEVEL_SUB: _Z, ED0_1, ED1_1, ED2_1, ED2_2, ED3_1, ED3_2, ED4_1, ED4_2, ED5_1, ED5_2, ED6_1, ED6_2, ED7_1, ED7_2, ED8_1
+               FORMAL_INFORMAL_EDUCATION: _Z, FORMAL, INFORMAL
+               NEET_CATEGORY: _Z, NEET, NOT_NEET
+               
+               Employment status dimensions:
+               LABOUR_FORCE_STATUS: _Z, EMPLOYED, UNEMPLOYED, INACTIVE, TOTAL_POPULATION
+               LABOUR_FORCE_SUBCATEGORY: _Z, EMPLOYMENT_RATE, UNEMPLOYMENT_RATE, ACTIVITY_RATE, INACTIVITY_RATE
+               MAIN_EMPLOYMENT_STATUS: _Z, EMPLOYED, EMPLOYEES, SELF_EMPLOYED, FAMILY_WORKERS, INACTIVE, UNEMPLOYED
+               SUB_EMPLOYMENT_STATUS: _Z, FULL_TIME, PART_TIME, PERMANENT, TEMPORARY
+               EMPLOYMENT_DISTINCTION: _Z, FULL_TIME, PART_TIME
+               
+               Job characteristics dimensions:
+               SECTOR: _Z, PRIMARY, SECONDARY, TERTIARY, AGRICULTURE, INDUSTRY, SERVICES, etc.
+               SECTOR_SUB: _Z, AGRICULTURE_FORESTRY_FISHING, MINING_QUARRYING, MANUFACTURING, etc.
+               TYPE_OCCUPATION: _Z, MANAGERS, PROFESSIONALS, TECHNICIANS, CLERICAL_SUPPORT, etc.
+               BO: _Z, PRIVATE_SECTOR, PUBLIC_SECTOR
+               NR_PERSONS_LOCAL_UNIT: _Z, LESS_THAN_10, 10_49, 50_249, 250_PLUS
+               
+               Working conditions dimensions:
+               HOURS_ACTUALLY_WORK: _Z, LESS_THAN_35, 35_39, 40, 41_47, 48_PLUS
+               HOURS_ACTUALLY_WORK_SUB: _Z, LESS_THAN_15, 15_29, 30_34, 35_39, 40, 41_47, 48_PLUS
+               HOURS_USUAL_WORK: _Z, WORKED_USUAL_HOURS, WORKED_LESS_THAN_USUAL, WORKED_MORE_THAN_USUAL
+               HOURS_USUAL_WORK_SUB: _Z, WORKED_USUAL_HOURS, WORKED_LESS_THAN_USUAL, WORKED_MORE_THAN_USUAL
+               ATYPICAL_WORK: _Z, WORK_AT_HOME, EVENING_WORK, NIGHT_WORK, SUNDAY_WORK, SHIFT_WORK
+               ATYPICAL_WORK_SUB: _Z, WORK_AT_HOME, EVENING_WORK, NIGHT_WORK, SUNDAY_WORK, SHIFT_WORK, ROTATING_SHIFTS
+               
+               Job preferences and permanency dimensions:
+               UNDERMP_PT_WORK_SUB: _Z, YES, NO
+               WORK_FOR_MORE_HOURS: _Z, AVAILABLE, WISH, NOT_AVAILABLE, NOT_WISH
+               LOOKING_FOR_ANOTHER_JOB: _Z, BETTER_CONDITIONS, JOB_LOSS_RISK, CAREER_DEVELOPMENT, OTHER
+               PERMANENCY_FOR_EMPLOYEES: _Z, PERMANENT_JOB, TEMPORARY_CONTRACT
+               PERMANENCY_FOR_EMPLOYEES_SUB: _Z, PERMANENT_JOB, TEMPORARY_CONTRACT, FIXED_TERM, SEASONAL, CASUAL
+               REASONS_PT: _Z, COULD_NOT_FIND_FULL_TIME, EDUCATION, ILLNESS, FAMILY_RESPONSIBILITIES, OTHER
+               REASONS_TEMP: _Z, COULD_NOT_FIND_PERMANENT, DID_NOT_WANT_PERMANENT, PROBATION, SEASONAL, OTHER
+               
+               Demographic dimensions:
+               MARITAL_STATUS: _Z, SINGLE, MARRIED, WIDOWED_DIVORCED_LEGALLY_SEPARATED
+               
+             - Header rows (0-4) provide dimension values for each column
+             - Data rows (5+) contain the actual observations
+             - The intersection cells contain OBS_VALUE (string format as per DSD)
+             - REGION values should match CL_REGIONS codelist
+             - REGION_1981 values should match CL_REGION_1981 codelist
+             - URBANIZATION values should match CL_URBANIZATION codelist
+             - SEX values should match ESTAT SEX 1.13 codelist
+             - AGE_GROUP values should match ESTAT AGE 11.0 codelist
+             - All other dimension values should match their respective BOG codelists
+             - UNIT_OF_MEASURE values should match ESTAT UNIT 64.0 codelist -->
+
+    </Coord-Mapping>
+</Excel-Data-Description>
