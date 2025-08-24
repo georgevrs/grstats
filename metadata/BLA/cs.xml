@@ -1,0 +1,131 @@
+<!-- SDMX-XML 2.1 – Concept Scheme for BLA (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDBLA_CS</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Concepts>
+
+            <structure:ConceptScheme id="CS_BLA_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Building and Construction Activity (BLA) – Concept Scheme</common:Name>
+                <common:Description xml:lang="en">Concepts for ELSTAT BLA data with essential dimensions for building permits and construction statistics.</common:Description>
+
+                <!-- ========= CONCEPTS ========= -->
+
+                <!-- 1 -->
+                <structure:Concept id="FREQ">
+                    <common:Name xml:lang="en">Frequency</common:Name>
+                    <common:Description xml:lang="en">Reference period frequency (e.g. monthly, quarterly, annual).</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:Enumeration>
+                            <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                 package="codelist" class="Codelist"/>
+                        </structure:Enumeration>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                <!-- 2 -->
+                <structure:Concept id="TIME_PERIOD">
+                    <common:Name xml:lang="en">Time period</common:Name>
+                    <common:Description xml:lang="en">Reference time period for the observation.</common:Description>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="ObservationalTimePeriod"/>
+                    </structure:CoreRepresentation>
+                </structure:Concept>
+
+                                 <!-- 3 -->
+                 <structure:Concept id="REGION">
+                     <common:Name xml:lang="en">Region</common:Name>
+                     <common:Description xml:lang="en">Greek administrative regions at NUTS 2 level.</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_REGIONS" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 4 -->
+                 <structure:Concept id="REGIONAL_UNIT">
+                     <common:Name xml:lang="en">Regional unit</common:Name>
+                     <common:Description xml:lang="en">Greek regional units at NUTS 3 level (prefectures/nomoi).</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_REGIONAL_UNITS" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 5 -->
+                 <structure:Concept id="CATEGORY">
+                     <common:Name xml:lang="en">Building category</common:Name>
+                     <common:Description xml:lang="en">Classification of building types and categories.</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_BUILDING_CATEGORIES" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 6 -->
+                 <structure:Concept id="UNIT_MEASURE">
+                     <common:Name xml:lang="en">Unit of measure</common:Name>
+                     <common:Description xml:lang="en">Unit of measurement for the BLA values (Number, Area, Volume).</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_UNIT_MEASURE" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 7 -->
+                 <structure:Concept id="DWELLINGS">
+                     <common:Name xml:lang="en">Dwelling types</common:Name>
+                     <common:Description xml:lang="en">Classification of dwelling types (New Dwellings, Improvements).</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_DWELLINGS" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 8 -->
+                 <structure:Concept id="URBAN_STATUS">
+                     <common:Name xml:lang="en">Urban status</common:Name>
+                     <common:Description xml:lang="en">Urban status classification (Urban, Semi-Urban, Rural, All Areas).</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="CL_URBAN_STATUS" version="1.0" agencyID="BOG"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 9 -->
+                 <structure:Concept id="OBS_VALUE">
+                     <common:Name xml:lang="en">Observation value</common:Name>
+                     <common:Description xml:lang="en">BLA observation value (counts, areas, volumes).</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:TextFormat textType="Double"/>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+            </structure:ConceptScheme>
+        </structure:Concepts>
+    </message:Structures>
+</message:Structure>

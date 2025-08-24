@@ -95,7 +95,7 @@ def main():
     import glob
     import os
 
-    bla_files = glob.glob("assets/BLA/*01_F_Bl.xlsx")
+    bla_files = glob.glob("assets/BLA/*TS_MM*01_F_B*.xlsx")
     if not bla_files:
         logger.error("No BLA file matching '*01_F_Bl.xlsx' found in assets/BLA")
         return

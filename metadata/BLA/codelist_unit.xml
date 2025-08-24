@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure:Codelists xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+    <message:Header>
+        <message:ID>IDUNIT_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_UNIT_MEASURE" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name xml:lang="en">Unit of Measurement Classification</common:Name>
+                <common:Description xml:lang="en">Classification of units of measurement for statistical data, including special codes for data processing.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name xml:lang="en">Special Processing Code</common:Name>
+                    <common:Description xml:lang="en">Special code used for data processing and layout purposes.</common:Description>
+                </structure:Code>
+                
+                <!-- Unit of measurement codes -->
+                <structure:Code id="N">
+                    <common:Name xml:lang="en">Number</common:Name>
+                    <common:Description xml:lang="en">Unit of measurement for count data (persons, items, units).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="A">
+                    <common:Name xml:lang="en">Area</common:Name>
+                    <common:Description xml:lang="en">Unit of measurement for area data (square meters, hectares, square kilometers).</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="V">
+                    <common:Name xml:lang="en">Volume</common:Name>
+                    <common:Description xml:lang="en">Unit of measurement for volume data (cubic meters, liters, cubic feet).</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</structure:Codelists>
