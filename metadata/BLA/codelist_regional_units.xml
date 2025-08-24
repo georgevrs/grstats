@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structure:Codelists xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
     <message:Header>
         <message:ID>IDREGIONAL_UNITS_CL</message:ID>
         <message:Test>false</message:Test>
@@ -10,398 +10,389 @@
     <message:Structures>
         <structure:Codelists>
             <structure:Codelist id="CL_REGIONAL_UNITS" agencyID="BOG" version="1.0" isFinal="true">
-                <common:Name xml:lang="en">Greek Regional Units Classification (NUTS 3)</common:Name>
-                <common:Description xml:lang="en">Classification of Greek regional units (prefectures/nomoi) at NUTS 3 level for statistical purposes.</common:Description>
+                <common:Name>Greek Regional Units Classification (NUTS 3)</common:Name>
+                <common:Description>Classification of Greek regional units (prefectures/nomoi) at NUTS 3 level for statistical purposes.</common:Description>
                 
                 <!-- Special processing codes -->
                 <structure:Code id="_Z">
-                    <common:Name xml:lang="en">Special Processing Code</common:Name>
-                    <common:Description xml:lang="en">Special code used for data processing and layout purposes.</common:Description>
+                    <common:Name>Special Processing Code</common:Name>
+                    <common:Description>Special code used for data processing and layout purposes.</common:Description>
                 </structure:Code>
                 
                 <!-- Eastern Macedonia and Thrace (EL11) -->
                 <structure:Code id="RODOPI">
-                    <common:Name xml:lang="en">RODOPI</common:Name>
-                    <common:Description xml:lang="en">Rodopi regional unit in Eastern Macedonia and Thrace.</common:Description>
+                    <common:Name>RODOPI</common:Name>
+                    <common:Description>Rodopi regional unit in Eastern Macedonia and Thrace.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="DRAMA">
-                    <common:Name xml:lang="en">DRAMA</common:Name>
-                    <common:Description xml:lang="en">Drama regional unit in Eastern Macedonia and Thrace.</common:Description>
+                    <common:Name>DRAMA</common:Name>
+                    <common:Description>Drama regional unit in Eastern Macedonia and Thrace.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EVROS">
-                    <common:Name xml:lang="en">EVROS</common:Name>
-                    <common:Description xml:lang="en">Evros regional unit in Eastern Macedonia and Thrace.</common:Description>
+                    <common:Name>EVROS</common:Name>
+                    <common:Description>Evros regional unit in Eastern Macedonia and Thrace.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KAVALA">
-                    <common:Name xml:lang="en">KAVALA</common:Name>
-                    <common:Description xml:lang="en">Kavala regional unit in Eastern Macedonia and Thrace.</common:Description>
+                    <common:Name>KAVALA</common:Name>
+                    <common:Description>Kavala regional unit in Eastern Macedonia and Thrace.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="XANTHI">
-                    <common:Name xml:lang="en">XANTHI</common:Name>
-                    <common:Description xml:lang="en">Xanthi regional unit in Eastern Macedonia and Thrace.</common:Description>
+                    <common:Name>XANTHI</common:Name>
+                    <common:Description>Xanthi regional unit in Eastern Macedonia and Thrace.</common:Description>
                 </structure:Code>
                 
                 <!-- Central Macedonia (EL12) -->
                 <structure:Code id="THESSALONIKI">
-                    <common:Name xml:lang="en">THESSALONIKI</common:Name>
-                    <common:Description xml:lang="en">Thessaloniki regional unit in Central Macedonia.</common:Description>
+                    <common:Name>THESSALONIKI</common:Name>
+                    <common:Description>Thessaloniki regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="IMATHIA">
-                    <common:Name xml:lang="en">IMATHIA</common:Name>
-                    <common:Description xml:lang="en">Imathia regional unit in Central Macedonia.</common:Description>
+                    <common:Name>IMATHIA</common:Name>
+                    <common:Description>Imathia regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KILKIS">
-                    <common:Name xml:lang="en">KILKIS</common:Name>
-                    <common:Description xml:lang="en">Kilkis regional unit in Central Macedonia.</common:Description>
+                    <common:Name>KILKIS</common:Name>
+                    <common:Description>Kilkis regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PELLA">
-                    <common:Name xml:lang="en">PELLA</common:Name>
-                    <common:Description xml:lang="en">Pella regional unit in Central Macedonia.</common:Description>
+                    <common:Name>PELLA</common:Name>
+                    <common:Description>Pella regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="SERRES">
-                    <common:Name xml:lang="en">SERRES</common:Name>
-                    <common:Description xml:lang="en">Serres regional unit in Central Macedonia.</common:Description>
+                    <common:Name>SERRES</common:Name>
+                    <common:Description>Serres regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PIERIA">
-                    <common:Name xml:lang="en">PIERIA</common:Name>
-                    <common:Description xml:lang="en">Pieria regional unit in Central Macedonia.</common:Description>
+                    <common:Name>PIERIA</common:Name>
+                    <common:Description>Pieria regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="CHALKIDIKI">
-                    <common:Name xml:lang="en">CHALKIDIKI</common:Name>
-                    <common:Description xml:lang="en">Chalkidiki regional unit in Central Macedonia.</common:Description>
+                    <common:Name>CHALKIDIKI</common:Name>
+                    <common:Description>Chalkidiki regional unit in Central Macedonia.</common:Description>
                 </structure:Code>
                 
                 <!-- Western Macedonia (EL13) -->
                 <structure:Code id="KOZANI">
-                    <common:Name xml:lang="en">KOZANI</common:Name>
-                    <common:Description xml:lang="en">Kozani regional unit in Western Macedonia.</common:Description>
+                    <common:Name>KOZANI</common:Name>
+                    <common:Description>Kozani regional unit in Western Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="GREVENA">
-                    <common:Name xml:lang="en">GREVENA</common:Name>
-                    <common:Description xml:lang="en">Grevena regional unit in Western Macedonia.</common:Description>
+                    <common:Name>GREVENA</common:Name>
+                    <common:Description>Grevena regional unit in Western Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KASTORIA">
-                    <common:Name xml:lang="en">KASTORIA</common:Name>
-                    <common:Description xml:lang="en">Kastoria regional unit in Western Macedonia.</common:Description>
+                    <common:Name>KASTORIA</common:Name>
+                    <common:Description>Kastoria regional unit in Western Macedonia.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="FLORINA">
-                    <common:Name xml:lang="en">FLORINA</common:Name>
-                    <common:Description xml:lang="en">Florina regional unit in Western Macedonia.</common:Description>
+                    <common:Name>FLORINA</common:Name>
+                    <common:Description>Florina regional unit in Western Macedonia.</common:Description>
                 </structure:Code>
                 
                 <!-- Epirus (EL21) -->
                 <structure:Code id="IOANNINA">
-                    <common:Name xml:lang="en">IOANNINA</common:Name>
-                    <common:Description xml:lang="en">Ioannina regional unit in Epirus.</common:Description>
+                    <common:Name>IOANNINA</common:Name>
+                    <common:Description>Ioannina regional unit in Epirus.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ARTA">
-                    <common:Name xml:lang="en">ARTA</common:Name>
-                    <common:Description xml:lang="en">Arta regional unit in Epirus.</common:Description>
+                    <common:Name>ARTA</common:Name>
+                    <common:Description>Arta regional unit in Epirus.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="THESPROTIA">
-                    <common:Name xml:lang="en">THESPROTIA</common:Name>
-                    <common:Description xml:lang="en">Thesprotia regional unit in Epirus.</common:Description>
+                    <common:Name>THESPROTIA</common:Name>
+                    <common:Description>Thesprotia regional unit in Epirus.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PREVEZA">
-                    <common:Name xml:lang="en">PREVEZA</common:Name>
-                    <common:Description xml:lang="en">Preveza regional unit in Epirus.</common:Description>
+                    <common:Name>PREVEZA</common:Name>
+                    <common:Description>Preveza regional unit in Epirus.</common:Description>
                 </structure:Code>
                 
                 <!-- Thessaly (EL14) -->
                 <structure:Code id="LARISA">
-                    <common:Name xml:lang="en">LARISA</common:Name>
-                    <common:Description xml:lang="en">Larisa regional unit in Thessaly.</common:Description>
+                    <common:Name>LARISA</common:Name>
+                    <common:Description>Larisa regional unit in Thessaly.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KARDITSA">
-                    <common:Name xml:lang="en">KARDITSA</common:Name>
-                    <common:Description xml:lang="en">Karditsa regional unit in Thessaly.</common:Description>
+                    <common:Name>KARDITSA</common:Name>
+                    <common:Description>Karditsa regional unit in Thessaly.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="MAGNISIA">
-                    <common:Name xml:lang="en">MAGNISIA</common:Name>
-                    <common:Description xml:lang="en">Magnisia regional unit in Thessaly.</common:Description>
+                    <common:Name>MAGNISIA</common:Name>
+                    <common:Description>Magnisia regional unit in Thessaly.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="SPORADES">
-                    <common:Name xml:lang="en">SPORADES</common:Name>
-                    <common:Description xml:lang="en">Sporades regional unit in Thessaly.</common:Description>
+                    <common:Name>SPORADES</common:Name>
+                    <common:Description>Sporades regional unit in Thessaly.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="TRIKALA">
-                    <common:Name xml:lang="en">TRIKALA</common:Name>
-                    <common:Description xml:lang="en">Trikala regional unit in Thessaly.</common:Description>
+                    <common:Name>TRIKALA</common:Name>
+                    <common:Description>Trikala regional unit in Thessaly.</common:Description>
                 </structure:Code>
                 
                 <!-- Central Greece (EL24) -->
                 <structure:Code id="VOIOTIA">
-                    <common:Name xml:lang="en">VOIOTIA</common:Name>
-                    <common:Description xml:lang="en">Voiotia regional unit in Central Greece.</common:Description>
+                    <common:Name>VOIOTIA</common:Name>
+                    <common:Description>Voiotia regional unit in Central Greece.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EVOIA">
-                    <common:Name xml:lang="en">EVOIA</common:Name>
-                    <common:Description xml:lang="en">Evia regional unit in Central Greece.</common:Description>
+                    <common:Name>EVOIA</common:Name>
+                    <common:Description>Evoia regional unit in Central Greece.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="FOKIDA">
-                    <common:Name xml:lang="en">FOKIDA</common:Name>
-                    <common:Description xml:lang="en">Fokida regional unit in Central Greece.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="FTHIOTIDA">
-                    <common:Name xml:lang="en">FTHIOTIDA</common:Name>
-                    <common:Description xml:lang="en">Fthiotida regional unit in Central Greece.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="EVRYTANIA">
-                    <common:Name xml:lang="en">EVRYTANIA</common:Name>
-                    <common:Description xml:lang="en">Evrytania regional unit in Central Greece.</common:Description>
+                    <common:Name>FOKIDA</common:Name>
+                    <common:Description>Fokida regional unit in Central Greece.</common:Description>
                 </structure:Code>
                 
                 <!-- Ionian Islands (EL22) -->
                 <structure:Code id="KERKYRA">
-                    <common:Name xml:lang="en">KERKYRA</common:Name>
-                    <common:Description xml:lang="en">Corfu regional unit in Ionian Islands.</common:Description>
+                    <common:Name>KERKYRA</common:Name>
+                    <common:Description>Kerkyra regional unit in Ionian Islands.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ZAKYNTHOS">
-                    <common:Name xml:lang="en">ZAKYNTHOS</common:Name>
-                    <common:Description xml:lang="en">Zakynthos regional unit in Ionian Islands.</common:Description>
+                    <common:Name>ZAKYNTHOS</common:Name>
+                    <common:Description>Zakynthos regional unit in Ionian Islands.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KEFALLINIA">
-                    <common:Name xml:lang="en">KEFALLINIA</common:Name>
-                    <common:Description xml:lang="en">Kefallonia regional unit in Ionian Islands.</common:Description>
+                    <common:Name>KEFALLINIA</common:Name>
+                    <common:Description>Kefallinia regional unit in Ionian Islands.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="LEFKADA">
-                    <common:Name xml:lang="en">LEFKADA</common:Name>
-                    <common:Description xml:lang="en">Lefkada regional unit in Ionian Islands.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="ITHAKI">
-                    <common:Name xml:lang="en">ITHAKI</common:Name>
-                    <common:Description xml:lang="en">Ithaki regional unit in Ionian Islands.</common:Description>
+                    <common:Name>LEFKADA</common:Name>
+                    <common:Description>Lefkada regional unit in Ionian Islands.</common:Description>
                 </structure:Code>
                 
                 <!-- Western Greece (EL23) -->
                 <structure:Code id="ACHAIA">
-                    <common:Name xml:lang="en">ACHAIA</common:Name>
-                    <common:Description xml:lang="en">Achaia regional unit in Western Greece.</common:Description>
+                    <common:Name>ACHAIA</common:Name>
+                    <common:Description>Achaia regional unit in Western Greece.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ETOLOAKARNANIA">
-                    <common:Name xml:lang="en">ETOLOAKARNANIA</common:Name>
-                    <common:Description xml:lang="en">Aetolia-Acarnania regional unit in Western Greece.</common:Description>
+                    <common:Name>ETOLOAKARNANIA</common:Name>
+                    <common:Description>Etoloakarnania regional unit in Western Greece.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ILEIA">
-                    <common:Name xml:lang="en">ILEIA</common:Name>
-                    <common:Description xml:lang="en">Elis regional unit in Western Greece.</common:Description>
+                    <common:Name>ILEIA</common:Name>
+                    <common:Description>Ileia regional unit in Western Greece.</common:Description>
                 </structure:Code>
                 
                 <!-- Peloponnese (EL25) -->
                 <structure:Code id="ARKADIA">
-                    <common:Name xml:lang="en">ARKADIA</common:Name>
-                    <common:Description xml:lang="en">Arcadia regional unit in Peloponnese.</common:Description>
+                    <common:Name>ARKADIA</common:Name>
+                    <common:Description>Arkadia regional unit in Peloponnese.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ARGOLIDA">
-                    <common:Name xml:lang="en">ARGOLIDA</common:Name>
-                    <common:Description xml:lang="en">Argolis regional unit in Peloponnese.</common:Description>
+                    <common:Name>ARGOLIDA</common:Name>
+                    <common:Description>Argolida regional unit in Peloponnese.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KORINTHIA">
-                    <common:Name xml:lang="en">KORINTHIA</common:Name>
-                    <common:Description xml:lang="en">Corinthia regional unit in Peloponnese.</common:Description>
+                    <common:Name>KORINTHIA</common:Name>
+                    <common:Description>Korinthia regional unit in Peloponnese.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="LAKONIA">
-                    <common:Name xml:lang="en">LAKONIA</common:Name>
-                    <common:Description xml:lang="en">Laconia regional unit in Peloponnese.</common:Description>
+                    <common:Name>LAKONIA</common:Name>
+                    <common:Description>Lakonia regional unit in Peloponnese.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="MESSINIA">
-                    <common:Name xml:lang="en">MESSINIA</common:Name>
-                    <common:Description xml:lang="en">Messenia regional unit in Peloponnese.</common:Description>
+                    <common:Name>MESSINIA</common:Name>
+                    <common:Description>Messinia regional unit in Peloponnese.</common:Description>
                 </structure:Code>
                 
-                <!-- Attica (EL30) -->
+                <!-- Attiki (EL30) -->
                 <structure:Code id="KENTRIKOS_TOMEAS_ATHINON">
-                    <common:Name xml:lang="en">KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)</common:Name>
-                    <common:Description xml:lang="en">Central sector of Athens in Attica region.</common:Description>
+                    <common:Name>KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)</common:Name>
+                    <common:Description>Central sector of Athens regional unit in Attiki.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="VOREIOS_TOMEAS_ATHINON">
-                    <common:Name xml:lang="en">VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)</common:Name>
-                    <common:Description xml:lang="en">North sector of Athens in Attica region.</common:Description>
+                    <common:Name>VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)</common:Name>
+                    <common:Description>North sector of Athens regional unit in Attiki.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="NOTIOS_TOMEAS_ATHINON">
-                    <common:Name xml:lang="en">NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)</common:Name>
-                    <common:Description xml:lang="en">South sector of Athens in Attica region.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="DYTIKOS_TOMEAS_ATHINON">
-                    <common:Name xml:lang="en">DYTIKOS TOMEAS ATHINON (WESTERN SECTOR OF ATHENS)</common:Name>
-                    <common:Description xml:lang="en">Western sector of Athens in Attica region.</common:Description>
+                    <common:Name>NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)</common:Name>
+                    <common:Description>South sector of Athens regional unit in Attiki.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ANATOLIKI_ATTIKI">
-                    <common:Name xml:lang="en">ANATOLIKI ATTIKI</common:Name>
-                    <common:Description xml:lang="en">Eastern Attica regional unit.</common:Description>
+                    <common:Name>ANATOLIKI ATTIKI</common:Name>
+                    <common:Description>Eastern Attiki regional unit.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="DYTIKI_ATTIKI">
-                    <common:Name xml:lang="en">DYTIKI ATTIKI</common:Name>
-                    <common:Description xml:lang="en">Western Attica regional unit.</common:Description>
+                    <common:Name>DYTIKI ATTIKI</common:Name>
+                    <common:Description>Western Attiki regional unit.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PIREAS">
-                    <common:Name xml:lang="en">PIREAS</common:Name>
-                    <common:Description xml:lang="en">Piraeus regional unit in Attica.</common:Description>
+                    <common:Name>PIREAS</common:Name>
+                    <common:Description>Pireas regional unit in Attiki.</common:Description>
                 </structure:Code>
                 
                 <!-- North Aegean (EL41) -->
                 <structure:Code id="NISIA">
-                    <common:Name xml:lang="en">NISIA (ISLANDS)</common:Name>
-                    <common:Description xml:lang="en">Islands regional unit in North Aegean.</common:Description>
+                    <common:Name>NISIA (ISLANDS)</common:Name>
+                    <common:Description>Islands regional unit in North Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="LIMNOS">
-                    <common:Name xml:lang="en">LIMNOS</common:Name>
-                    <common:Description xml:lang="en">Lemnos regional unit in North Aegean.</common:Description>
+                    <common:Name>LIMNOS</common:Name>
+                    <common:Description>Limnos regional unit in North Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="SAMOS">
-                    <common:Name xml:lang="en">SAMOS</common:Name>
-                    <common:Description xml:lang="en">Samos regional unit in North Aegean.</common:Description>
+                    <common:Name>SAMOS</common:Name>
+                    <common:Description>Samos regional unit in North Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="CHIOS">
-                    <common:Name xml:lang="en">CHIOS</common:Name>
-                    <common:Description xml:lang="en">Chios regional unit in North Aegean.</common:Description>
+                    <common:Name>CHIOS</common:Name>
+                    <common:Description>Chios regional unit in North Aegean.</common:Description>
                 </structure:Code>
                 
-                <structure:Code id="LESVOS">
-                    <common:Name xml:lang="en">LESVOS</common:Name>
-                    <common:Description xml:lang="en">Lesvos regional unit in North Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="IKARIA">
-                    <common:Name xml:lang="en">IKARIA</common:Name>
-                    <common:Description xml:lang="en">Ikaria regional unit in North Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="THASOS">
-                    <common:Name xml:lang="en">THASOS</common:Name>
-                    <common:Description xml:lang="en">Thasos regional unit in North Aegean.</common:Description>
+                <structure:Code id="THIRA">
+                    <common:Name>THIRA</common:Name>
+                    <common:Description>Thira regional unit in North Aegean.</common:Description>
                 </structure:Code>
                 
                 <!-- South Aegean (EL42) -->
-                <structure:Code id="THIRA">
-                    <common:Name xml:lang="en">THIRA</common:Name>
-                    <common:Description xml:lang="en">Santorini regional unit in South Aegean.</common:Description>
-                </structure:Code>
-                
                 <structure:Code id="KALYMNOS">
-                    <common:Name xml:lang="en">KALYMNOS</common:Name>
-                    <common:Description xml:lang="en">Kalymnos regional unit in South Aegean.</common:Description>
+                    <common:Name>KALYMNOS</common:Name>
+                    <common:Description>Kalymnos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KEA_KYTHNOS">
-                    <common:Name xml:lang="en">KEA - KYTHNOS</common:Name>
-                    <common:Description xml:lang="en">Kea-Kythnos regional unit in South Aegean.</common:Description>
+                    <common:Name>KEA - KYTHNOS</common:Name>
+                    <common:Description>Kea-Kythnos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="KOS">
-                    <common:Name xml:lang="en">KOS</common:Name>
-                    <common:Description xml:lang="en">Kos regional unit in South Aegean.</common:Description>
+                    <common:Name>KOS</common:Name>
+                    <common:Description>Kos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="MILOS">
-                    <common:Name xml:lang="en">MILOS</common:Name>
-                    <common:Description xml:lang="en">Milos regional unit in South Aegean.</common:Description>
+                    <common:Name>MILOS</common:Name>
+                    <common:Description>Milos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="MYKONOS">
-                    <common:Name xml:lang="en">MYKONOS</common:Name>
-                    <common:Description xml:lang="en">Mykonos regional unit in South Aegean.</common:Description>
+                    <common:Name>MYKONOS</common:Name>
+                    <common:Description>Mykonos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="NAXOS">
-                    <common:Name xml:lang="en">NAXOS</common:Name>
-                    <common:Description xml:lang="en">Naxos regional unit in South Aegean.</common:Description>
+                    <common:Name>NAXOS</common:Name>
+                    <common:Description>Naxos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PAROS">
-                    <common:Name xml:lang="en">PAROS</common:Name>
-                    <common:Description xml:lang="en">Paros regional unit in South Aegean.</common:Description>
+                    <common:Name>PAROS</common:Name>
+                    <common:Description>Paros regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="RODOS">
-                    <common:Name xml:lang="en">RODOS</common:Name>
-                    <common:Description xml:lang="en">Rhodes regional unit in South Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="SYROS">
-                    <common:Name xml:lang="en">SYROS</common:Name>
-                    <common:Description xml:lang="en">Syros regional unit in South Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="ANDROS">
-                    <common:Name xml:lang="en">ANDROS</common:Name>
-                    <common:Description xml:lang="en">Andros regional unit in South Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="KARPATHOS">
-                    <common:Name xml:lang="en">KARPATHOS</common:Name>
-                    <common:Description xml:lang="en">Karpathos regional unit in South Aegean.</common:Description>
-                </structure:Code>
-                
-                <structure:Code id="TINOS">
-                    <common:Name xml:lang="en">TINOS</common:Name>
-                    <common:Description xml:lang="en">Tinos regional unit in South Aegean.</common:Description>
+                    <common:Name>RODOS</common:Name>
+                    <common:Description>Rodos regional unit in South Aegean.</common:Description>
                 </structure:Code>
                 
                 <!-- Crete (EL43) -->
                 <structure:Code id="IRAKLEIO">
-                    <common:Name xml:lang="en">IRAKLEIO</common:Name>
-                    <common:Description xml:lang="en">Heraklion regional unit in Crete.</common:Description>
+                    <common:Name>IRAKLEIO</common:Name>
+                    <common:Description>Irakleio regional unit in Crete.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="LASITHI">
-                    <common:Name xml:lang="en">LASITHI</common:Name>
-                    <common:Description xml:lang="en">Lasithi regional unit in Crete.</common:Description>
+                    <common:Name>LASITHI</common:Name>
+                    <common:Description>Lasithi regional unit in Crete.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="RETHYMNO">
-                    <common:Name xml:lang="en">RETHYMNO</common:Name>
-                    <common:Description xml:lang="en">Rethymno regional unit in Crete.</common:Description>
+                    <common:Name>RETHYMNO</common:Name>
+                    <common:Description>Rethymno regional unit in Crete.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="CHANIA">
-                    <common:Name xml:lang="en">CHANIA</common:Name>
-                    <common:Description xml:lang="en">Chania regional unit in Crete.</common:Description>
+                    <common:Name>CHANIA</common:Name>
+                    <common:Description>Chania regional unit in Crete.</common:Description>
+                </structure:Code>
+                
+                <!-- Additional regional units -->
+                <structure:Code id="THASOS">
+                    <common:Name>THASOS</common:Name>
+                    <common:Description>Thasos regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="GREVENA">
+                    <common:Name>GREVENA</common:Name>
+                    <common:Description>Grevena regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ITHAKI">
+                    <common:Name>ITHAKI</common:Name>
+                    <common:Description>Ithaki regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="LESVOS">
+                    <common:Name>LESVOS</common:Name>
+                    <common:Description>Lesvos regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="IKARIA">
+                    <common:Name>IKARIA</common:Name>
+                    <common:Description>Ikaria regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="SYROS">
+                    <common:Name>SYROS</common:Name>
+                    <common:Description>Syros regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="ANDROS">
+                    <common:Name>ANDROS</common:Name>
+                    <common:Description>Andros regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="KARPATHOS">
+                    <common:Name>KARPATHOS</common:Name>
+                    <common:Description>Karpathos regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="TINOS">
+                    <common:Name>TINOS</common:Name>
+                    <common:Description>Tinos regional unit.</common:Description>
                 </structure:Code>
             </structure:Codelist>
         </structure:Codelists>
     </message:Structures>
-</structure:Codelists>
+</message:Structure>

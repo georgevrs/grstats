@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structure:Codelists xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
     <message:Header>
         <message:ID>IDREGIONS_CL</message:ID>
         <message:Test>false</message:Test>
@@ -10,87 +10,87 @@
     <message:Structures>
         <structure:Codelists>
             <structure:Codelist id="CL_REGIONS" agencyID="BOG" version="1.0" isFinal="true">
-                <common:Name xml:lang="en">Greek Administrative Regions Classification</common:Name>
-                <common:Description xml:lang="en">Classification of Greek administrative regions following NUTS standards for statistical purposes.</common:Description>
+                <common:Name>Greek Administrative Regions Classification</common:Name>
+                <common:Description>Classification of Greek administrative regions following NUTS standards for statistical purposes.</common:Description>
                 
                 <!-- Special processing codes -->
                 <structure:Code id="_Z">
-                    <common:Name xml:lang="en">Special Processing Code</common:Name>
-                    <common:Description xml:lang="en">Special code used for data processing and layout purposes.</common:Description>
+                    <common:Name>Special Processing Code</common:Name>
+                    <common:Description>Special code used for data processing and layout purposes.</common:Description>
                 </structure:Code>
                 
                 <!-- National level -->
                 <structure:Code id="EL">
-                    <common:Name xml:lang="en">Greece, total</common:Name>
-                    <common:Description xml:lang="en">National level data covering the entire territory of Greece.</common:Description>
+                    <common:Name>Greece, total</common:Name>
+                    <common:Description>National level data covering the entire territory of Greece.</common:Description>
                 </structure:Code>
                 
                 <!-- NUTS 2 Regions -->
                 <structure:Code id="EL30">
-                    <common:Name xml:lang="en">REGION OF ATTIKI</common:Name>
-                    <common:Description xml:lang="en">Attiki region (Athens metropolitan area and surrounding areas).</common:Description>
+                    <common:Name>REGION OF ATTIKI</common:Name>
+                    <common:Description>Attiki region (Athens metropolitan area and surrounding areas).</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL11">
-                    <common:Name xml:lang="en">REGION OF ANATOLIKI MAKEDONIA,THRAKI</common:Name>
-                    <common:Description xml:lang="en">Eastern Macedonia and Thrace region.</common:Description>
+                    <common:Name>REGION OF ANATOLIKI MAKEDONIA,THRAKI</common:Name>
+                    <common:Description>Eastern Macedonia and Thrace region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL12">
-                    <common:Name xml:lang="en">REGION OF KENTRIKI MAKEDONIA</common:Name>
-                    <common:Description xml:lang="en">Central Macedonia region.</common:Description>
+                    <common:Name>REGION OF KENTRIKI MAKEDONIA</common:Name>
+                    <common:Description>Central Macedonia region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL13">
-                    <common:Name xml:lang="en">REGION OF DYTIKI MAKEDONIA</common:Name>
-                    <common:Description xml:lang="en">Western Macedonia region.</common:Description>
+                    <common:Name>REGION OF DYTIKI MAKEDONIA</common:Name>
+                    <common:Description>Western Macedonia region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL21">
-                    <common:Name xml:lang="en">REGION OF IPEIROS</common:Name>
-                    <common:Description xml:lang="en">Epirus region.</common:Description>
+                    <common:Name>REGION OF IPEIROS</common:Name>
+                    <common:Description>Epirus region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL14">
-                    <common:Name xml:lang="en">REGION OF THESSALIA</common:Name>
-                    <common:Description xml:lang="en">Thessaly region.</common:Description>
+                    <common:Name>REGION OF THESSALIA</common:Name>
+                    <common:Description>Thessaly region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL24">
-                    <common:Name xml:lang="en">REGION OF STEREA ELLADA</common:Name>
-                    <common:Description xml:lang="en">Central Greece region.</common:Description>
+                    <common:Name>REGION OF STEREA ELLADA</common:Name>
+                    <common:Description>Central Greece region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL22">
-                    <common:Name xml:lang="en">REGION OF IONIA NISIA</common:Name>
-                    <common:Description xml:lang="en">Ionian Islands region.</common:Description>
+                    <common:Name>REGION OF IONIA NISIA</common:Name>
+                    <common:Description>Ionian Islands region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL23">
-                    <common:Name xml:lang="en">REGION OF DYTIKI ELLADA</common:Name>
-                    <common:Description xml:lang="en">Western Greece region.</common:Description>
+                    <common:Name>REGION OF DYTIKI ELLADA</common:Name>
+                    <common:Description>Western Greece region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL25">
-                    <common:Name xml:lang="en">REGION OF PELOPONNISOS</common:Name>
-                    <common:Description xml:lang="en">Peloponnese region.</common:Description>
+                    <common:Name>REGION OF PELOPONNISOS</common:Name>
+                    <common:Description>Peloponnese region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL41">
-                    <common:Name xml:lang="en">REGION OF VOREIO AIGAIO</common:Name>
-                    <common:Description xml:lang="en">North Aegean region.</common:Description>
+                    <common:Name>REGION OF VOREIO AIGAIO</common:Name>
+                    <common:Description>North Aegean region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL42">
-                    <common:Name xml:lang="en">REGION OF NOTIO AIGAIO</common:Name>
-                    <common:Description xml:lang="en">South Aegean region.</common:Description>
+                    <common:Name>REGION OF NOTIO AIGAIO</common:Name>
+                    <common:Description>South Aegean region.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EL43">
-                    <common:Name xml:lang="en">REGION OF KRITI</common:Name>
-                    <common:Description xml:lang="en">Crete region.</common:Description>
+                    <common:Name>REGION OF KRITI</common:Name>
+                    <common:Description>Crete region.</common:Description>
                 </structure:Code>
             </structure:Codelist>
         </structure:Codelists>
     </message:Structures>
-</structure:Codelists>
+</message:Structure>

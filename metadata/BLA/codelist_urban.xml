@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structure:Codelists xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
     <message:Header>
         <message:ID>IDURBAN_CL</message:ID>
         <message:Test>false</message:Test>
@@ -10,36 +10,36 @@
     <message:Structures>
         <structure:Codelists>
             <structure:Codelist id="CL_URBAN_STATUS" agencyID="BOG" version="1.0" isFinal="true">
-                <common:Name xml:lang="en">Urban Status Classification</common:Name>
-                <common:Description xml:lang="en">Classification of urban status for statistical data, including special codes for data processing.</common:Description>
+                <common:Name>Urban Status Classification</common:Name>
+                <common:Description>Classification of urban status for statistical data, including special codes for data processing.</common:Description>
                 
                 <!-- Special processing codes -->
                 <structure:Code id="_Z">
-                    <common:Name xml:lang="en">Special Processing Code</common:Name>
-                    <common:Description xml:lang="en">Special code used for data processing and layout purposes.</common:Description>
+                    <common:Name>Special Processing Code</common:Name>
+                    <common:Description>Special code used for data processing and layout purposes.</common:Description>
                 </structure:Code>
                 
                 <!-- Geographic coverage codes -->
                 <structure:Code id="ALL">
-                    <common:Name xml:lang="en">All Areas</common:Name>
-                    <common:Description xml:lang="en">Data covering all urban and rural areas combined.</common:Description>
+                    <common:Name>All Areas</common:Name>
+                    <common:Description>Data covering all urban and rural areas combined.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="URBAN">
-                    <common:Name xml:lang="en">Urban Areas</common:Name>
-                    <common:Description xml:lang="en">Data covering only urban areas (cities and towns).</common:Description>
+                    <common:Name>Urban Areas</common:Name>
+                    <common:Description>Data covering only urban areas (cities and towns).</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="SEMI_URBAN">
-                    <common:Name xml:lang="en">Semi-Urban Areas</common:Name>
-                    <common:Description xml:lang="en">Data covering semi-urban areas (suburban and peri-urban zones).</common:Description>
+                    <common:Name>Semi-Urban Areas</common:Name>
+                    <common:Description>Data covering semi-urban areas (suburban and peri-urban zones).</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="RURAL">
-                    <common:Name xml:lang="en">Rural Areas</common:Name>
-                    <common:Description xml:lang="en">Data covering only rural areas (villages and countryside).</common:Description>
+                    <common:Name>Rural Areas</common:Name>
+                    <common:Description>Data covering only rural areas (villages and countryside).</common:Description>
                 </structure:Code>
             </structure:Codelist>
         </structure:Codelists>
     </message:Structures>
-</structure:Codelists>
+</message:Structure>

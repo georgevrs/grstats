@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structure:Codelists xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
     <message:Header>
         <message:ID>IDBUILDING_CAT_CL</message:ID>
         <message:Test>false</message:Test>
@@ -10,76 +10,76 @@
     <message:Structures>
         <structure:Codelists>
             <structure:Codelist id="CL_BUILDING_CATEGORIES" agencyID="BOG" version="1.0" isFinal="true">
-                <common:Name xml:lang="en">Building Categories Classification</common:Name>
-                <common:Description xml:lang="en">Classification of building types and categories for construction and building statistics.</common:Description>
+                <common:Name>Building Categories Classification</common:Name>
+                <common:Description>Classification of building types and categories for construction and building statistics.</common:Description>
                 
                 <!-- Special processing codes -->
                 <structure:Code id="_Z">
-                    <common:Name xml:lang="en">Special Processing Code</common:Name>
-                    <common:Description xml:lang="en">Special code used for data processing and layout purposes.</common:Description>
+                    <common:Name>Special Processing Code</common:Name>
+                    <common:Description>Special code used for data processing and layout purposes.</common:Description>
                 </structure:Code>
                 
                 <!-- Building category codes -->
                 <structure:Code id="UNSPECIFIED">
-                    <common:Name xml:lang="en">Unspecified</common:Name>
-                    <common:Description xml:lang="en">Building category not specified or classified.</common:Description>
+                    <common:Name>Unspecified</common:Name>
+                    <common:Description>Building category not specified or classified.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="MANUFACTURING">
-                    <common:Name xml:lang="en">Manufacturing</common:Name>
-                    <common:Description xml:lang="en">Industrial and manufacturing buildings, factories, and production facilities.</common:Description>
+                    <common:Name>Manufacturing</common:Name>
+                    <common:Description>Industrial and manufacturing buildings, factories, and production facilities.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="AGRICULTURAL">
-                    <common:Name xml:lang="en">Agricultural</common:Name>
-                    <common:Description xml:lang="en">Agricultural buildings, barns, storage facilities, and farming infrastructure.</common:Description>
+                    <common:Name>Agricultural</common:Name>
+                    <common:Description>Agricultural buildings, barns, storage facilities, and farming infrastructure.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="OFFICES">
-                    <common:Name xml:lang="en">Offices</common:Name>
-                    <common:Description xml:lang="en">Office buildings, administrative facilities, and corporate headquarters.</common:Description>
+                    <common:Name>Offices</common:Name>
+                    <common:Description>Office buildings, administrative facilities, and corporate headquarters.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="EDUCATIONAL">
-                    <common:Name xml:lang="en">Educational</common:Name>
-                    <common:Description xml:lang="en">Educational buildings, schools, universities, and training facilities.</common:Description>
+                    <common:Name>Educational</common:Name>
+                    <common:Description>Educational buildings, schools, universities, and training facilities.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="COMMERCIAL">
-                    <common:Name xml:lang="en">Commercial</common:Name>
-                    <common:Description xml:lang="en">Commercial buildings, retail spaces, and business establishments.</common:Description>
+                    <common:Name>Commercial</common:Name>
+                    <common:Description>Commercial buildings, retail spaces, and business establishments.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="SHORT_STAY_ACCOMMODATION">
-                    <common:Name xml:lang="en">Short stay accommodation (rooms for rent)</common:Name>
-                    <common:Description xml:lang="en">Short-term accommodation facilities, guest rooms, and temporary lodging.</common:Description>
+                    <common:Name>Short stay accommodation (rooms for rent)</common:Name>
+                    <common:Description>Short-term accommodation facilities, guest rooms, and temporary lodging.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="LIVESTOCK">
-                    <common:Name xml:lang="en">Livestock</common:Name>
-                    <common:Description xml:lang="en">Livestock buildings, animal housing, and agricultural animal facilities.</common:Description>
+                    <common:Name>Livestock</common:Name>
+                    <common:Description>Livestock buildings, animal housing, and agricultural animal facilities.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="OTHER">
-                    <common:Name xml:lang="en">Other</common:Name>
-                    <common:Description xml:lang="en">Other building categories not covered by specific classifications.</common:Description>
+                    <common:Name>Other</common:Name>
+                    <common:Description>Other building categories not covered by specific classifications.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="RESIDENCES_COMMUNITIES">
-                    <common:Name xml:lang="en">Residences for communities</common:Name>
-                    <common:Description xml:lang="en">Residential buildings for community living, group housing, and shared facilities.</common:Description>
+                    <common:Name>Residences for communities</common:Name>
+                    <common:Description>Residential buildings for community living, group housing, and shared facilities.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="HOTELS">
-                    <common:Name xml:lang="en">Hotels</common:Name>
-                    <common:Description xml:lang="en">Hotel buildings, hospitality facilities, and accommodation establishments.</common:Description>
+                    <common:Name>Hotels</common:Name>
+                    <common:Description>Hotel buildings, hospitality facilities, and accommodation establishments.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="HEALTH_CARE">
-                    <common:Name xml:lang="en">Health care</common:Name>
-                    <common:Description xml:lang="en">Healthcare buildings, hospitals, clinics, and medical facilities.</common:Description>
+                    <common:Name>Health care</common:Name>
+                    <common:Description>Healthcare buildings, hospitals, clinics, and medical facilities.</common:Description>
                 </structure:Code>
             </structure:Codelist>
         </structure:Codelists>
     </message:Structures>
-</structure:Codelists>
+</message:Structure>
