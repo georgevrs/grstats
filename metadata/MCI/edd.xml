@@ -13,7 +13,7 @@
              From column F onward, header row (row 1) contains TIME_PERIODs; the
              data cells at the intersections (Row, Column) hold OBS_VALUE. -->
         <Top-Left  Coord="E2"/>
-        <Bottom-Right Coord="E8537"/>
+        <Bottom-Right Coord="E8357"/>
 
         <!-- ======= DIMENSION MAPPINGS ======= -->
         <!-- TIME_PERIOD across columns (row 1) -->
@@ -21,7 +21,7 @@
 
         <!-- Row-wise dimensions (per series), using columns A–E -->
         <!-- A -->
-        <Dimension Code="FREQ"           Value="Cell(Row, 2).Value"/>
+        <Dimension Code="FREQ"            Value="Cell(Row, 2).Value"/>
         <!-- B -->
         <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
         <!-- C -->
