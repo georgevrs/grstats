@@ -51,7 +51,7 @@
                             </structure:ConceptIdentity>
                             <structure:LocalRepresentation>
                                 <structure:Enumeration>
-                                    <Ref id="CL_AREA" version="1.0" agencyID="ESTAT"
+                                    <Ref id="GEO" version="25.0" agencyID="ESTAT"
                                          package="codelist" class="Codelist"/>
                                 </structure:Enumeration>
                                 <structure:EnumerationFormat textType="String" minLength="2" maxLength="6"/>
