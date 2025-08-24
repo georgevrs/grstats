@@ -256,6 +256,85 @@ def process_dataframe(df):
         df['REGION'] = df['REGION'].map(region_mapping).fillna('_Z')
         print("✓ Applied regions mapping")
     
+    # Apply regional units mapping to convert full names to codes
+    regional_unit_mapping = {
+        'KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
+        'VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
+        'DYTIKOS TOMEAS ATHINON (WESTERN SECTOR OF ATHENS)': 'DYTIKOS_TOMEAS_ATHINON',
+        'NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
+        'ANATOLIKI ATTIKI': 'ANATOLIKI_ATTIKI',
+        'DYTIKI ATTIKI': 'DYTIKI_ATTIKI',
+        'PIREAS': 'PIREAS',
+        'NISIA (ISLANDS)': 'NISIA',
+        'RODOPI': 'RODOPI',
+        'DRAMA': 'DRAMA',
+        'EVROS': 'EVROS',
+        'KAVALA': 'KAVALA',
+        'XANTHI': 'XANTHI',
+        'THESSALONIKI': 'THESSALONIKI',
+        'IMATHIA': 'IMATHIA',
+        'KILKIS': 'KILKIS',
+        'PELLA': 'PELLA',
+        'SERRES': 'SERRES',
+        'KOZANI': 'KOZANI',
+        'GREVENA': 'GREVENA',
+        'KASTORIA': 'KASTORIA',
+        'FLORINA': 'FLORINA',
+        'IOANNINA': 'IOANNINA',
+        'ARTA': 'ARTA',
+        'THESPROTIA': 'THESPROTIA',
+        'PREVEZA': 'PREVEZA',
+        'LARISA': 'LARISA',
+        'KARDITSA': 'KARDITSA',
+        'MAGNISIA': 'MAGNISIA',
+        'SPORADES': 'SPORADES',
+        'TRIKALA': 'TRIKALA',
+        'VOIOTIA': 'VOIOTIA',
+        'EVOIA': 'EVOIA',
+        'FOKIDA': 'FOKIDA',
+        'KERKYRA': 'KERKYRA',
+        'ZAKYNTHOS': 'ZAKYNTHOS',
+        'KEFALLINIA': 'KEFALLINIA',
+        'LEFKADA': 'LEFKADA',
+        'ACHAIA': 'ACHAIA',
+        'ETOLOAKARNANIA': 'ETOLOAKARNANIA',
+        'ILEIA': 'ILEIA',
+        'ARKADIA': 'ARKADIA',
+        'ARGOLIDA': 'ARGOLIDA',
+        'KORINTHIA': 'KORINTHIA',
+        'LAKONIA': 'LAKONIA',
+        'MESSINIA': 'MESSINIA',
+        'LIMNOS': 'LIMNOS',
+        'SAMOS': 'SAMOS',
+        'CHIOS': 'CHIOS',
+        'THIRA': 'THIRA',
+        'KALYMNOS': 'KALYMNOS',
+        'KEA - KYTHNOS': 'KEA_KYTHNOS',
+        'KOS': 'KOS',
+        'MILOS': 'MILOS',
+        'MYKONOS': 'MYKONOS',
+        'NAXOS': 'NAXOS',
+        'PAROS': 'PAROS',
+        'RODOS': 'RODOS',
+        'IRAKLEIO': 'IRAKLEIO',
+        'LASITHI': 'LASITHI',
+        'RETHYMNO': 'RETHYMNO',
+        'CHANIA': 'CHANIA',
+        'THASOS': 'THASOS',
+        'ITHAKI': 'ITHAKI',
+        'LESVOS': 'LESVOS',
+        'IKARIA': 'IKARIA',
+        'SYROS': 'SYROS',
+        'ANDROS': 'ANDROS',
+        'KARPATHOS': 'KARPATHOS',
+        'TINOS': 'TINOS'
+    }
+    
+    # Apply regional units mapping
+    if 'REGIONAL_UNIT' in df.columns:
+        df['REGIONAL_UNIT'] = df['REGIONAL_UNIT'].map(regional_unit_mapping).fillna('_Z')
+        print("✓ Applied regional units mapping")
+    
     print("✓ Dataframe processed according to recipe")
     return df
 
@@ -381,26 +460,11 @@ def main():
                 df_existing.iloc[2, 0] == 'URBAN STATUS' and
                 df_existing.iloc[3, 0] == 'MEASURE'):
                 
-                print("✓ Final BLA.xlsx already exists and is properly formatted")
-                print("Skipping data processing, proceeding to integrity check...")
-                
-                # Perform data integrity check on existing file
-                print("\n" + "="*60)
-                print("FINAL DATA INTEGRITY CHECK")
-                print("="*60)
-                
-                success = perform_data_integrity_check(df_existing)
-                
-                if success:
-                    print("\n🎉 BLA Overall Strategy completed successfully!")
-                    print(f"Final file: {output_file}")
-                    print(f"Shape: {df_existing.shape}")
-                else:
-                    print("\n⚠️  BLA Overall Strategy completed with issues!")
-                    print("Please review the issues above before proceeding.")
-                
-                print(f"\nCompleted at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                return success
+                print("⚠️  Final BLA.xlsx already exists but needs reprocessing for code mapping")
+                print("Proceeding with full reprocessing...")
+                # Remove existing file to force reprocessing
+                os.remove(output_file)
+                print("✓ Removed existing file for reprocessing")
                 
         except Exception as e:
             print(f"⚠️  Error reading existing file: {str(e)}")
