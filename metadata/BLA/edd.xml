@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Excel-Data-Description Dataflow="ELS-BLA" Agency="BOG" Version="1.0">
+    <Coord-Mapping Name="ELSBLA_V1" ExcludeNulls="false" IsActive="true">
+
+        <!-- ======= Sheet & Cell Range ======= -->
+        <Worksheets>
+            <!-- Put your BLA data here; rows 0-3 are header rows, data starts at row 4 -->
+            <Worksheet Name="Sheet1"/>
+        </Worksheets>
+
+        <!-- Top-left of the data block (first data row starts at row 4, after header rows 0-3).
+             Row 0: UNIT (N, A, V for Number, Area, Volume)
+             Row 1: DWELLINGS (_Z, D, I for All, New Dwellings, Improvements)
+             Row 2: URBAN STATUS (_Z, ALL, URBAN, SEMI_URBAN, RURAL)
+             Row 3: MEASURE (NR, M2, M3 for Number, Square Meters, Cubic Meters)
+             Row 4+: Actual data with dimensions in columns A-E and values in columns F-T -->
+        <Top-Left  Coord="F6"/>
+        <Bottom-Right Coord="U20216"/>
+
+        <!-- ======= DIMENSION MAPPINGS ======= -->
+        <!-- Row-wise dimensions (per series), using columns A-E -->
+        <Dimension Code="TIME_PERIOD"     Coord="Cell(Row, 2)"/>
+
+        <!-- A: FREQ -->
+        <Dimension Code="FREQ"            Value="Cell(Row, 1).Value"/>
+        <!-- B: TIME_PERIOD -->
+        <!-- C: REGION -->
+        <Dimension Code="REGION"          Value="Cell(Row, 3).Value"/>
+        <!-- D: REGIONAL_UNIT -->
+        <Dimension Code="REGIONAL_UNIT"   Value="Cell(Row, 4).Value"/>
+        <!-- E: CATEGORY -->
+        <Dimension Code="CATEGORY"        Value="Cell(Row, 5).Value"/>
+
+        <!-- Header row-based dimensions (from rows 0-3) -->
+        <!-- UNIT_MEASURE from row 0 -->
+        <Dimension Code="UNIT_MEASURE"    Value="Cell(2, Column).Value"/>
+        <!-- DWELLINGS from row 1 -->
+        <Dimension Code="DWELLINGS"       Value="Cell(3, Column).Value"/>
+        <!-- URBAN_STATUS from row 2 -->
+        <Dimension Code="URBAN_STATUS"    Value="Cell(4, Column).Value"/>
+        <!-- MEASUREMENT from row 3 (ESTAT UNIT 64.0 codelist) -->
+        <Dimension Code="MEASUREMENT"     Value="Cell(5, Column).Value"/>
+
+        <!-- Notes:
+             - Valid values (per BLA concept scheme):
+               FREQ: A (Annual), M (Monthly)
+               TIME_PERIOD: 2007, 2007-M01, 2007-M02, ... (YYYY or YYYY-MM format)
+               REGION: _Z, EL, EL30, EL11, EL12, etc. (NUTS 2 level)
+               REGIONAL_UNIT: _Z, RODOPI, DRAMA, THESSALONIKI, etc. (NUTS 3 level)
+               CATEGORY: _Z, UNSPECIFIED, MANUFACTURING, AGRICULTURAL, etc.
+               UNIT_MEASURE: _Z, N (Number), A (Area), V (Volume)
+               DWELLINGS: _Z, D (New Dwellings), I (Improvements)
+               URBAN_STATUS: _Z, ALL, URBAN, SEMI_URBAN, RURAL
+               MEASUREMENT: _Z, NR (Number), M2 (Square Meters), M3 (Cubic Meters)
+             - Header rows (0-3) provide dimension values for each column
+             - Data rows (4+) contain the actual observations
+             - The intersection cells contain OBS_VALUE (numeric)
+             - REGION values should match CL_REGIONS codelist
+             - REGIONAL_UNIT values should match CL_REGIONAL_UNITS codelist
+             - CATEGORY values should match CL_BUILDING_CATEGORIES codelist
+             - UNIT_MEASURE values should match CL_UNIT_MEASURE codelist
+             - DWELLINGS values should match CL_DWELLINGS codelist
+             - URBAN_STATUS values should match CL_URBAN_STATUS codelist
+             - MEASUREMENT values should match ESTAT UNIT 64.0 codelist -->
+
+    </Coord-Mapping>
+</Excel-Data-Description>
