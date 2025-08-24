@@ -1,0 +1,70 @@
+<!-- SDMX-XML 2.1 – Dataflow BLA (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========= HEADER ========= -->
+    <message:Header>
+        <message:ID>IDBLA_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========= STRUCTURE ========= -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="DF_BLA_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+                
+                <common:Name xml:lang="en">Building and Construction Activity (BLA) – Dataflow</common:Name>
+                <common:Description xml:lang="en">Dataflow definition for ELSTAT BLA data with essential dimensions for building permits and construction statistics.</common:Description>
+
+                <!-- ===== STRUCTURE REFERENCE ===== -->
+                <structure:Structure>
+                    <Ref id="DSD_BLA_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+                <!-- ===== ANNOTATIONS ===== -->
+                <common:Annotations>
+                    
+                    <!-- Layout suggestion -->
+                    <common:Annotation id="LAYOUT_SUGGESTION" type="LAYOUT">
+                        <common:AnnotationTitle xml:lang="en">Layout Suggestion</common:AnnotationTitle>
+                        <common:AnnotationText xml:lang="en">Recommended layout: TIME_PERIOD,REGION,CATEGORY for optimal data browsing and analysis.</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Default values -->
+                    <common:Annotation id="DEFAULT_VALUES" type="DEFAULT">
+                        <common:AnnotationTitle xml:lang="en">Default Values</common:AnnotationTitle>
+                        <common:AnnotationText xml:lang="en">Default dimensions: FREQ=M (Monthly), REGION=EL (Greece total), UNIT_MEASURE=N (Number), DWELLINGS=_Z (All types), URBAN_STATUS=_Z (All areas).</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Hidden fields -->
+                    <common:Annotation id="HIDDEN_FIELDS" type="VISIBILITY">
+                        <common:AnnotationTitle xml:lang="en">Hidden Fields</common:AnnotationTitle>
+                        <common:AnnotationText xml:lang="en">Optional fields that can be hidden: OBS_STATUS, CONF_STATUS, UNIT_MULT, DECIMALS.</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation id="EXTERNAL_RESOURCES" type="RESOURCE">
+                        <common:AnnotationTitle xml:lang="en">External Resources</common:AnnotationTitle>
+                        <common:AnnotationText xml:lang="en">Related documentation: ELSTAT BLA methodology, NUTS classification, ESTAT UNIT codelist 64.0.</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Data quality -->
+                    <common:Annotation id="DATA_QUALITY" type="QUALITY">
+                        <common:AnnotationTitle xml:lang="en">Data Quality</common:AnnotationTitle>
+                        <common:AnnotationText xml:lang="en">Data quality indicators: Completeness, Accuracy, Timeliness, Consistency across regional and categorical breakdowns.</common:AnnotationText>
+                    </common:Annotation>
+
+                </common:Annotations>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

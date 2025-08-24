@@ -93,6 +93,18 @@
                  </structure:Concept>
 
                  <!-- 7 -->
+                 <structure:Concept id="MEASUREMENT">
+                     <common:Name xml:lang="en">Measurement</common:Name>
+                     <common:Description xml:lang="en">Measurement classification supported by ESTAT UNIT 64.0 codelist.</common:Description>
+                     <structure:CoreRepresentation>
+                         <structure:Enumeration>
+                             <Ref id="UNIT" version="64.0" agencyID="ESTAT"
+                                  package="codelist" class="Codelist"/>
+                         </structure:Enumeration>
+                     </structure:CoreRepresentation>
+                 </structure:Concept>
+
+                 <!-- 8 -->
                  <structure:Concept id="DWELLINGS">
                      <common:Name xml:lang="en">Dwelling types</common:Name>
                      <common:Description xml:lang="en">Classification of dwelling types (New Dwellings, Improvements).</common:Description>
@@ -104,7 +116,7 @@
                      </structure:CoreRepresentation>
                  </structure:Concept>
 
-                 <!-- 8 -->
+                 <!-- 9 -->
                  <structure:Concept id="URBAN_STATUS">
                      <common:Name xml:lang="en">Urban status</common:Name>
                      <common:Description xml:lang="en">Urban status classification (Urban, Semi-Urban, Rural, All Areas).</common:Description>
@@ -116,7 +128,7 @@
                      </structure:CoreRepresentation>
                  </structure:Concept>
 
-                 <!-- 9 -->
+                 <!-- 10 -->
                  <structure:Concept id="OBS_VALUE">
                      <common:Name xml:lang="en">Observation value</common:Name>
                      <common:Description xml:lang="en">BLA observation value (counts, areas, volumes).</common:Description>
