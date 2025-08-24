@@ -21,17 +21,17 @@
                 
                 <!-- Regional categories -->
                 <structure:Code id="KENTRIKI_DYTIKI_MAKEDONIA">
-                    <common:Name>Kentriki & Dytiki Makedonia</common:Name>
+                    <common:Name>Kentriki and Dytiki Makedonia</common:Name>
                     <common:Description>Central and Western Macedonia region according to 1981 classification.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="ANATOLIKI_STEREA_NISSIA">
-                    <common:Name>Anatoliki Sterea & Nissia</common:Name>
+                    <common:Name>Anatoliki Sterea and Nissia</common:Name>
                     <common:Description>Eastern Central Greece and Islands region according to 1981 classification.</common:Description>
                 </structure:Code>
                 
                 <structure:Code id="PELOPONNISOS_DYTIKI_STEREA">
-                    <common:Name>Peloponnisos & Dytiki Sterea</common:Name>
+                    <common:Name>Peloponnisos and Dytiki Sterea</common:Name>
                     <common:Description>Peloponnese and Western Central Greece region according to 1981 classification.</common:Description>
                 </structure:Code>
                 

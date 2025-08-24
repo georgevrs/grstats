@@ -1,0 +1,604 @@
+<!-- SDMX-XML 2.1 – DSD LFS (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========= HEADER ========= -->
+    <message:Header>
+        <message:ID>IDLFS_DSD</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========= STRUCTURE ========= -->
+    <message:Structures>
+        <structure:DataStructures>
+
+            <structure:DataStructure id="DSD_LFS_ELSTAT" agencyID="BOG" version="1.0" isFinal="true">
+
+                <common:Name xml:lang="en">Labour Force Survey (LFS) – DSD</common:Name>
+                <common:Description xml:lang="en">Data Structure Definition for ELSTAT LFS data with comprehensive dimensions for employment, unemployment, education, demographics, and regional classifications.</common:Description>
+
+                <!-- ===== COMPONENTS ===== -->
+                <structure:DataStructureComponents>
+
+                    <!-- === DIMENSIONS (ordered) === -->
+                    <structure:DimensionList id="DimensionDescriptor">
+
+                        <!-- 1 - Frequency -->
+                        <structure:Dimension id="FREQ" position="1">
+                            <structure:ConceptIdentity>
+                                <Ref id="FREQ" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_FREQ" version="2.1" agencyID="SDMX"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="1"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 2 - Time Period -->
+                        <structure:TimeDimension id="TIME_PERIOD" position="2">
+                            <structure:ConceptIdentity>
+                                <Ref id="TIME_PERIOD" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="ObservationalTimePeriod"/>
+                            </structure:LocalRepresentation>
+                        </structure:TimeDimension>
+
+                        <!-- 3 - Region -->
+                        <structure:Dimension id="REGION" position="3">
+                            <structure:ConceptIdentity>
+                                <Ref id="REGION" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_REGIONS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="6"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 4 - Region 1981 -->
+                        <structure:Dimension id="REGION_1981" position="4">
+                            <structure:ConceptIdentity>
+                                <Ref id="REGION_1981" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_REGION_1981" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 5 - Urbanization -->
+                        <structure:Dimension id="URBANIZATION" position="5">
+                            <structure:ConceptIdentity>
+                                <Ref id="URBANIZATION" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_URBANIZATION" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 6 - Sex -->
+                        <structure:Dimension id="SEX" position="6">
+                            <structure:ConceptIdentity>
+                                <Ref id="SEX" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="SEX" version="1.13" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="1" maxLength="10"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 7 - Age Group -->
+                        <structure:Dimension id="AGE_GROUP" position="7">
+                            <structure:ConceptIdentity>
+                                <Ref id="AGE_GROUP" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="AGE" version="11.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="10"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 8 - Nationality -->
+                        <structure:Dimension id="NATIONALITY" position="8">
+                            <structure:ConceptIdentity>
+                                <Ref id="NATIONALITY" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_NATIONALITY" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 9 - Marital Status -->
+                        <structure:Dimension id="MARITAL_STATUS" position="9">
+                            <structure:ConceptIdentity>
+                                <Ref id="MARITAL_STATUS" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_MARITAL_STATUS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 10 - Education Level Main -->
+                        <structure:Dimension id="EDUCATION_LEVEL_MAIN" position="10">
+                            <structure:ConceptIdentity>
+                                <Ref id="EDUCATION_LEVEL_MAIN" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_EDUCATION" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="10"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 11 - Education Level Sub -->
+                        <structure:Dimension id="EDUCATION_LEVEL_SUB" position="11">
+                            <structure:ConceptIdentity>
+                                <Ref id="EDUCATION_LEVEL_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_EDUCATION_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 12 - Formal/Informal Education -->
+                        <structure:Dimension id="FORMAL_INFORMAL_EDUCATION" position="12">
+                            <structure:ConceptIdentity>
+                                <Ref id="FORMAL_INFORMAL_EDUCATION" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_FORMAL_INFORMAL_EDUCATION" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 13 - NEET Category -->
+                        <structure:Dimension id="NEET_CATEGORY" position="13">
+                            <structure:ConceptIdentity>
+                                <Ref id="NEET_CATEGORY" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_NEET_CATEGORY" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 14 - Labour Force Status -->
+                        <structure:Dimension id="LABOUR_FORCE_STATUS" position="14">
+                            <structure:ConceptIdentity>
+                                <Ref id="LABOUR_FORCE_STATUS" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_LABOUR_FORCE_STATUS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 15 - Labour Force Subcategory -->
+                        <structure:Dimension id="LABOUR_FORCE_SUBCATEGORY" position="15">
+                            <structure:ConceptIdentity>
+                                <Ref id="LABOUR_FORCE_SUBCATEGORY" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_LABOUR_FORCE_SUBCATEGORY" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 16 - Main Employment Status -->
+                        <structure:Dimension id="MAIN_EMPLOYMENT_STATUS" position="16">
+                            <structure:ConceptIdentity>
+                                <Ref id="MAIN_EMPLOYMENT_STATUS" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_MAIN_EMPLOYMENT_STATUS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 17 - Sub Employment Status -->
+                        <structure:Dimension id="SUB_EMPLOYMENT_STATUS" position="17">
+                            <structure:ConceptIdentity>
+                                <Ref id="SUB_EMPLOYMENT_STATUS" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_SUB_EMPLOYMENT_STATUS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 18 - Employment Distinction -->
+                        <structure:Dimension id="EMPLOYMENT_DISTINCTION" position="18">
+                            <structure:ConceptIdentity>
+                                <Ref id="EMPLOYMENT_DISTINCTION" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_EMPLOYMENT_DISTINCTION" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 19 - Economic Sector -->
+                        <structure:Dimension id="SECTOR" position="19">
+                            <structure:ConceptIdentity>
+                                <Ref id="SECTOR" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_SECTOR" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="100"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 20 - Economic Sector Sub -->
+                        <structure:Dimension id="SECTOR_SUB" position="20">
+                            <structure:ConceptIdentity>
+                                <Ref id="SECTOR_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_SECTOR_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 21 - Type of Occupation -->
+                        <structure:Dimension id="TYPE_OCCUPATION" position="21">
+                            <structure:ConceptIdentity>
+                                <Ref id="TYPE_OCCUPATION" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_TYPE_OCCUPATION" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="100"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 22 - Business Ownership -->
+                        <structure:Dimension id="BO" position="22">
+                            <structure:ConceptIdentity>
+                                <Ref id="BO" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_BUSINESS_OWNERSHIP" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 23 - Number of Persons in Local Unit -->
+                        <structure:Dimension id="NR_PERSONS_LOCAL_UNIT" position="23">
+                            <structure:ConceptIdentity>
+                                <Ref id="NR_PERSONS_LOCAL_UNIT" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_NR_PERSONS_LOCAL_UNIT" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 24 - Hours Actually Work -->
+                        <structure:Dimension id="HOURS_ACTUALLY_WORK" position="24">
+                            <structure:ConceptIdentity>
+                                <Ref id="HOURS_ACTUALLY_WORK" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_HOURS_ACTUALLY_WORK" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 25 - Hours Actually Work Sub -->
+                        <structure:Dimension id="HOURS_ACTUALLY_WORK_SUB" position="25">
+                            <structure:ConceptIdentity>
+                                <Ref id="HOURS_ACTUALLY_WORK_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_HOURS_ACTUALLY_WORK_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="20"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 26 - Hours Usual Work -->
+                        <structure:Dimension id="HOURS_USUAL_WORK" position="26">
+                            <structure:ConceptIdentity>
+                                <Ref id="HOURS_USUAL_WORK" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_HOURS_USUAL_WORK" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 27 - Hours Usual Work Sub -->
+                        <structure:Dimension id="HOURS_USUAL_WORK_SUB" position="27">
+                            <structure:ConceptIdentity>
+                                <Ref id="HOURS_USUAL_WORK_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_HOURS_USUAL_WORK_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 28 - Atypical Work -->
+                        <structure:Dimension id="ATYPICAL_WORK" position="28">
+                            <structure:ConceptIdentity>
+                                <Ref id="ATYPICAL_WORK" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_ATYPICAL_WORK" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 29 - Atypical Work Sub -->
+                        <structure:Dimension id="ATYPICAL_WORK_SUB" position="29">
+                            <structure:ConceptIdentity>
+                                <Ref id="ATYPICAL_WORK_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_ATYPICAL_WORK_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="100"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 30 - Undermployed Part-time Work Sub -->
+                        <structure:Dimension id="UNDERMP_PT_WORK_SUB" position="30">
+                            <structure:ConceptIdentity>
+                                <Ref id="UNDERMP_PT_WORK_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_UNDERMP_PT_WORK_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="10"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 31 - Work for More Hours -->
+                        <structure:Dimension id="WORK_FOR_MORE_HOURS" position="31">
+                            <structure:ConceptIdentity>
+                                <Ref id="WORK_FOR_MORE_HOURS" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_WORK_FOR_MORE_HOURS" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 32 - Looking for Another Job -->
+                        <structure:Dimension id="LOOKING_FOR_ANOTHER_JOB" position="32">
+                            <structure:ConceptIdentity>
+                                <Ref id="LOOKING_FOR_ANOTHER_JOB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_LOOKING_FOR_ANOTHER_JOB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 33 - Permanency for Employees -->
+                        <structure:Dimension id="PERMANENCY_FOR_EMPLOYEES" position="33">
+                            <structure:ConceptIdentity>
+                                <Ref id="PERMANENCY_FOR_EMPLOYEES" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_PERMANENCY_FOR_EMPLOYEES" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 34 - Permanency for Employees Sub -->
+                        <structure:Dimension id="PERMANENCY_FOR_EMPLOYEES_SUB" position="34">
+                            <structure:ConceptIdentity>
+                                <Ref id="PERMANENCY_FOR_EMPLOYEES_SUB" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_PERMANENCY_FOR_EMPLOYEES_SUB" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="30"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 35 - Reasons for Part-time Work -->
+                        <structure:Dimension id="REASONS_PT" position="35">
+                            <structure:ConceptIdentity>
+                                <Ref id="REASONS_PT" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_REASONS_PT" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 36 - Reasons for Temporary Work -->
+                        <structure:Dimension id="REASONS_TEMP" position="36">
+                            <structure:ConceptIdentity>
+                                <Ref id="REASONS_TEMP" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="CL_REASONS_TEMP" version="1.0" agencyID="BOG"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                        <!-- 37 - Unit of Measure -->
+                        <structure:Dimension id="UNIT_OF_MEASURE" position="37">
+                            <structure:ConceptIdentity>
+                                <Ref id="UNIT_OF_MEASURE" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>
+                                    <Ref id="UNIT" version="64.0" agencyID="ESTAT"
+                                         package="codelist" class="Codelist"/>
+                                </structure:Enumeration>
+                                <structure:EnumerationFormat textType="String" minLength="2" maxLength="10"/>
+                            </structure:LocalRepresentation>
+                        </structure:Dimension>
+
+                    </structure:DimensionList>
+
+                    <!-- === MEASURE === -->
+                    <structure:MeasureList id="MeasureDescriptor">
+                        <structure:PrimaryMeasure id="OBS_VALUE">
+                            <structure:ConceptIdentity>
+                                <Ref id="OBS_VALUE" maintainableParentID="CS_LFS_ELSTAT" agencyID="BOG"
+                                     package="conceptscheme" class="Concept"/>
+                            </structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="String"/>
+                            </structure:LocalRepresentation>
+                        </structure:PrimaryMeasure>
+                    </structure:MeasureList>
+
+                    <!-- No AttributeList: All concepts are modelled as dimensions -->
+
+                </structure:DataStructureComponents>
+            </structure:DataStructure>
+
+        </structure:DataStructures>
+    </message:Structures>
+</message:Structure>
