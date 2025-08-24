@@ -21,13 +21,13 @@
 
         <!-- Row-wise dimensions (per series), using columns A–E -->
         <!-- A -->
-        <Dimension Code="FREQ"           Coord="Cell(Row, 2).Value"/>
+        <Dimension Code="FREQ"           Value="Cell(Row, 2).Value"/>
         <!-- B -->
         <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
         <!-- C -->
-        <Dimension Code="MCI_SERIES"      Coord="Cell(Row, 3).Value"/>
+        <Dimension Code="MCI_SERIES"      Value="Cell(Row, 3).Value"/>
         <!-- D -->
-        <Dimension Code="ICP_SUFFIX"      Coord="Cell(Row, 4).Value"/>
+        <Dimension Code="ICP_SUFFIX"      Value="Cell(Row, 4).Value"/>
 
         <!-- Notes:
              - Valid values (per MCI concept scheme):
