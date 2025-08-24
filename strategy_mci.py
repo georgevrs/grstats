@@ -112,7 +112,7 @@ def normalize_period_and_freq(s: pd.Series):
         if t in month_map:
             # For MCI data, we'll use a placeholder year since we don't have it in the column
             # The actual year should come from the filename or be inferred
-            return (f"2000-{month_map[t]}", "M")
+            return (f"2000-M{month_map[t]}", "M")
 
         # YYYY-MM or YYYY-M
         m = re.fullmatch(r"(\d{4})[-/\.](\d{1,2})", t)
@@ -618,9 +618,9 @@ def excel_to_tidy(path: Path) -> pd.DataFrame:
                         year = str(int(row['Year']))
                         month = str(row['Month']).upper()
                         if month in month_map:
-                            time_periods.append(f"{year}-{month_map[month]}")
+                            time_periods.append(f"{year}-M{month_map[month]}")
                         else:
-                            time_periods.append(f"{year}-01")  # fallback
+                            time_periods.append(f"{year}-M01")  # fallback
                     
                     # Create long format
                     long_df = pd.DataFrame({
@@ -709,7 +709,7 @@ def excel_to_tidy(path: Path) -> pd.DataFrame:
                                             year = "20" + year_part
                                         else:
                                             year = year_part
-                                        result = f"{year}-{month_map[month_name]}"
+                                        result = f"{year}-M{month_map[month_name]}"
                                         time_periods.append(result)
                                         freqs.append('M')  # Monthly frequency
                                     else:
@@ -972,6 +972,84 @@ def main():
         print("No duplicates found - all rows are unique based on the deduplication columns")
     
     print(f"\nFinal shape after deduplication: {unified.shape}")
+
+    # Check for missing values in freq column
+    print("\n=== FREQUENCY COLUMN ANALYSIS ===")
+    
+    if 'freq' in unified.columns:
+        # Count missing values
+        missing_freq_count = unified['freq'].isna().sum()
+        total_rows = len(unified)
+        
+        print(f"Frequency column analysis:")
+        print(f"  - Total rows: {total_rows:,}")
+        print(f"  - Missing freq values: {missing_freq_count:,}")
+        print(f"  - Missing percentage: {(missing_freq_count/total_rows)*100:.2f}%")
+        
+        if missing_freq_count > 0:
+            print(f"\n⚠ WARNING: Found {missing_freq_count} rows with missing frequency values!")
+            
+            # Show examples of rows with missing freq
+            missing_freq_rows = unified[unified['freq'].isna()]
+            print(f"\nExample rows with missing freq (showing first 10):")
+            print(missing_freq_rows.head(10).to_string())
+            
+            # Show distribution of non-missing freq values
+            non_missing_freq = unified[unified['freq'].notna()]
+            if len(non_missing_freq) > 0:
+                print(f"\nFrequency distribution (non-missing values):")
+                freq_dist = non_missing_freq['freq'].value_counts().sort_index()
+                for freq, count in freq_dist.items():
+                    print(f"  - {freq}: {count:,} rows")
+            
+            # Show which columns have values when freq is missing
+            print(f"\nColumns with values when freq is missing:")
+            for col in unified.columns:
+                if col != 'freq':
+                    non_null_count = missing_freq_rows[col].notna().sum()
+                    if non_null_count > 0:
+                        print(f"  - {col}: {non_null_count:,} non-null values")
+            
+            # Attempt to infer missing freq values based on time_period format
+            print(f"\nAttempting to infer missing freq values...")
+            inferred_count = 0
+            
+            for idx, row in missing_freq_rows.iterrows():
+                time_period = row.get('time_period')
+                if pd.notna(time_period):
+                    time_str = str(time_period).strip()
+                    
+                    # Infer frequency based on time_period format
+                    if re.match(r'^\d{4}-M\d{2}$', time_str):  # YYYY-MXY format
+                        unified.loc[idx, 'freq'] = 'M'  # Monthly
+                        inferred_count += 1
+                    elif re.match(r'^\d{4}-Q[1-4]$', time_str):  # YYYY-Q# format
+                        unified.loc[idx, 'freq'] = 'Q'  # Quarterly
+                        inferred_count += 1
+                    elif re.match(r'^\d{4}$', time_str):  # YYYY format
+                        unified.loc[idx, 'freq'] = 'A'  # Annual
+                        inferred_count += 1
+                    elif re.match(r'^\d{4}M\d{2}$', time_str):  # YYYYMM format
+                        unified.loc[idx, 'freq'] = 'M'  # Monthly
+                        inferred_count += 1
+            
+            if inferred_count > 0:
+                print(f"  ✓ Successfully inferred freq for {inferred_count:,} rows")
+                # Re-check missing values after inference
+                remaining_missing = unified['freq'].isna().sum()
+                print(f"  - Remaining missing freq values: {remaining_missing:,}")
+            else:
+                print(f"  ⚠ Could not infer freq values from time_period format")
+        else:
+            print(f"  ✓ No missing frequency values found")
+            
+        # Show final frequency distribution
+        print(f"\nFinal frequency distribution:")
+        final_freq_dist = unified['freq'].value_counts().sort_index()
+        for freq, count in final_freq_dist.items():
+            print(f"  - {freq}: {count:,} rows")
+    else:
+        print("Frequency column not found in the dataset")
 
     # Persist (Excel only, do not save parquet)
     try:
