@@ -118,24 +118,24 @@ def normalize_period_and_freq(s: pd.Series):
         m = re.fullmatch(r"(\d{4})[-/\.](\d{1,2})", t)
         if m:
             y, mo = m.group(1), m.group(2).zfill(2)
-            return (f"{y}-{mo}", "M")
+            return (f"{y}-M{mo}", "M")
 
         # YYYYMM
         m = re.fullmatch(r"(\d{4})(\d{2})", t)
         if m:
             y, mo = m.group(1), m.group(2)
-            return (f"{y}-{mo}", "M")
+            return (f"{y}-M{mo}", "M")
 
         # YYYY Mmm or Mon-YYYY
         try:
             dt = pd.to_datetime(t, errors="raise", format="%b-%Y")
-            return (f"{dt.year}-{str(dt.month).zfill(2)}", "M")
+            return (f"{dt.year}-M{str(dt.month).zfill(2)}", "M")
         except Exception:
             pass
         try:
             dt = pd.to_datetime(t, errors="raise")
-            # If it parsed to a date, emit monthly YYYY-MM
-            return (f"{dt.year}-{str(dt.month).zfill(2)}", "M")
+            # If it parsed to a date, emit monthly YYYY-MXY
+            return (f"{dt.year}-M{str(dt.month).zfill(2)}", "M")
         except Exception:
             pass
 
@@ -154,7 +154,7 @@ def normalize_period_and_freq(s: pd.Series):
         m = re.fullmatch(r"(\d{4})M(\d{2})", t, flags=re.IGNORECASE)
         if m:
             y, mo = m.group(1), m.group(2)
-            return (f"{y}-{mo}", "M")
+            return (f"{y}-M{mo}", "M")
 
         # Fallback: return raw
         return (t, None)
@@ -381,27 +381,27 @@ def clean_time_periods(df: pd.DataFrame) -> pd.DataFrame:
             
             if prev_year:
                 month = time_str.split('-')[1]
-                cleaned_periods.append(f"{prev_year}-{month}")
+                cleaned_periods.append(f"{prev_year}-M{month}")
                 cleaned_freqs.append('M')  # Monthly frequency
             else:
                 # Fallback: assume 2020s decade for "20-XX" format
                 month = time_str.split('-')[1]
                 year_part = time_str.split('-')[0]
                 if year_part == '20':
-                    cleaned_periods.append(f"2020-{month}")
+                    cleaned_periods.append(f"2020-M{month}")
                 elif year_part == '21':
-                    cleaned_periods.append(f"2021-{month}")
+                    cleaned_periods.append(f"2021-M{month}")
                 elif year_part == '22':
-                    cleaned_periods.append(f"2022-{month}")
+                    cleaned_periods.append(f"2022-M{month}")
                 elif year_part == '23':
-                    cleaned_periods.append(f"2023-{month}")
+                    cleaned_periods.append(f"2023-M{month}")
                 elif year_part == '24':
-                    cleaned_periods.append(f"2024-{month}")
+                    cleaned_periods.append(f"2024-M{month}")
                 elif year_part == '25':
-                    cleaned_periods.append(f"2025-{month}")
+                    cleaned_periods.append(f"2025-M{month}")
                 else:
                     # Generic fallback
-                    cleaned_periods.append(f"202{year_part}-{month}")
+                    cleaned_periods.append(f"202{year_part}-M{month}")
                 cleaned_freqs.append('M')
         elif re.match(r'^\d{4}$', time_str):
             # This is just a year like "2000", "2001", etc.
