@@ -927,6 +927,52 @@ def main():
     print(f"Final columns: {unified.columns.tolist()}")
     print(f"Final shape: {unified.shape}")
 
+    # Deduplicate rows based on all remaining columns except 'value'
+    print("\n=== DEDUPLICATION ANALYSIS ===")
+    
+    # Get the columns that will be used for deduplication (all except 'value')
+    dedup_columns = [col for col in unified.columns if col != 'value']
+    print(f"Columns used for deduplication: {dedup_columns}")
+    
+    # Check for duplicates before deduplication
+    initial_rows = len(unified)
+    duplicate_mask = unified.duplicated(subset=dedup_columns, keep=False)
+    duplicate_count = duplicate_mask.sum()
+    
+    if duplicate_count > 0:
+        print(f"Found {duplicate_count} duplicate rows (same combination of columns except 'value')")
+        
+        # Show some examples of duplicates
+        duplicate_examples = unified[duplicate_mask].head(10)
+        print("\nExample duplicate rows:")
+        print(duplicate_examples[dedup_columns + ['value']].to_string())
+        
+        # Show duplicate counts by combination
+        duplicate_groups = unified[duplicate_mask].groupby(dedup_columns).size().sort_values(ascending=False)
+        print(f"\nDuplicate combinations (showing top 10):")
+        print(duplicate_groups.head(10).to_string())
+        
+        # Perform deduplication - keep first occurrence
+        unified = unified.drop_duplicates(subset=dedup_columns, keep='first')
+        final_rows = len(unified)
+        removed_count = initial_rows - final_rows
+        
+        print(f"\nDeduplication completed:")
+        print(f"  - Initial rows: {initial_rows:,}")
+        print(f"  - Final rows: {final_rows:,}")
+        print(f"  - Removed duplicates: {removed_count:,}")
+        
+        # Check if there are still duplicates after deduplication
+        remaining_duplicates = unified.duplicated(subset=dedup_columns, keep=False).sum()
+        if remaining_duplicates > 0:
+            print(f"  - WARNING: {remaining_duplicates} duplicates still remain after deduplication!")
+        else:
+            print(f"  - ✓ All duplicates successfully removed")
+    else:
+        print("No duplicates found - all rows are unique based on the deduplication columns")
+    
+    print(f"\nFinal shape after deduplication: {unified.shape}")
+
     # Persist (Excel only, do not save parquet)
     try:
         # Excel for hand-off
