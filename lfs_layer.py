@@ -3,6 +3,24 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
+# Import all masking functions once at the top
+from lfs_utils.masking_config import (
+    apply_region_masking, apply_education_masking, apply_education_sub_masking,
+    apply_formal_informal_education_masking, apply_neet_category_masking,
+    apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking,
+    apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking,
+    apply_work_for_more_hours_masking, apply_looking_for_another_job_masking,
+    apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking,
+    apply_bo_masking, apply_sector_masking, apply_sector_sub_masking,
+    apply_type_occupation_masking, apply_permanency_for_employees_masking,
+    apply_reasons_pt_masking, apply_permanency_for_employees_sub_masking,
+    apply_reasons_temp_masking, apply_hours_actually_work_masking,
+    apply_hours_actually_work_sub_masking, apply_hours_usual_work_masking,
+    apply_hours_usual_work_sub_masking, apply_atypical_work_masking,
+    apply_atypical_work_sub_masking, apply_nationality_masking,
+    apply_region_1981_masking, apply_urbanization_masking,
+    apply_labour_force_status_masking, apply_labour_force_subcategory_masking, apply_marital_status_masking
+)
 
 def clean_dataframe(df, col_to_check="Value", invalid_value="_Z"):
     """
@@ -40,6 +58,107 @@ def clean_dataframe(df, col_to_check="Value", invalid_value="_Z"):
     print(f"Dropped invalid rows ({invalid_value} in {col_to_check}): {before - after}")
     
     return df
+
+def apply_comprehensive_masking(df):
+    """
+    Apply all available masking functions to the dataset in the correct order
+    and then remove any duplicate rows that may have been created
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with all applicable columns masked and duplicates removed
+    """
+    print("\n" + "="*60)
+    print("APPLYING COMPREHENSIVE MASKING TO ALL COLUMNS")
+    print("="*60)
+    
+    # Define masking configuration: (column_name, masking_function, display_name)
+    masking_config = [
+        ('Region', apply_region_masking, 'Region'),
+        ('Education_Level_Main', apply_education_masking, 'Education Level Main'),
+        ('Education_Level_Sub', apply_education_sub_masking, 'Education Level Sub'),
+        ('Formal_Informal_Education', apply_formal_informal_education_masking, 'Formal/Informal Education'),
+        ('NEET_Category', apply_neet_category_masking, 'NEET Category'),
+        ('Sex', apply_sex_masking, 'Sex'),
+        ('Age_Group', apply_age_group_masking, 'Age Group'),
+        ('Main_Employment_Status', apply_main_employment_status_masking, 'Main Employment Status'),
+        ('Sub_Employment_Status', apply_sub_employment_status_masking, 'Sub Employment Status'),
+        ('UNDERMP_PT_WORK_SUB', apply_undermp_pt_work_sub_masking, 'Underemployment PT Work Sub'),
+        ('WORK_FOR_MORE_HOURS', apply_work_for_more_hours_masking, 'Work for More Hours'),
+        ('LOOKING_FOR_ANOTHER_JOB', apply_looking_for_another_job_masking, 'Looking for Another Job'),
+        ('Unit_of_Measure', apply_unit_of_measure_masking, 'Unit of Measure'),
+        ('NR_PERSONS_LOCAL_UNIT', apply_nr_persons_local_unit_masking, 'Number of Persons Local Unit'),
+        ('BO', apply_bo_masking, 'Business Ownership'),
+        ('SECTOR', apply_sector_masking, 'Sector'),
+        ('SECTOR_SUB', apply_sector_sub_masking, 'Sector Sub'),
+        ('TYPE_OCCUPATION', apply_type_occupation_masking, 'Type of Occupation'),
+        ('PERMANENCY_FOR_EMPLOYEES', apply_permanency_for_employees_masking, 'Permanency for Employees'),
+        ('REASONS_PT', apply_reasons_pt_masking, 'Reasons for Part-Time Work'),
+        ('PERMANENCY_FOR_EMPLOYEES_SUB', apply_permanency_for_employees_sub_masking, 'Permanency for Employees Sub-Category'),
+        ('REASONS_TEMP', apply_reasons_temp_masking, 'Reasons for Temporary Work'),
+        ('HOURS_ACTUALLY_WORK', apply_hours_actually_work_masking, 'Hours Actually Worked'),
+        ('HOURS_ACTUALLY_WORK_SUB', apply_hours_actually_work_sub_masking, 'Hours Actually Worked Sub-Category'),
+        ('HOURS_USUAL_WORK', apply_hours_usual_work_masking, 'Hours Usually Worked'),
+        ('HOURS_USUAL_WORK_SUB', apply_hours_usual_work_sub_masking, 'Hours Usually Worked Sub-Category'),
+        ('ATYPICAL_WORK', apply_atypical_work_masking, 'Atypical Work'),
+        ('ATYPICAL_WORK_SUB', apply_atypical_work_sub_masking, 'Atypical Work Sub-Category'),
+        ('Nationality', apply_nationality_masking, 'Nationality'),
+        ('Region_1981', apply_region_1981_masking, '1981 Region Classification'),
+        ('Urbanization', apply_urbanization_masking, 'Urbanization'),
+        ('Marital_Status', apply_marital_status_masking, 'Marital Status'),
+        ('Labour_Force_Status', apply_labour_force_status_masking, 'Labour Force Status'),
+        ('Labour_Force_Subcategory', apply_labour_force_subcategory_masking, 'Labour Force Subcategory')
+    ]
+    
+    masked_df = df.copy()
+    total_masked = 0
+    
+    for column_name, masking_function, display_name in masking_config:
+        if column_name in masked_df.columns:
+            print(f"\nApplying masking to {display_name} column...")
+            try:
+                masked_df = masking_function(masked_df, column_name)
+                print(f"✓ Successfully masked {display_name}")
+            except Exception as e:
+                print(f"✗ Error masking {display_name}: {str(e)}")
+        else:
+            print(f"⚠ Column '{column_name}' not found - skipping {display_name} masking")
+    
+    print(f"\n" + "="*60)
+    print("MASKING COMPLETED SUCCESSFULLY")
+    print("="*60)
+    
+    # Final duplicate removal after all masking is complete
+    print("\n" + "="*60)
+    print("FINAL DUPLICATE ROW REMOVAL")
+    print("="*60)
+    
+    initial_rows = len(masked_df)
+    print(f"Initial dataset: {initial_rows:,} rows")
+    
+    # Remove duplicate rows
+    masked_df = masked_df.drop_duplicates()
+    
+    final_rows = len(masked_df)
+    duplicates_removed = initial_rows - final_rows
+    
+    print(f"After duplicate removal: {final_rows:,} rows")
+    print(f"Duplicates removed: {duplicates_removed:,} rows")
+    
+    if duplicates_removed > 0:
+        print(f"Duplicate reduction: {(duplicates_removed/initial_rows)*100:.2f}%")
+    else:
+        print("✓ No duplicate rows found")
+    
+    print("="*60)
+    
+    return masked_df
 
 # EDUC DATASETS
 print("Loading EDUC datasets...")
@@ -335,165 +454,8 @@ if non_existing_columns:
 
 print(f"After dropping columns: {final_merged.shape}")
 
-# Apply masking to Region column
-print("\nApplying masking to Region column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking
-
-if 'Region' in final_merged.columns:
-    final_merged = apply_region_masking(final_merged, 'Region')
-else:
-    print("Warning: Region column not found in dataset")
-
-# Apply masking to Education_Level_Main column
-print("\nApplying masking to Education_Level_Main column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking
-
-if 'Education_Level_Main' in final_merged.columns:
-    final_merged = apply_education_masking(final_merged, 'Education_Level_Main')
-else:
-    print("Warning: Education_Level_Main column not found in dataset")
-
-# Apply masking to Education_Level_Sub column
-print("\nApplying masking to Education_Level_Sub column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking
-
-if 'Education_Level_Sub' in final_merged.columns:
-    final_merged = apply_education_sub_masking(final_merged, 'Education_Level_Sub')
-else:
-    print("Warning: Education_Level_Sub column not found in dataset")
-
-# Apply masking to Formal_Informal_Education column
-print("\nApplying masking to Formal_Informal_Education column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking
-
-if 'Formal_Informal_Education' in final_merged.columns:
-    final_merged = apply_formal_informal_education_masking(final_merged, 'Formal_Informal_Education')
-else:
-    print("Warning: Formal_Informal_Education column not found in dataset")
-
-# Apply masking to NEET_Category column
-print("\nApplying masking to NEET_Category column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking
-
-if 'NEET_Category' in final_merged.columns:
-    final_merged = apply_neet_category_masking(final_merged, 'NEET_Category')
-else:
-    print("Warning: NEET_Category column not found in dataset")
-
-# Apply masking to Sex column
-print("\nApplying masking to Sex column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking
-
-if 'Sex' in final_merged.columns:
-    final_merged = apply_sex_masking(final_merged, 'Sex')
-else:
-    print("Warning: Sex column not found in dataset")
-
-# Apply masking to Age_Group column
-print("\nApplying masking to Age_Group column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking
-
-if 'Age_Group' in final_merged.columns:
-    final_merged = apply_age_group_masking(final_merged, 'Age_Group')
-else:
-    print("Warning: Age_Group column not found in dataset")
-
-# Apply masking to Main_Employment_Status column
-print("\nApplying masking to Main_Employment_Status column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking
-
-if 'Main_Employment_Status' in final_merged.columns:
-    final_merged = apply_main_employment_status_masking(final_merged, 'Main_Employment_Status')
-else:
-    print("Warning: Main_Employment_Status column not found in dataset")
-
-# Apply masking to Sub_Employment_Status column
-print("\nApplying masking to Sub_Employment_Status column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking
-
-if 'Sub_Employment_Status' in final_merged.columns:
-    final_merged = apply_sub_employment_status_masking(final_merged, 'Sub_Employment_Status')
-else:
-    print("Warning: Sub_Employment_Status column not found in dataset")
-
-# Apply masking to UNDERMP_PT_WORK_SUB column
-print("\nApplying masking to UNDERMP_PT_WORK_SUB column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking
-
-if 'UNDERMP_PT_WORK_SUB' in final_merged.columns:
-    final_merged = apply_undermp_pt_work_sub_masking(final_merged, 'UNDERMP_PT_WORK_SUB')
-else:
-    print("Warning: UNDERMP_PT_WORK_SUB column not found in dataset")
-
-# Apply masking to WORK_FOR_MORE_HOURS column
-print("\nApplying masking to WORK_FOR_MORE_HOURS column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking
-
-if 'WORK_FOR_MORE_HOURS' in final_merged.columns:
-    final_merged = apply_work_for_more_hours_masking(final_merged, 'WORK_FOR_MORE_HOURS')
-else:
-    print("Warning: WORK_FOR_MORE_HOURS column not found in dataset")
-
-# Apply masking to LOOKING_FOR_ANOTHER_JOB column
-print("\nApplying masking to LOOKING_FOR_ANOTHER_JOB column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking
-
-if 'LOOKING_FOR_ANOTHER_JOB' in final_merged.columns:
-    final_merged = apply_looking_for_another_job_masking(final_merged, 'LOOKING_FOR_ANOTHER_JOB')
-else:
-    print("Warning: LOOKING_FOR_ANOTHER_JOB column not found in dataset")
-
-# Apply masking to Unit_of_Measure column
-print("\nApplying masking to Unit_of_Measure column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking
-
-if 'Unit_of_Measure' in final_merged.columns:
-    final_merged = apply_unit_of_measure_masking(final_merged, 'Unit_of_Measure')
-else:
-    print("Warning: Unit_of_Measure column not found in dataset")
-
-# Apply masking to NR_PERSONS_LOCAL_UNIT column
-print("\nApplying masking to NR_PERSONS_LOCAL_UNIT column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking, apply_bo_masking
-
-if 'NR_PERSONS_LOCAL_UNIT' in final_merged.columns:
-    final_merged = apply_nr_persons_local_unit_masking(final_merged, 'NR_PERSONS_LOCAL_UNIT')
-else:
-    print("Warning: NR_PERSONS_LOCAL_UNIT column not found in dataset")
-
-# Apply masking to BO column
-print("\nApplying masking to BO column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking, apply_bo_masking, apply_sector_masking
-
-if 'BO' in final_merged.columns:
-    final_merged = apply_bo_masking(final_merged, 'BO')
-else:
-    print("Warning: BO column not found in dataset")
-
-# Apply masking to SECTOR column
-print("\nApplying masking to SECTOR column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking, apply_bo_masking, apply_sector_masking, apply_sector_sub_masking
-
-if 'SECTOR' in final_merged.columns:
-    final_merged = apply_sector_masking(final_merged, 'SECTOR')
-else:
-    print("Warning: SECTOR column not found in dataset")
-
-# Apply masking to SECTOR_SUB column
-print("\nApplying masking to SECTOR_SUB column...")
-from lfs_utils.masking_config import apply_region_masking, apply_education_masking, apply_education_sub_masking, apply_formal_informal_education_masking, apply_neet_category_masking, apply_sex_masking, apply_age_group_masking, apply_main_employment_status_masking, apply_sub_employment_status_masking, apply_undermp_pt_work_sub_masking, apply_work_for_more_hours_masking, apply_looking_for_another_job_masking, apply_unit_of_measure_masking, apply_nr_persons_local_unit_masking, apply_bo_masking, apply_sector_masking, apply_sector_sub_masking, apply_type_occupation_masking
-
-if 'SECTOR_SUB' in final_merged.columns:
-    final_merged = apply_sector_sub_masking(final_merged, 'SECTOR_SUB')
-else:
-    print("Warning: SECTOR_SUB column not found in dataset")
-
-# Apply masking to TYPE_OCCUPATION column
-print("\nApplying masking to TYPE_OCCUPATION column...")
-if 'TYPE_OCCUPATION' in final_merged.columns:
-    final_merged = apply_type_occupation_masking(final_merged, 'TYPE_OCCUPATION')
-else:
-    print("Warning: TYPE_OCCUPATION column not found in dataset")
+# Apply comprehensive masking to all applicable columns
+final_merged = apply_comprehensive_masking(final_merged)
 
 print(f"Remaining columns: {list(final_merged.columns)}")
 

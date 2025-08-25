@@ -382,6 +382,17 @@ TYPE_OCCUPATION_MASKING = {
     'Highly skilled non-manual': 'HIGHLY_SKILLED_NON_MANUAL'
 }
 
+# PERMANENCY_FOR_EMPLOYEES masking configuration
+PERMANENCY_FOR_EMPLOYEES_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Job permanency categories
+    'Permanent job': 'PERMANENT_JOB',  # Permanent job
+    'Temporary /contract of limited duration': 'TEMPORARY_CONTRACT',  # Temporary/contract of limited duration
+    'Duration of temporary job': 'DURATION_TEMPORARY'  # Duration of temporary job
+}
+
 # REASONS_PT masking configuration
 REASONS_PT_MASKING = {
     # Special processing codes
@@ -397,6 +408,183 @@ REASONS_PT_MASKING = {
     # Health and caregiving reasons
     'Of own illness or disability': 'OWN_ILLNESS_DISABILITY',  # Of own illness or disability
     'of them, looking after children or incapacitated adults': 'LOOKING_AFTER_CHILDREN_INCAPACITATED_ADULTS'  # Of them, looking after children or incapacitated adults
+}
+
+# HOURS_ACTUALLY_WORK masking configuration
+HOURS_ACTUALLY_WORK_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Hours categories
+    'Less than 35 hours': 'LESS_THAN_35',  # Less than 35 hours
+    'More than 35 hours': 'MORE_THAN_35',  # More than 35 hours
+    'Hour group B': 'HOUR_GROUP_B',  # Hour group B
+    'Hour group 35+': 'HOUR_GROUP_35_PLUS',  # Hour group 35+
+    'Hour group A': 'HOUR_GROUP_A',  # Hour group A
+    'Average number of hours': 'AVERAGE_NUMBER_OF_HOURS'  # Average number of hours
+}
+
+# HOURS_ACTUALLY_WORK_SUB masking configuration
+HOURS_ACTUALLY_WORK_SUB_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Detailed hours categories
+    'Total <35': 'TOTAL_LESS_THAN_35',  # Total less than 35
+    'Total 35+': 'TOTAL_35_PLUS',  # Total 35 or more
+    '20-34': '20_34',  # 20-34 hours
+    '48+': '48_PLUS',  # 48+ hours
+    '40-47': '40_47',  # 40-47 hours
+    '10-19': '10_19',  # 10-19 hours
+    '25-34': '25_34',  # 25-34 hours
+    '0-14': '0_14',  # 0-14 hours
+    '15-24': '15_24',  # 15-24 hours
+    '35-39': '35_39',  # 35-39 hours
+    '0-9': '0_9'  # 0-9 hours
+}
+
+# HOURS_USUAL_WORK masking configuration
+HOURS_USUAL_WORK_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Usual hours categories
+    'Worked usual hours': 'WORKED_USUAL_HOURS',  # Worked usual hours
+    'Worked less than usual hours': 'WORKED_LESS_THAN_USUAL',  # Worked less than usual hours
+    'Worked more than usual hours': 'WORKED_MORE_THAN_USUAL',  # Worked more than usual hours
+    'Main reason': 'MAIN_REASON'  # Main reason
+}
+
+# HOURS_USUAL_WORK_SUB masking configuration
+HOURS_USUAL_WORK_SUB_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Detailed usual hours categories
+    'Other reason': 'OTHER_REASON',  # Other reason
+    'Bad weather, technical or economic': 'BAD_WEATHER_TECHNICAL_ECONOMIC',  # Bad weather, technical or economic
+    'Illness, injury, annual holidays': 'ILLNESS_INJURY_ANNUAL_HOLIDAYS'  # Illness, injury, annual holidays
+}
+
+# ATYPICAL_WORK masking configuration
+ATYPICAL_WORK_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Atypical work categories
+    'Work at home': 'WORK_AT_HOME',  # Work at home
+    'Evening work': 'EVENING_WORK',  # Evening work
+    'Night work': 'NIGHT_WORK',  # Night work
+    'Sunday work': 'SUNDAY_WORK',  # Sunday work
+    'Saturday work': 'SATURDAY_WORK',  # Saturday work
+    'Shift-work (employees only)': 'SHIFT_WORK_EMPLOYEES_ONLY',  # Shift-work (employees only)
+    'Shift work': 'SHIFT_WORK'  # Shift work
+}
+
+# ATYPICAL_WORK_SUB masking configuration
+ATYPICAL_WORK_SUB_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Detailed atypical work categories
+    'Usually ←2008 At least half working days , 2009→': 'USUALLY_AT_LEAST_HALF_WORKING_DAYS',  # Usually at least half working days
+    'Sometimes, ←2008 Less than half working days, 2009→': 'SOMETIMES_LESS_THAN_HALF_WORKING_DAYS',  # Sometimes less than half working days
+    'Usually, ←2008 At least twice, 2009 →': 'USUALLY_AT_LEAST_TWICE',  # Usually at least twice
+    'Sometimes ←2008 Once, 2009 →': 'SOMETIMES_ONCE',  # Sometimes once
+    'Usually': 'USUALLY',  # Usually
+    'Sometimes': 'SOMETIMES'  # Sometimes
+}
+
+# NATIONALITY masking configuration
+NATIONALITY_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Nationality categories
+    'Greek': 'GREEK',  # Greek nationality
+    'EU country': 'EU_COUNTRY',  # EU country nationality
+    'Other': 'OTHER'  # Other nationality
+}
+
+# REGION_1981 masking configuration
+REGION_1981_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # 1981 region classifications
+    'Kentriki & Dytiki Makedonia': 'KENTRIKI_DYTIKI_MAKEDONIA',  # Central & Western Macedonia
+    'Anatoliki Sterea & Nissia': 'ANATOLIKI_STEREA_NISSIA',  # Eastern Central Greece & Islands
+    'Peloponissos & Dytiki Sterea': 'PELOPONNISOS_DYTIKI_STEREA',  # Peloponnese & Western Central Greece
+    'Ipeiros': 'IPEIROS',  # Epirus
+    'Thessalia': 'THESSALIA',  # Thessaly
+    'Kriti': 'KRITI',  # Crete
+    'Anatoliki Makedonia': 'ANATOLIKI_MAKEDONIA',  # Eastern Macedonia
+    'Nissia Anatolikou Aigaiou': 'NISSIA_ANATOLIKOU_AIGAIOU',  # Eastern Aegean Islands
+    'Thraki': 'THRAKI'  # Thrace
+}
+
+# URBANIZATION masking configuration
+URBANIZATION_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Urbanization categories
+    'Semi-urban areas': 'SEMI_URBAN_AREAS',  # Semi-urban areas
+    'Other urban areas': 'OTHER_URBAN_AREAS',  # Other urban areas
+    'Rural areas': 'RURAL_AREAS',  # Rural areas
+    'Athens agglomeration': 'ATHENS_AGGLOMERATION',  # Athens agglomeration
+    'Thessaloniki agglomeration': 'THESSALONIKI_AGGLOMERATION'  # Thessaloniki agglomeration
+}
+
+# LABOUR_FORCE_STATUS masking configuration
+LABOUR_FORCE_STATUS_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Labour force status categories
+    'Employed': 'EMPLOYED',  # Employed
+    'Reasons for not seeking employment (inactive)': 'REASONS_NOT_SEEKING_EMPLOYMENT_INACTIVE',  # Reasons for not seeking employment (inactive)
+    'Unemployed': 'UNEMPLOYED',  # Unemployed
+    'Labour Force': 'LABOUR_FORCE',  # Labour Force
+    'Inactive': 'INACTIVE',  # Inactive
+    'Total Population': 'TOTAL_POPULATION',  # Total Population
+    'Population living in jobless households': 'POPULATION_LIVING_IN_JOBLESS_HOUSEHOLDS'  # Population living in jobless households
+}
+
+# MARITAL_STATUS masking configuration
+MARITAL_STATUS_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Marital status categories
+    'Single': 'SINGLE',  # Single
+    'Married': 'MARRIED',  # Married
+    'Widowed, divorced      or legally separated': 'WIDOWED_DIVORCED_LEGALLY_SEPARATED',  # Widowed, divorced or legally separated
+    'Widowed, divorced          or legally separated': 'WIDOWED_DIVORCED_LEGALLY_SEPARATED'  # Widowed, divorced or legally separated
+}
+
+# LABOUR_FORCE_SUBCATEGORY masking configuration
+LABOUR_FORCE_SUBCATEGORY_MASKING = {
+    # Special processing codes
+    '_Z': '_Z',  # Special processing code -> Not applicable
+    
+    # Labour force subcategory categories
+    'persons': 'PERSONS',  # persons
+    '% aged 20-64': 'PERCENT_AGED_20_64',  # % aged 20-64
+    'activity rate': 'ACTIVITY_RATE',  # activity rate
+    'unemployment rate': 'UNEMPLOYMENT_RATE',  # unemployment rate
+    'employment rate': 'EMPLOYMENT_RATE',  # employment rate
+    '"% aged 15+\n(1981-97: 14+)"': 'PERCENT_AGED_15_PLUS',  # % aged 15+ (1981-97: 14+) - EXACT MATCH
+    '% aged 15+\n(1981-97: 14+)': 'PERCENT_AGED_15_PLUS',  # % aged 15+ (1981-97: 14+) - without quotes
+    '% aged 15+': 'PERCENT_AGED_15_PLUS',  # % aged 15+ - simplified
+    'Own ilness or disability': 'OWN_ILLNESS_DISABILITY',  # Own illness or disability
+    'Personal or family responsibilities': 'PERSONAL_FAMILY_RESPONSIBILITIES',  # Personal or family responsibilities
+    'Undermployed part-time workers': 'UNDEREMPLOYED_PART_TIME_WORKERS',  # Underemployed part-time workers
+    'Seeking work but not immediately available': 'SEEKING_WORK_NOT_IMMEDIATELY_AVAILABLE',  # Seeking work but not immediately available
+    'Other inactive': 'OTHER_INACTIVE',  # Other inactive
+    'Education or training': 'EDUCATION_TRAINING',  # Education or training
+    'Employed, not undermployed': 'EMPLOYED_NOT_UNDEREMPLOYED',  # Employed, not underemployed
+    'Retirement': 'RETIREMENT'  # Retirement
 }
 
 # PERMANENCY_FOR_EMPLOYEES_SUB masking configuration
@@ -1268,6 +1456,775 @@ def apply_type_occupation_masking(df, type_occupation_column='TYPE_OCCUPATION'):
     
     # Report masking statistics
     masked_count = (df_masked[type_occupation_column] != df[type_occupation_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply PERMANENCY_FOR_EMPLOYEES masking
+def apply_permanency_for_employees_masking(df, permanency_column='PERMANENCY_FOR_EMPLOYEES'):
+    """
+    Apply PERMANENCY_FOR_EMPLOYEES masking to standardize job permanency values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    permanency_column : str, default 'PERMANENCY_FOR_EMPLOYEES'
+        Name of the permanency for employees column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked permanency for employees column
+    """
+    if permanency_column not in df.columns:
+        print(f"Warning: Column '{permanency_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current permanency for employees value counts before masking
+    print(f"Permanency for Employees values before masking:")
+    permanency_counts_before = df_masked[permanency_column].value_counts()
+    for permanency, count in permanency_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {permanency}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[permanency_column] = df_masked[permanency_column].map(PERMANENCY_FOR_EMPLOYEES_MASKING).fillna(df_masked[permanency_column])
+    
+    # Show permanency for employees value counts after masking
+    print(f"\nPermanency for Employees values after masking:")
+    permanency_counts_after = df_masked[permanency_column].value_counts()
+    for permanency, count in permanency_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {permanency}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[permanency_column] != df[permanency_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply REASONS_PT masking
+def apply_reasons_pt_masking(df, reasons_pt_column='REASONS_PT'):
+    """
+    Apply REASONS_PT masking to standardize reasons for part-time work values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    reasons_pt_column : str, default 'REASONS_PT'
+        Name of the reasons for part-time work column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked reasons for part-time work column
+    """
+    if reasons_pt_column not in df.columns:
+        print(f"Warning: Column '{reasons_pt_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current reasons for part-time work value counts before masking
+    print(f"Reasons for Part-Time Work values before masking:")
+    reasons_pt_counts_before = df_masked[reasons_pt_column].value_counts()
+    for reasons_pt, count in reasons_pt_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {reasons_pt}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[reasons_pt_column] = df_masked[reasons_pt_column].map(REASONS_PT_MASKING).fillna(df_masked[reasons_pt_column])
+    
+    # Show reasons for part-time work value counts after masking
+    print(f"\nReasons for Part-Time Work values after masking:")
+    reasons_pt_counts_after = df_masked[reasons_pt_column].value_counts()
+    for reasons_pt, count in reasons_pt_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {reasons_pt}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[reasons_pt_column] != df[reasons_pt_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply PERMANENCY_FOR_EMPLOYEES_SUB masking
+def apply_permanency_for_employees_sub_masking(df, permanency_sub_column='PERMANENCY_FOR_EMPLOYEES_SUB'):
+    """
+    Apply PERMANENCY_FOR_EMPLOYEES_SUB masking to standardize job permanency sub-category values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    permanency_sub_column : str, default 'PERMANENCY_FOR_EMPLOYEES_SUB'
+        Name of the permanency for employees sub-category column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked permanency for employees sub-category column
+    """
+    if permanency_sub_column not in df.columns:
+        print(f"Warning: Column '{permanency_sub_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current permanency for employees sub-category value counts before masking
+    print(f"Permanency for Employees Sub-Category values before masking:")
+    permanency_sub_counts_before = df_masked[permanency_sub_column].value_counts()
+    for permanency_sub, count in permanency_sub_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {permanency_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[permanency_sub_column] = df_masked[permanency_sub_column].map(PERMANENCY_FOR_EMPLOYEES_SUB_MASKING).fillna(df_masked[permanency_sub_column])
+    
+    # Show permanency for employees sub-category value counts after masking
+    print(f"\nPermanency for Employees Sub-Category values after masking:")
+    permanency_sub_counts_after = df_masked[permanency_sub_column].value_counts()
+    for permanency_sub, count in permanency_sub_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {permanency_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[permanency_sub_column] != df[permanency_sub_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply REASONS_TEMP masking
+def apply_reasons_temp_masking(df, reasons_temp_column='REASONS_TEMP'):
+    """
+    Apply REASONS_TEMP masking to standardize reasons for temporary work values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    reasons_temp_column : str, default 'REASONS_TEMP'
+        Name of the reasons for temporary work column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked reasons for temporary work column
+    """
+    if reasons_temp_column not in df.columns:
+        print(f"Warning: Column '{reasons_temp_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current reasons for temporary work value counts before masking
+    print(f"Reasons for Temporary Work values before masking:")
+    reasons_temp_counts_before = df_masked[reasons_temp_column].value_counts()
+    for reasons_temp, count in reasons_temp_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {reasons_temp}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[reasons_temp_column] = df_masked[reasons_temp_column].map(REASONS_TEMP_MASKING).fillna(df_masked[reasons_temp_column])
+    
+    # Show reasons for temporary work value counts after masking
+    print(f"\nReasons for Temporary Work values after masking:")
+    reasons_temp_counts_after = df_masked[reasons_temp_column].value_counts()
+    for reasons_temp, count in reasons_temp_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {reasons_temp}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[reasons_temp_column] != df[reasons_temp_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply HOURS_ACTUALLY_WORK masking
+def apply_hours_actually_work_masking(df, hours_actually_work_column='HOURS_ACTUALLY_WORK'):
+    """
+    Apply HOURS_ACTUALLY_WORK masking to standardize hours actually worked values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    hours_actually_work_column : str, default 'HOURS_ACTUALLY_WORK'
+        Name of the hours actually worked column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked hours actually worked column
+    """
+    if hours_actually_work_column not in df.columns:
+        print(f"Warning: Column '{hours_actually_work_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current hours actually worked value counts before masking
+    print(f"Hours Actually Worked values before masking:")
+    hours_actually_work_counts_before = df_masked[hours_actually_work_column].value_counts()
+    for hours_actually_work, count in hours_actually_work_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_actually_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[hours_actually_work_column] = df_masked[hours_actually_work_column].map(HOURS_ACTUALLY_WORK_MASKING).fillna(df_masked[hours_actually_work_column])
+    
+    # Show hours actually worked value counts after masking
+    print(f"\nHours Actually Worked values after masking:")
+    hours_actually_work_counts_after = df_masked[hours_actually_work_column].value_counts()
+    for hours_actually_work, count in hours_actually_work_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_actually_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[hours_actually_work_column] != df[hours_actually_work_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply HOURS_ACTUALLY_WORK_SUB masking
+def apply_hours_actually_work_sub_masking(df, hours_actually_work_sub_column='HOURS_ACTUALLY_WORK_SUB'):
+    """
+    Apply HOURS_ACTUALLY_WORK_SUB masking to standardize hours actually worked sub-category values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    hours_actually_work_sub_column : str, default 'HOURS_ACTUALLY_WORK_SUB'
+        Name of the hours actually worked sub-category column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked hours actually worked sub-category column
+    """
+    if hours_actually_work_sub_column not in df.columns:
+        print(f"Warning: Column '{hours_actually_work_sub_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current hours actually worked sub-category value counts before masking
+    print(f"Hours Actually Worked Sub-Category values before masking:")
+    hours_actually_work_sub_counts_before = df_masked[hours_actually_work_sub_column].value_counts()
+    for hours_actually_work_sub, count in hours_actually_work_sub_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_actually_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[hours_actually_work_sub_column] = df_masked[hours_actually_work_sub_column].map(HOURS_ACTUALLY_WORK_SUB_MASKING).fillna(df_masked[hours_actually_work_sub_column])
+    
+    # Show hours actually worked sub-category value counts after masking
+    print(f"\nHours Actually Worked Sub-Category values after masking:")
+    hours_actually_work_sub_counts_after = df_masked[hours_actually_work_sub_column].value_counts()
+    for hours_actually_work_sub, count in hours_actually_work_sub_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_actually_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[hours_actually_work_sub_column] != df[hours_actually_work_sub_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply HOURS_USUAL_WORK masking
+def apply_hours_usual_work_masking(df, hours_usual_work_column='HOURS_USUAL_WORK'):
+    """
+    Apply HOURS_USUAL_WORK masking to standardize hours usually worked values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    hours_usual_work_column : str, default 'HOURS_USUAL_WORK'
+        Name of the hours usually worked column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked hours usually worked column
+    """
+    if hours_usual_work_column not in df.columns:
+        print(f"Warning: Column '{hours_usual_work_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current hours usually worked value counts before masking
+    print(f"Hours Usually Worked values before masking:")
+    hours_usual_work_counts_before = df_masked[hours_usual_work_column].value_counts()
+    for hours_usual_work, count in hours_usual_work_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_usual_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[hours_usual_work_column] = df_masked[hours_usual_work_column].map(HOURS_USUAL_WORK_MASKING).fillna(df_masked[hours_usual_work_column])
+    
+    # Show hours usually worked value counts after masking
+    print(f"\nHours Usually Worked values after masking:")
+    hours_usual_work_counts_after = df_masked[hours_usual_work_column].value_counts()
+    for hours_usual_work, count in hours_usual_work_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_usual_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[hours_usual_work_column] != df[hours_usual_work_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply HOURS_USUAL_WORK_SUB masking
+def apply_hours_usual_work_sub_masking(df, hours_usual_work_sub_column='HOURS_USUAL_WORK_SUB'):
+    """
+    Apply HOURS_USUAL_WORK_SUB masking to standardize hours usually worked sub-category values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    hours_usual_work_sub_column : str, default 'HOURS_USUAL_WORK_SUB'
+        Name of the hours usually worked sub-category column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked hours usually worked sub-category column
+    """
+    if hours_usual_work_sub_column not in df.columns:
+        print(f"Warning: Column '{hours_usual_work_sub_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current hours usually worked sub-category value counts before masking
+    print(f"Hours Usually Worked Sub-Category values before masking:")
+    hours_usual_work_sub_counts_before = df_masked[hours_usual_work_sub_column].value_counts()
+    for hours_usual_work_sub, count in hours_usual_work_sub_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_usual_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[hours_usual_work_sub_column] = df_masked[hours_usual_work_sub_column].map(HOURS_USUAL_WORK_SUB_MASKING).fillna(df_masked[hours_usual_work_sub_column])
+    
+    # Show hours usually worked sub-category value counts after masking
+    print(f"\nHours Usually Worked Sub-Category values after masking:")
+    hours_usual_work_sub_counts_after = df_masked[hours_usual_work_sub_column].value_counts()
+    for hours_usual_work_sub, count in hours_usual_work_sub_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {hours_usual_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[hours_usual_work_sub_column] != df[hours_usual_work_sub_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply ATYPICAL_WORK masking
+def apply_atypical_work_masking(df, atypical_work_column='ATYPICAL_WORK'):
+    """
+    Apply ATYPICAL_WORK masking to standardize atypical work values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    atypical_work_column : str, default 'ATYPICAL_WORK'
+        Name of the atypical work column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked atypical work column
+    """
+    if atypical_work_column not in df.columns:
+        print(f"Warning: Column '{atypical_work_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current atypical work value counts before masking
+    print(f"Atypical Work values before masking:")
+    atypical_work_counts_before = df_masked[atypical_work_column].value_counts()
+    for atypical_work, count in atypical_work_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {atypical_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[atypical_work_column] = df_masked[atypical_work_column].map(ATYPICAL_WORK_MASKING).fillna(df_masked[atypical_work_column])
+    
+    # Show atypical work value counts after masking
+    print(f"\nAtypical Work values after masking:")
+    atypical_work_counts_after = df_masked[atypical_work_column].value_counts()
+    for atypical_work, count in atypical_work_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {atypical_work}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[atypical_work_column] != df[atypical_work_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply ATYPICAL_WORK_SUB masking
+def apply_atypical_work_sub_masking(df, atypical_work_sub_column='ATYPICAL_WORK_SUB'):
+    """
+    Apply ATYPICAL_WORK_SUB masking to standardize atypical work sub-category values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    atypical_work_sub_column : str, default 'ATYPICAL_WORK_SUB'
+        Name of the atypical work sub-category column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked atypical work sub-category column
+    """
+    if atypical_work_sub_column not in df.columns:
+        print(f"Warning: Column '{atypical_work_sub_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current atypical work sub-category value counts before masking
+    print(f"Atypical Work Sub-Category values before masking:")
+    atypical_work_sub_counts_before = df_masked[atypical_work_sub_column].value_counts()
+    for atypical_work_sub, count in atypical_work_sub_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {atypical_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[atypical_work_sub_column] = df_masked[atypical_work_sub_column].map(ATYPICAL_WORK_SUB_MASKING).fillna(df_masked[atypical_work_sub_column])
+    
+    # Show atypical work sub-category value counts after masking
+    print(f"\nAtypical Work Sub-Category values after masking:")
+    atypical_work_sub_counts_after = df_masked[atypical_work_sub_column].value_counts()
+    for atypical_work_sub, count in atypical_work_sub_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {atypical_work_sub}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[atypical_work_sub_column] != df[atypical_work_sub_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply NATIONALITY masking
+def apply_nationality_masking(df, nationality_column='Nationality'):
+    """
+    Apply NATIONALITY masking to standardize nationality values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    nationality_column : str, default 'Nationality'
+        Name of the nationality column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked nationality column
+    """
+    if nationality_column not in df.columns:
+        print(f"Warning: Column '{nationality_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current nationality value counts before masking
+    print(f"Nationality values before masking:")
+    nationality_counts_before = df_masked[nationality_column].value_counts()
+    for nationality, count in nationality_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {nationality}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[nationality_column] = df_masked[nationality_column].map(NATIONALITY_MASKING).fillna(df_masked[nationality_column])
+    
+    # Show nationality value counts after masking
+    print(f"\nNationality values after masking:")
+    nationality_counts_after = df_masked[nationality_column].value_counts()
+    for nationality, count in nationality_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {nationality}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[nationality_column] != df[nationality_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply REGION_1981 masking
+def apply_region_1981_masking(df, region_1981_column='Region_1981'):
+    """
+    Apply REGION_1981 masking to standardize 1981 region classification values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    region_1981_column : str, default 'Region_1981'
+        Name of the 1981 region classification column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked 1981 region classification column
+    """
+    if region_1981_column not in df.columns:
+        print(f"Warning: Column '{region_1981_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current 1981 region classification value counts before masking
+    print(f"1981 Region Classification values before masking:")
+    region_1981_counts_before = df_masked[region_1981_column].value_counts()
+    for region_1981, count in region_1981_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {region_1981}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[region_1981_column] = df_masked[region_1981_column].map(REGION_1981_MASKING).fillna(df_masked[region_1981_column])
+    
+    # Show 1981 region classification value counts after masking
+    print(f"\n1981 Region Classification values after masking:")
+    region_1981_counts_after = df_masked[region_1981_column].value_counts()
+    for region_1981, count in region_1981_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {region_1981}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[region_1981_column] != df[region_1981_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply URBANIZATION masking
+def apply_urbanization_masking(df, urbanization_column='Urbanization'):
+    """
+    Apply URBANIZATION masking to standardize urbanization values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    urbanization_column : str, default 'Urbanization'
+        Name of the urbanization column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked urbanization column
+    """
+    if urbanization_column not in df.columns:
+        print(f"Warning: Column '{urbanization_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current urbanization value counts before masking
+    print(f"Urbanization values before masking:")
+    urbanization_counts_before = df_masked[urbanization_column].value_counts()
+    for urbanization, count in urbanization_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {urbanization}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[urbanization_column] = df_masked[urbanization_column].map(URBANIZATION_MASKING).fillna(df_masked[urbanization_column])
+    
+    # Show urbanization value counts after masking
+    print(f"\nUrbanization values after masking:")
+    urbanization_counts_after = df_masked[urbanization_column].value_counts()
+    for urbanization, count in urbanization_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {urbanization}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[urbanization_column] != df[urbanization_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply LABOUR_FORCE_STATUS masking
+def apply_labour_force_status_masking(df, labour_force_status_column='Labour_Force_Status'):
+    """
+    Apply LABOUR_FORCE_STATUS masking to standardize labour force status values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    labour_force_status_column : str, default 'Labour_Force_Status'
+        Name of the labour force status column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked labour force status column
+    """
+    if labour_force_status_column not in df.columns:
+        print(f"Warning: Column '{labour_force_status_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current labour force status value counts before masking
+    print(f"Labour Force Status values before masking:")
+    labour_force_status_counts_before = df_masked[labour_force_status_column].value_counts()
+    for labour_force_status, count in labour_force_status_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {labour_force_status}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[labour_force_status_column] = df_masked[labour_force_status_column].map(LABOUR_FORCE_STATUS_MASKING).fillna(df_masked[labour_force_status_column])
+    
+    # Show labour force status value counts after masking
+    print(f"\nLabour Force Status values after masking:")
+    labour_force_status_counts_after = df_masked[labour_force_status_column].value_counts()
+    for labour_force_status, count in labour_force_status_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {labour_force_status}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[labour_force_status_column] != df[labour_force_status_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply MARITAL_STATUS masking
+def apply_marital_status_masking(df, marital_status_column='Marital_Status'):
+    """
+    Apply MARITAL_STATUS masking to standardize marital status values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    marital_status_column : str, default 'Marital_Status'
+        Name of the marital status column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked marital status column
+    """
+    if marital_status_column not in df.columns:
+        print(f"Warning: Column '{marital_status_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current marital status value counts before masking
+    print(f"Marital Status values before masking:")
+    marital_status_counts_before = df_masked[marital_status_column].value_counts()
+    for marital_status, count in marital_status_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {marital_status}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply masking
+    df_masked[marital_status_column] = df_masked[marital_status_column].map(MARITAL_STATUS_MASKING).fillna(df_masked[marital_status_column])
+    
+    # Show marital status value counts after masking
+    print(f"\nMarital Status values after masking:")
+    marital_status_counts_after = df_masked[marital_status_column].value_counts()
+    for marital_status, count in marital_status_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {marital_status}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[marital_status_column] != df[marital_status_column]).sum()
+    print(f"\nTotal rows masked: {masked_count:,}")
+    
+    return df_masked
+
+# Function to apply LABOUR_FORCE_SUBCATEGORY masking
+def apply_labour_force_subcategory_masking(df, labour_force_subcategory_column='Labour_Force_Subcategory'):
+    """
+    Apply LABOUR_FORCE_SUBCATEGORY masking to standardize labour force subcategory values according to codelist
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame
+    labour_force_subcategory_column : str, default 'Labour_Force_Subcategory'
+        Name of the labour force subcategory column to mask
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with masked labour force subcategory column
+    """
+    if labour_force_subcategory_column not in df.columns:
+        print(f"Warning: Column '{labour_force_subcategory_column}' not found in dataset")
+        return df
+    
+    # Create a copy to avoid modifying original
+    df_masked = df.copy()
+    
+    # Show current labour force subcategory value counts before masking
+    print(f"Labour Force Subcategory values before masking:")
+    labour_force_subcategory_counts_before = df_masked[labour_force_subcategory_column].value_counts()
+    for labour_force_subcategory, count in labour_force_subcategory_counts_before.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {labour_force_subcategory}: {count:,} ({percentage:.2f}%)")
+    
+    # Apply standard masking first
+    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].map(LABOUR_FORCE_SUBCATEGORY_MASKING).fillna(df_masked[labour_force_subcategory_column])
+    
+    # Apply regex-based masking for complex patterns
+    import re
+    
+    # Pattern to catch variations of "% aged 15+ (1981-97: 14+)"
+    # This pattern needs to be more specific to catch the actual value with newlines and quotes
+    pattern = r'.*aged\s*15\+.*'
+    
+    # Apply regex replacement for any remaining variations
+    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
+        lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and re.search(pattern, x, re.IGNORECASE) else x
+    )
+    
+    # Additional safety check - replace any remaining values containing "aged 15" with the standard code
+    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
+        lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and 'aged 15' in x else x
+    )
+    
+    # Show labour force subcategory value counts after masking
+    print(f"\nLabour Force Subcategory values after masking:")
+    labour_force_subcategory_counts_after = df_masked[labour_force_subcategory_column].value_counts()
+    for labour_force_subcategory, count in labour_force_subcategory_counts_after.head(10).items():
+        percentage = (count / len(df_masked)) * 100
+        print(f"  {labour_force_subcategory}: {count:,} ({percentage:.2f}%)")
+    
+    # Report masking statistics
+    masked_count = (df_masked[labour_force_subcategory_column] != df[labour_force_subcategory_column]).sum()
     print(f"\nTotal rows masked: {masked_count:,}")
     
     return df_masked

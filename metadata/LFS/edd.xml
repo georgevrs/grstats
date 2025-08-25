@@ -15,81 +15,75 @@
              Row 3: SEX (T, M, F for Total, Males, Females)
              Row 4: AGE_GROUP (TOTAL, Y15_24, Y25_34, Y35_44, Y45_54, Y55_64, Y65_74, Y75_MAX)
              Row 5+: Actual data with dimensions in columns A-H and values in columns I onwards -->
-        <Top-Left  Coord="I6"/>
-        <Bottom-Right Coord="Z1000"/>
+        <Top-Left  Coord="G2"/>
+        <Bottom-Right Coord="G1000"/>
 
         <!-- ======= DIMENSION MAPPINGS ======= -->
         <!-- Row-wise dimensions (per series), using columns A-H -->
-        <Dimension Code="TIME_PERIOD"     Coord="Cell(Row, 2)"/>
+        <Dimension Code="TIME_PERIOD"     Coord="Cell(Row, 1)"/>
 
         <!-- A: FREQ -->
-        <Dimension Code="FREQ"            Value="Cell(Row, 1).Value"/>
+        <Dimension Code="FREQ"            Value="A" IsExpression="false"//>
         <!-- B: TIME_PERIOD -->
         <!-- C: REGION -->
         <Dimension Code="REGION"          Value="Cell(Row, 3).Value"/>
         <!-- D: REGION_1981 -->
-        <Dimension Code="REGION_1981"     Value="Cell(Row, 4).Value"/>
+        <Dimension Code="REGION_1981"     Value="Cell(Row, 33).Value"/>
         <!-- E: URBANIZATION -->
-        <Dimension Code="URBANIZATION"    Value="Cell(Row, 5).Value"/>
-        <!-- F: SEX -->
-        <Dimension Code="SEX"             Value="Cell(Row, 6).Value"/>
-        <!-- G: AGE_GROUP -->
-        <Dimension Code="AGE_GROUP"       Value="Cell(Row, 7).Value"/>
+        <Dimension Code="URBANIZATION"    Value="Cell(Row, 34).Value"/>
         <!-- H: NATIONALITY -->
-        <Dimension Code="NATIONALITY"     Value="Cell(Row, 8).Value"/>
+        <Dimension Code="NATIONALITY"     Value="Cell(Row, 32).Value"/>
 
         <!-- Header row-based dimensions (from rows 0-4) -->
         <!-- FREQ from row 0 -->
-        <Dimension Code="FREQ"            Value="Cell(1, Column).Value"/>
         <!-- UNIT_OF_MEASURE from row 1 -->
-        <Dimension Code="UNIT_OF_MEASURE" Value="Cell(2, Column).Value"/>
+        <Dimension Code="UNIT_OF_MEASURE" Value="Cell(Row, 15).Value"/>
         <!-- REGION from row 2 -->
-        <Dimension Code="REGION"          Value="Cell(3, Column).Value"/>
         <!-- SEX from row 3 -->
-        <Dimension Code="SEX"             Value="Cell(4, Column).Value"/>
+        <Dimension Code="SEX"             Value="Cell(Row, 8).Value"/>
         <!-- AGE_GROUP from row 4 -->
-        <Dimension Code="AGE_GROUP"       Value="Cell(5, Column).Value"/>
+        <Dimension Code="AGE_GROUP"       Value="Cell(Row, 9).Value"/>
 
         <!-- Additional dimensions that may vary by column -->
         <!-- Education dimensions -->
-        <Dimension Code="EDUCATION_LEVEL_MAIN"      Value="Cell(Row, 9).Value"/>
-        <Dimension Code="EDUCATION_LEVEL_SUB"       Value="Cell(Row, 10).Value"/>
-        <Dimension Code="FORMAL_INFORMAL_EDUCATION" Value="Cell(Row, 11).Value"/>
-        <Dimension Code="NEET_CATEGORY"             Value="Cell(Row, 12).Value"/>
+        <Dimension Code="EDUCATION_LEVEL_MAIN"      Value="Cell(Row, 3).Value"/>
+        <Dimension Code="EDUCATION_LEVEL_SUB"       Value="Cell(Row, 4).Value"/>
+        <Dimension Code="FORMAL_INFORMAL_EDUCATION" Value="Cell(Row, 5).Value"/>
+        <Dimension Code="NEET_CATEGORY"             Value="Cell(Row, 6).Value"/>
 
         <!-- Employment status dimensions -->
-        <Dimension Code="LABOUR_FORCE_STATUS"       Value="Cell(Row, 13).Value"/>
-        <Dimension Code="LABOUR_FORCE_SUBCATEGORY" Value="Cell(Row, 14).Value"/>
-        <Dimension Code="MAIN_EMPLOYMENT_STATUS"    Value="Cell(Row, 15).Value"/>
-        <Dimension Code="SUB_EMPLOYMENT_STATUS"     Value="Cell(Row, 16).Value"/>
-        <Dimension Code="EMPLOYMENT_DISTINCTION"    Value="Cell(Row, 17).Value"/>
+        <Dimension Code="LABOUR_FORCE_STATUS"       Value="Cell(Row, 36).Value"/>
+        <Dimension Code="LABOUR_FORCE_SUBCATEGORY" Value="Cell(Row, 37).Value"/>
+        <Dimension Code="MAIN_EMPLOYMENT_STATUS"    Value="Cell(Row, 10).Value"/>
+        <Dimension Code="SUB_EMPLOYMENT_STATUS"     Value="Cell(Row, 11).Value"/>
+        <Dimension Code="EMPLOYMENT_DISTINCTION"    Value="Cell(Row, 21).Value"/>
 
         <!-- Job characteristics dimensions -->
         <Dimension Code="SECTOR"                    Value="Cell(Row, 18).Value"/>
         <Dimension Code="SECTOR_SUB"                Value="Cell(Row, 19).Value"/>
         <Dimension Code="TYPE_OCCUPATION"           Value="Cell(Row, 20).Value"/>
-        <Dimension Code="BO"                        Value="Cell(Row, 21).Value"/>
-        <Dimension Code="NR_PERSONS_LOCAL_UNIT"     Value="Cell(Row, 22).Value"/>
+        <Dimension Code="BO"                        Value="Cell(Row, 17).Value"/>
+        <Dimension Code="NR_PERSONS_LOCAL_UNIT"     Value="Cell(Row, 16).Value"/>
 
         <!-- Working conditions dimensions -->
-        <Dimension Code="HOURS_ACTUALLY_WORK"       Value="Cell(Row, 23).Value"/>
-        <Dimension Code="HOURS_ACTUALLY_WORK_SUB"   Value="Cell(Row, 24).Value"/>
-        <Dimension Code="HOURS_USUAL_WORK"          Value="Cell(Row, 25).Value"/>
-        <Dimension Code="HOURS_USUAL_WORK_SUB"      Value="Cell(Row, 26).Value"/>
-        <Dimension Code="ATYPICAL_WORK"             Value="Cell(Row, 27).Value"/>
-        <Dimension Code="ATYPICAL_WORK_SUB"         Value="Cell(Row, 28).Value"/>
+        <Dimension Code="HOURS_ACTUALLY_WORK"       Value="Cell(Row, 26).Value"/>
+        <Dimension Code="HOURS_ACTUALLY_WORK_SUB"   Value="Cell(Row, 27).Value"/>
+        <Dimension Code="HOURS_USUAL_WORK"          Value="Cell(Row, 28).Value"/>
+        <Dimension Code="HOURS_USUAL_WORK_SUB"      Value="Cell(Row, 29).Value"/>
+        <Dimension Code="ATYPICAL_WORK"             Value="Cell(Row, 30).Value"/>
+        <Dimension Code="ATYPICAL_WORK_SUB"         Value="Cell(Row, 31).Value"/>
 
         <!-- Job preferences and permanency dimensions -->
-        <Dimension Code="UNDERMP_PT_WORK_SUB"      Value="Cell(Row, 29).Value"/>
-        <Dimension Code="WORK_FOR_MORE_HOURS"       Value="Cell(Row, 30).Value"/>
-        <Dimension Code="LOOKING_FOR_ANOTHER_JOB"   Value="Cell(Row, 31).Value"/>
-        <Dimension Code="PERMANENCY_FOR_EMPLOYEES"  Value="Cell(Row, 32).Value"/>
-        <Dimension Code="PERMANENCY_FOR_EMPLOYEES_SUB" Value="Cell(Row, 33).Value"/>
-        <Dimension Code="REASONS_PT"                Value="Cell(Row, 34).Value"/>
-        <Dimension Code="REASONS_TEMP"              Value="Cell(Row, 35).Value"/>
+        <Dimension Code="UNDERMP_PT_WORK_SUB"      Value="Cell(Row, 12).Value"/>
+        <Dimension Code="WORK_FOR_MORE_HOURS"       Value="Cell(Row, 13).Value"/>
+        <Dimension Code="LOOKING_FOR_ANOTHER_JOB"   Value="Cell(Row, 14).Value"/>
+        <Dimension Code="PERMANENCY_FOR_EMPLOYEES"  Value="Cell(Row, 23).Value"/>
+        <Dimension Code="PERMANENCY_FOR_EMPLOYEES_SUB" Value="Cell(Row, 24).Value"/>
+        <Dimension Code="REASONS_PT"                Value="Cell(Row, 22).Value"/>
+        <Dimension Code="REASONS_TEMP"              Value="Cell(Row, 25).Value"/>
 
         <!-- Demographic dimensions -->
-        <Dimension Code="MARITAL_STATUS"            Value="Cell(Row, 36).Value"/>
+        <Dimension Code="MARITAL_STATUS"            Value="Cell(Row, 35).Value"/>
 
         <!-- Notes:
              - Valid values (per LFS concept scheme):
