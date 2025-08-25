@@ -2216,6 +2216,11 @@ def apply_labour_force_subcategory_masking(df, labour_force_subcategory_column='
         lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and 'aged 15' in x else x
     )
     
+    # FINAL NUCLEAR OPTION - catch ANY value containing "1981" and mask it properly
+    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
+        lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and '1981' in x else x
+    )
+    
     # Show labour force subcategory value counts after masking
     print(f"\nLabour Force Subcategory values after masking:")
     labour_force_subcategory_counts_after = df_masked[labour_force_subcategory_column].value_counts()
