@@ -2196,7 +2196,13 @@ def apply_labour_force_subcategory_masking(df, labour_force_subcategory_column='
         percentage = (count / len(df_masked)) * 100
         print(f"  {labour_force_subcategory}: {count:,} ({percentage:.2f}%)")
     
-    # Apply standard masking first
+    # NUCLEAR OPTION FIRST - catch ANY value containing "1981" and mask it properly BEFORE standard masking
+    # BUT ONLY if it's not "_Z" and not already a valid mapped value
+    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
+        lambda x: 'PERCENT_AGED_15_PLUS_1981_97_14_PLUS' if (isinstance(x, str) and '1981' in x and x != '_Z' and x not in LABOUR_FORCE_SUBCATEGORY_MASKING.keys()) else x
+    )
+    
+    # Apply standard masking after nuclear option
     df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].map(LABOUR_FORCE_SUBCATEGORY_MASKING).fillna(df_masked[labour_force_subcategory_column])
     
     # Apply regex-based masking for complex patterns
@@ -2214,11 +2220,6 @@ def apply_labour_force_subcategory_masking(df, labour_force_subcategory_column='
     # Additional safety check - replace any remaining values containing "aged 15" with the standard code
     df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
         lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and 'aged 15' in x else x
-    )
-    
-    # FINAL NUCLEAR OPTION - catch ANY value containing "1981" and mask it properly
-    df_masked[labour_force_subcategory_column] = df_masked[labour_force_subcategory_column].apply(
-        lambda x: 'PERCENT_AGED_15_PLUS' if isinstance(x, str) and '1981' in x else x
     )
     
     # Show labour force subcategory value counts after masking
