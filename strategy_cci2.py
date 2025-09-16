@@ -5,9 +5,9 @@ import re
 
 def get_category_names():
     return [
-        "Overall Cost Index",
-        "Material Costs Index", 
-        "Labour Costs Index"
+        "Overall Index",
+        "Material Cost", 
+        "Labour Cost"
     ]
 
 def parse_cci_sheet_02_format(sheet):
@@ -58,7 +58,8 @@ def parse_cci_sheet_02_format(sheet):
                     
                 cat_row = sheet.iloc[i + 1 + cat_idx]
                 cat_name = category_names[cat_idx]
-                cat_num = cat_idx + 1
+                # Map to correct K numbers: 0→K0, 1→K18, 2→K19
+                cat_num = 0 if cat_idx == 0 else (18 if cat_idx == 1 else 19)
                 
                 # Extract quarter values (Q1, Q2, Q3, Q4) and annual mean
                 # Based on the structure: Year | Q1 | Q2 | Q3 | Q4 | Annual Mean
@@ -132,8 +133,8 @@ def add_time_period_and_freq(df):
     return df[cols]
 
 def impute_overall_index_q1(df):
-    # For each year, if OVERALL INDEX Q1 (A) is missing, impute it using annual average and other quarters
-    logger.info("Imputing missing OVERALL INDEX Q1 values if needed...")
+    # For each year, if Overall Index Q1 (A) is missing, impute it using annual average and other quarters
+    logger.info("Imputing missing Overall Index Q1 values if needed...")
     df_out = df.copy()
     # Only for Category==0 and Quarter in A,B,C,D,_Z
     for year in df_out['Year'].unique():
@@ -157,13 +158,13 @@ def impute_overall_index_q1(df):
                     vals = [v for v in [q2, q3, q4, avg] if v is not None]
                     q1 = sum(vals) / len(vals) if vals else None
                 if q1 is not None:
-                    logger.warning(f"Imputed OVERALL INDEX Q1 for year {year}: {q1}")
+                    logger.warning(f"Imputed Overall Index Q1 for year {year}: {q1}")
                     # Insert the row
                     new_row = {
                         'Year': year,
                         'Quarter': 'A',
                         'Category': 0,
-                        'CategoryName': 'OVERALL INDEX',
+                        'CategoryName': 'Overall Index',
                         'Value': q1
                     }
                     # Add TIME_PERIOD and FREQ
@@ -173,7 +174,7 @@ def impute_overall_index_q1(df):
                     # Insert in correct order
                     df_out = pd.concat([df_out, pd.DataFrame([new_row])], ignore_index=True)
             except Exception as e:
-                logger.error(f"Failed to impute OVERALL INDEX Q1 for year {year}: {e}")
+                logger.error(f"Failed to impute Overall Index Q1 for year {year}: {e}")
     # Resort for nice output
     df_out = df_out.sort_values(['Year', 'Category', 'Quarter', 'TIME_PERIOD']).reset_index(drop=True)
     return df_out

@@ -17,7 +17,7 @@
       <structure:Codelist id="CL_CSTO_17" agencyID="ELSTAT" version="1.0" isFinal="true">
         <common:Name xml:lang="en">Work categories for Construction (CSTO)</common:Name>
         <common:Name xml:lang="el">Κατηγορίες εργασιών στην οικοδομή (CSTO)</common:Name>
-        <common:Description xml:lang="en">Codelist for ELSTAT Price Index of Work Categories (CSTO), incl. Overall Index (00) and 17 work categories (01–17). Base: national extension.</common:Description>
+        <common:Description xml:lang="en">Codelist for ELSTAT Price Index of Work Categories (CSTO), incl. Overall Index (00), 17 work categories (01–17), Material Cost (18), and Labour Cost (19). Base: national extension.</common:Description>
 
         <structure:Code id="K0">
           <common:Name xml:lang="en">Overall Index</common:Name>
@@ -107,6 +107,16 @@
         <structure:Code id="K17">
           <common:Name xml:lang="en">Special installations without appliances and accessories</common:Name>
           <common:Name xml:lang="el">Ειδικές εγκαταστάσεις χωρίς συσκευές και εξαρτήματα</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K18">
+          <common:Name xml:lang="en">Material Cost</common:Name>
+          <common:Name xml:lang="el">Κόστος Υλικών</common:Name>
+        </structure:Code>
+
+        <structure:Code id="K19">
+          <common:Name xml:lang="en">Labour Cost</common:Name>
+          <common:Name xml:lang="el">Κόστος Εργασίας</common:Name>
         </structure:Code>
 
       </structure:Codelist>
