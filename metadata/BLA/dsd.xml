@@ -66,7 +66,7 @@
                             </structure:ConceptIdentity>
                             <structure:LocalRepresentation>
                                 <structure:Enumeration>
-                                    <Ref id="CL_REGIONAL_UNITS" version="1.0" agencyID="BOG"
+                                    <Ref id="CL_GEO" version="1.0" agencyID="ELS"
                                          package="codelist" class="Codelist"/>
                                 </structure:Enumeration>
                                 <structure:EnumerationFormat textType="String" minLength="2" maxLength="50"/>

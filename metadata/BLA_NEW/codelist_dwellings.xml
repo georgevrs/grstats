@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDDWELLINGS_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_BLA_UNIT" agencyID="BOG" version="1.0" isFinal="true">
+                <common:Name>Dwellings Classification</common:Name>
+                <common:Description>Classification of dwelling types for building and construction statistics.</common:Description>
+                
+        
+                
+                <!-- Dwelling type codes -->
+                <structure:Code id="D">
+                    <common:Name>New Dwellings</common:Name>
+                    <common:Description>Newly constructed dwelling units and buildings.</common:Description>
+                </structure:Code>
+
+                <structure:Code id="DR">
+                    <common:Name>New Rooms</common:Name>
+                    <common:Description>Newly constructed rooms.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="I">
+                    <common:Name>Improvements</common:Name>
+                    <common:Description>Improvements and renovations to existing dwellings and buildings.</common:Description>
+                </structure:Code>
+
+                <!-- Permit codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Permits</common:Name>
+                    <common:Description>Authorization for construction or renovation projects.</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>

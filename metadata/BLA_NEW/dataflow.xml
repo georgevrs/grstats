@@ -1,0 +1,91 @@
+<!-- SDMX-XML 2.1 – Dataflow BLA (ELSTAT) -->
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+
+    <!-- ========== HEADER ========== -->
+    <message:Header>
+        <message:ID>IDBLA_DF</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+
+    <!-- ========== STRUCTURES ========== -->
+    <message:Structures>
+        <structure:Dataflows>
+
+            <structure:Dataflow id="ELS-BLA" agencyID="BOG" version="1.0" isFinal="false">
+
+                <!-- ======== Annotations ======== -->
+                <common:Annotations>
+                    <common:Annotation>
+                        <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+                    </common:Annotation>
+
+                    <!-- Layout suggestion: time period, region, and category as columns -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>TIME_PERIOD,REGION,CATEGORY</common:AnnotationTitle>
+                        <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Defaults: monthly, Greece total, number units -->
+                    <common:Annotation>
+                        <common:AnnotationTitle>FREQ=M,REGION=EL,UNIT_MEASURE=N</common:AnnotationTitle>
+                        <common:AnnotationType>DEFAULT</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- Hide technical fields in UI -->
+                    <common:Annotation id="@SDMX">
+                        <common:AnnotationTitle>OBS_STATUS,CONF_STATUS</common:AnnotationTitle>
+                        <common:AnnotationType>NOT_DISPLAYED</common:AnnotationType>
+                    </common:Annotation>
+
+                    <!-- External resources -->
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Methodology — Building and Construction Activity|https://www.statistics.gr/en/statistics/-/publication/SOP03/-|
+                            https://upload.wikimedia.org/wikipedia/commons/f/fa/Line-style-icons-calendar-black.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Reference Metadata — ELSTAT Publications|https://www.statistics.gr/en/statistics/-/publication/metadata|
+                            https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-M_brown.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                    <common:Annotation>
+                        <common:AnnotationType>EXT_RESOURCE</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">
+                            Publication (SOP03) – Building and Construction Activity|https://www.statistics.gr/en/statistics/-/publication/SOP03/-|
+                            https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg
+                        </common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+
+                <!-- ======== Name and Description ======== -->
+                <common:Name xml:lang="en">Building and Construction Activity (BLA) — Greece</common:Name>
+                <common:Description xml:lang="en">
+                    Building and Construction Activity (BLA) for Greece, providing comprehensive statistics on building permits,
+                    construction activity, and building categories. Coverage includes residential and non-residential buildings,
+                    urban/rural breakdowns, and regional analysis at NUTS 2 and NUTS 3 levels. The data includes counts,
+                    areas, and volumes for various building types and categories. Frequency: Monthly (M) and Annual (A).
+                    Reference area: EL (Greece) and regional breakdowns. Source: Hellenic Statistical Authority (ELSTAT).
+                </common:Description>
+
+                <!-- ======== Reference to DSD ======== -->
+                <structure:Structure>
+                    <Ref id="DSD_BLA_ELSTAT" version="1.0" agencyID="BOG"
+                         package="datastructure" class="DataStructure"/>
+                </structure:Structure>
+
+            </structure:Dataflow>
+
+        </structure:Dataflows>
+    </message:Structures>
+</message:Structure>

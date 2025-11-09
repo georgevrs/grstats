@@ -62,7 +62,7 @@
                      <common:Description xml:lang="en">Greek regional units at NUTS 3 level (prefectures/nomoi).</common:Description>
                      <structure:CoreRepresentation>
                          <structure:Enumeration>
-                             <Ref id="CL_REGIONAL_UNITS" version="1.0" agencyID="BOG"
+                             <Ref id="CL_GEO" version="1.0" agencyID="ELS"
                                   package="codelist" class="Codelist"/>
                          </structure:Enumeration>
                      </structure:CoreRepresentation>

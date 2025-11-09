@@ -157,7 +157,7 @@ def process_dataframe(df):
     
     df.iloc[2, 0] = 'URBAN STATUS'
     
-    urban_status_values = ['_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', 'ALL', 'ALL', 'URBAN', 'URBAN', 'SEMI_URBAN', 'SEMI_URBAN', 'RURAL', 'RURAL']
+    urban_status_values = ['_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', '_Z', 'URBAN', 'URBAN', 'SEMI_URBAN', 'SEMI_URBAN', 'RURAL', 'RURAL']
     df.iloc[2, 1:len(urban_status_values)+1] = urban_status_values[:len(df.columns)-1]
     
     df.iloc[3, 0] = 'MEASURE'
@@ -239,123 +239,123 @@ def process_dataframe(df):
     # Comprehensive mapping from actual names to codelist codes
     regional_unit_mapping = {
         # Eastern Macedonia and Thrace (EL11)
-        'RODOPI': 'RODOPI',
-        'DRAMA': 'DRAMA', 
-        'EVROS': 'EVROS',
-        'KAVALA': 'KAVALA',
-        'XANTHI': 'XANTHI',
-        
+        'RODOPI': '01',
+        'DRAMA': '02',
+        'EVROS': '03',
+        'KAVALA': '05',
+        'XANTHI': '06',
+
         # Central Macedonia (EL12)
-        'THESSALONIKI': 'THESSALONIKI',
-        'IMATHIA': 'IMATHIA',
-        'KILKIS': 'KILKIS',
-        'PELLA': 'PELLA',
-        'SERRES': 'SERRES',
-        'PIERIA': 'PIERIA',
-        'CHALKIDIKI': 'CHALKIDIKI',
-        
+        'THESSALONIKI': '07',
+        'IMATHIA': '08',
+        'KILKIS': '09',
+        'PELLA': '10',
+        'SERRES': '12',
+        'PIERIA': '11',
+        'CHALKIDIKI': '13',
+
         # Western Macedonia (EL13)
-        'KOZANI': 'KOZANI',
-        'GREVENA': 'GREVENA',
-        'KASTORIA': 'KASTORIA',
-        'FLORINA': 'FLORINA',
-        
+        'KOZANI': '14',
+        'GREVENA': '15',
+        'KASTORIA': '16',
+        'FLORINA': '17',
+
         # Epirus (EL21)
-        'IOANNINA': 'IOANNINA',
-        'ARTA': 'ARTA',
-        'THESPROTIA': 'THESPROTIA',
-        'PREVEZA': 'PREVEZA',
-        
+        'IOANNINA': '18',
+        'ARTA': '19',
+        'THESPROTIA': '20',
+        'PREVEZA': '21',
+
         # Thessaly (EL14)
-        'LARISA': 'LARISA',
-        'KARDITSA': 'KARDITSA',
-        'MAGNISIA': 'MAGNISIA',
-        'SPORADES': 'SPORADES',
-        'TRIKALA': 'TRIKALA',
-        
+        'LARISA': '22',
+        'KARDITSA': '23',
+        'MAGNISIA': '24',
+        'SPORADES': '25',
+        'TRIKALA': '26',
+
         # Central Greece (EL24)
-        'VOIOTIA': 'VOIOTIA',
-        'EVOIA': 'EVOIA',
-        'FOKIDA': 'FOKIDA',
-        
+        'VOIOTIA': '27',
+        'EVOIA': '28',
+        'FOKIDA': '29',
+
         # Ionian Islands (EL22)
-        'KERKYRA': 'KERKYRA',
-        'ZAKYNTHOS': 'ZAKYNTHOS',
-        'KEFALLINIA': 'KEFALLINIA',
-        'LEFKADA': 'LEFKADA',
-        
+        'KERKYRA': '30',
+        'ZAKYNTHOS': '31',
+        'KEFALLINIA': '33',
+        'LEFKADA': '34',
+
         # Western Greece (EL23)
-        'ACHAIA': 'ACHAIA',
-        'ETOLOAKARNANIA': 'ETOLOAKARNANIA',
-        'ILEIA': 'ILEIA',
-        
+        'ACHAIA': '35',
+        'ETOLOAKARNANIA': '36',
+        'ILEIA': '37',
+
         # Peloponnese (EL25)
-        'ARKADIA': 'ARKADIA',
-        'ARGOLIDA': 'ARGOLIDA',
-        'KORINTHIA': 'KORINTHIA',
-        'LAKONIA': 'LAKONIA',
-        'MESSINIA': 'MESSINIA',
-        
+        'ARKADIA': '38',
+        'ARGOLIDA': '39',
+        'KORINTHIA': '40',
+        'LAKONIA': '41',
+        'MESSINIA': '42',
+
         # Attiki (EL30)
-        'KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
-        'VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
-        'NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
-        'ANATOLIKI ATTIKI': 'ANATOLIKI_ATTIKI',
-        'DYTIKI ATTIKI': 'DYTIKI_ATTIKI',
-        'PIREAS': 'PIREAS',
-        
+        'KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)': '43',
+        'VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)': '44',
+        'NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)': '45',
+        'ANATOLIKI ATTIKI': '47',
+        'DYTIKI ATTIKI': '46',
+        'PIREAS': '50',
+
         # North Aegean (EL41)
-        'NISIA (ISLANDS)': 'NISIA',
-        'LIMNOS': 'LIMNOS',
-        'SAMOS': 'SAMOS',
-        'CHIOS': 'CHIOS',
-        'THIRA': 'THIRA',
-        
+        'NISIA (ISLANDS)': '51',
+        'LIMNOS': '52',
+        'SAMOS': '53',
+        'CHIOS': '54',
+        'THIRA': '55',
+
         # South Aegean (EL42)
-        'KALYMNOS': 'KALYMNOS',
-        'KEA - KYTHNOS': 'KEA_KYTHNOS',
-        'KOS': 'KOS',
-        'MILOS': 'MILOS',
-        'MYKONOS': 'MYKONOS',
-        'NAXOS': 'NAXOS',
-        'PAROS': 'PAROS',
-        'RODOS': 'RODOS',
-        
+        'KALYMNOS': '56',
+        'KEA - KYTHNOS': '57',
+        'KOS': '58',
+        'MILOS': '59',
+        'MYKONOS': '60',
+        'NAXOS': '61',
+        'PAROS': '62',
+        'RODOS': '63',
+
         # Crete (EL43)
-        'IRAKLEIO': 'IRAKLEIO',
-        'LASITHI': 'LASITHI',
-        'RETHYMNO': 'RETHYMNO',
-        'CHANIA': 'CHANIA',
-        
+        'IRAKLEIO': '64',
+        'LASITHI': '65',
+        'RETHYMNO': '66',
+        'CHANIA': '67',
+
         # Additional regional units
-        'THASOS': 'THASOS',
-        'ITHAKI': 'ITHAKI',
-        'LESVOS': 'LESVOS',
-        'IKARIA': 'IKARIA',
-        'SYROS': 'SYROS',
-        'ANDROS': 'ANDROS',
-        'KARPATHOS': 'KARPATHOS',
-        'TINOS': 'TINOS',
-        
+        'THASOS': '04',
+        'ITHAKI': '32',
+        'LESVOS': '75',
+        'IKARIA': '76',
+        'SYROS': '77',
+        'ANDROS': '78',
+        'KARPATHOS': '79',
+        'TINOS': '70',
+
         # Handle variations and clean names
-        'REGIONAL UNIT OF RODOPI': 'RODOPI',
-        'REGIONAL UNIT OF DRAMA': 'DRAMA',
-        'REGIONAL UNIT OF EVROS': 'EVROS',
-        'REGIONAL UNIT OF KAVALA': 'KAVALA',
-        'REGIONAL UNIT OF XANTHI': 'XANTHI',
-        'REGIONAL UNIT OF THESSALONIKI': 'THESSALONIKI',
-        'REGIONAL UNIT OF IOANNINA': 'IOANNINA',
-        'REGIONAL UNIT OF LARISA': 'LARISA',
-        'REGIONAL UNIT OF ATHENS': 'KENTRIKOS_TOMEAS_ATHINON',
-        'ATHENS': 'KENTRIKOS_TOMEAS_ATHINON',
-        'ATHINA': 'KENTRIKOS_TOMEAS_ATHINON',
-        
+        'REGIONAL UNIT OF RODOPI': '01',
+        'REGIONAL UNIT OF DRAMA': '02',
+        'REGIONAL UNIT OF EVROS': '03',
+        'REGIONAL UNIT OF KAVALA': '05',
+        'REGIONAL UNIT OF XANTHI': '06',
+        'REGIONAL UNIT OF THESSALONIKI': '07',
+        'REGIONAL UNIT OF IOANNINA': '18',
+        'REGIONAL UNIT OF LARISA': '22',
+        'REGIONAL UNIT OF ATHENS': '43',
+        'ATHENS': '43',
+        'ATHINA': '43',
+
         # Handle newlines and extra spaces
-        'KENTRIKOS TOMEAS ATHINON\n (CENTRAL SECTOR OF ATHENS)': 'KENTRIKOS_TOMEAS_ATHINON',
-        'VOREIOS TOMEAS ATHINON\n (NORTH SECTOR OF ATHENS)': 'VOREIOS_TOMEAS_ATHINON',
-        'NOTIOS TOMEAS ATHINON\n (SOUTH SECTOR OF ATHENS)': 'NOTIOS_TOMEAS_ATHINON',
-        'DYTIKOS TOMEAS ATHINON\n (WESTERN SECTOR OF ATHENS)': 'DYTIKOS_TOMEAS_ATHINON',
-        'NISIA (ISLANDS)': 'NISIA'
+        'KENTRIKOS TOMEAS ATHINON\n (CENTRAL SECTOR OF ATHENS)': '43',
+        'VOREIOS TOMEAS ATHINON\n (NORTH SECTOR OF ATHENS)': '44',
+        'NOTIOS TOMEAS ATHINON\n (SOUTH SECTOR OF ATHENS)': '45',
+        'DYTIKOS TOMEAS ATHINON\n (WESTERN SECTOR OF ATHENS)': '46',
+        'NISIA (ISLANDS)': '51'
     }
     
     # Apply regional unit mapping IMMEDIATELY
@@ -390,7 +390,7 @@ def process_dataframe(df):
         'REGION OF VOREIO AIGAIO': 'EL41',
         'REGION OF NOTIO AIGAIO': 'EL42',
         'REGION OF KRITI': 'EL43',
-        'Greece, total': 'EL'
+        'Greece, total': '_Z'
     }
     
     # Apply regions mapping
@@ -542,7 +542,7 @@ def main():
                     print("Please review the issues above before proceeding.")
                 
                 print(f"\nCompleted at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                return success
+                #return success
                 
         except Exception as e:
             print(f"⚠️  Error reading existing file: {str(e)}")
@@ -566,7 +566,48 @@ def main():
     
     # Step 4: Process dataframe according to exact recipe
     df_final = process_dataframe(df_merged)
-    
+
+    # --- Step 4.1: Merge REGION and REGIONAL_UNIT into GEO according to rules
+    print("Merging REGION and REGIONAL_UNIT into GEO column...")
+
+    # Ensure columns exist and are strings for comparison
+    if 'REGION' not in df_final.columns:
+        df_final['REGION'] = '_Z'
+    if 'REGIONAL_UNIT' not in df_final.columns:
+        df_final['REGIONAL_UNIT'] = '_Z'
+
+    # Normalize values to string and strip
+    df_final['REGION'] = df_final['REGION'].fillna('_Z').astype(str).str.strip()
+    df_final['REGIONAL_UNIT'] = df_final['REGIONAL_UNIT'].fillna('_Z').astype(str).str.strip()
+
+    def choose_geo(row):
+        reg = row['REGION']
+        ru = row['REGIONAL_UNIT']
+        # both _Z -> _Z
+        if (reg == '_Z' or reg == '') and (ru == '_Z' or ru == ''):
+            return '_Z'
+        # if REGIONAL_UNIT is not _Z keep REGIONAL_UNIT
+        if ru not in ('_Z', ''):
+            return ru
+        # if REGION is not _Z and REGIONAL_UNIT is _Z keep REGION
+        if reg not in ('_Z', ''):
+            return reg
+        return '_Z'
+
+    df_final['GEO'] = df_final.apply(choose_geo, axis=1)
+
+    # Drop original columns if present (keep GEO instead)
+    drop_cols = [c for c in ['REGION', 'REGIONAL_UNIT'] if c in df_final.columns]
+    if drop_cols:
+        df_final = df_final.drop(columns=drop_cols)
+        print(f"Dropped columns: {drop_cols}")
+    print("GEO column created.\n")
+
+    #MOVE THE NEW COLUMN GEO FROM THE END TO POSITION 3
+    geo_col = df_final.pop('GEO')
+    df_final.insert(3, 'GEO', geo_col)
+
+
     # Step 5: DEDUPLICATE AT THE VERY FUCKING END - AFTER ROW 6 (HEADERS)
     print("Deduplicating data rows (after header rows)...")
     
@@ -578,7 +619,7 @@ def main():
     print(f"  - Data rows before deduplication: {len(data_rows)}")
     
     # Deduplicate data rows based on key dimensions
-    key_columns = ['FREQ', 'time_period', 'REGION', 'REGIONAL_UNIT', 'CATEGORY']
+    key_columns = ['FREQ', 'time_period', 'GEO', 'CATEGORY']
     existing_key_columns = [col for col in key_columns if col in data_rows.columns]
     
     if existing_key_columns:
@@ -602,6 +643,10 @@ def main():
         print(f"  - Final dataframe shape: {df_final.shape}")
     else:
         print("  - Warning: Key columns for deduplication not found!")
+
+    #DROP HARD DUPLICATE COLUMNS TOTAL_NUMBER	TOTAL_VOLUME
+    hard_duplicate_cols = ['TOTAL_NUMBER', 'TOTAL_VOLUME']
+    df_final = df_final.drop(columns=hard_duplicate_cols, errors='ignore')
     
     # Step 6: Save final output
     try:

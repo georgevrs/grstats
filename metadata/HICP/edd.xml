@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Excel-Data-Description Dataflow="ELS-HICP" Agency="BOG" Version="1.0">
+<Excel-Data-Description Dataflow="HICP" Agency="ELS" Version="1.0">
     <Coord-Mapping Name="ELSHICP_V1" ExcludeNulls="false" IsActive="true">
 
         <!-- ======= Sheet & Cell Range ======= -->
@@ -25,9 +25,9 @@
         <!-- B -->
         <Dimension Code="REF_AREA"        Value="EL" IsExpression="false"/>
         <!-- C -->
-        <Dimension Code="ICP_SUFFIX"      Value="Cell(2, Column).Value"/>
+        <Dimension Code="MEASURE"      Value="Cell(2, Column).Value"/>
         <!-- D -->
-        <Dimension Code="UNIT_MEASURE"    Value="PD" IsExpression="false"/>
+        <Dimension Code="ICP_ITEM"    Value="CP00" IsExpression="false"/>
 
         <!-- Notes:
              - Valid values (per HICP concept scheme):

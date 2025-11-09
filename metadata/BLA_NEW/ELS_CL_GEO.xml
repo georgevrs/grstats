@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDREGIONAL_UNITS_CL</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2025-01-27T00:00:00+03:00</message:Prepared>
+        <message:Sender id="ELSTAT"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:Codelists>
+            <structure:Codelist id="CL_GEO" agencyID="ELS" version="1.0" isFinal="true">
+                <common:Name>Greek Regional Units Classification (NUTS 3)</common:Name>
+                <common:Description>Classification of Greek regional units (prefectures/nomoi) at NUTS 3 level for statistical purposes.</common:Description>
+                
+                <!-- Special processing codes -->
+                <structure:Code id="_Z">
+                    <common:Name>Greece, Overall</common:Name>
+                    <common:Description>Greece, Overall.</common:Description>
+                </structure:Code>
+                
+                <!-- Eastern Macedonia and Thrace (EL11) -->
+                <structure:Code id="01">
+                    <common:Name>RODOPI</common:Name>
+                    <common:Description>Rodopi regional unit in Eastern Macedonia and Thrace.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="02">
+                    <common:Name>DRAMA</common:Name>
+                    <common:Description>Drama regional unit in Eastern Macedonia and Thrace.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="03">
+                    <common:Name>EVROS</common:Name>
+                    <common:Description>Evros regional unit in Eastern Macedonia and Thrace.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="04">
+                    <common:Name>THASOS</common:Name>
+                    <common:Description>Thasos regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="05">
+                    <common:Name>KAVALA</common:Name>
+                    <common:Description>Kavala regional unit in Eastern Macedonia and Thrace.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="06">
+                    <common:Name>XANTHI</common:Name>
+                    <common:Description>Xanthi regional unit in Eastern Macedonia and Thrace.</common:Description>
+                </structure:Code>
+                
+                <!-- Central Macedonia (EL12) -->
+                <structure:Code id="07">
+                    <common:Name>THESSALONIKI</common:Name>
+                    <common:Description>Thessaloniki regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="08">
+                    <common:Name>IMATHIA</common:Name>
+                    <common:Description>Imathia regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="09">
+                    <common:Name>KILKIS</common:Name>
+                    <common:Description>Kilkis regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="10">
+                    <common:Name>PELLA</common:Name>
+                    <common:Description>Pella regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="11">
+                    <common:Name>PIERIA</common:Name>
+                    <common:Description>Pieria regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="12">
+                    <common:Name>SERRES</common:Name>
+                    <common:Description>Serres regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="13">
+                    <common:Name>CHALKIDIKI</common:Name>
+                    <common:Description>Chalkidiki regional unit in Central Macedonia.</common:Description>
+                </structure:Code>
+                
+                <!-- Western Macedonia (EL13) -->
+                <structure:Code id="14">
+                    <common:Name>KOZANI</common:Name>
+                    <common:Description>Kozani regional unit in Western Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="15">
+                    <common:Name>GREVENA</common:Name>
+                    <common:Description>Grevena regional unit in Western Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="16">
+                    <common:Name>KASTORIA</common:Name>
+                    <common:Description>Kastoria regional unit in Western Macedonia.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="17">
+                    <common:Name>FLORINA</common:Name>
+                    <common:Description>Florina regional unit in Western Macedonia.</common:Description>
+                </structure:Code>
+                
+                <!-- Epirus (EL21) -->
+                <structure:Code id="18">
+                    <common:Name>IOANNINA</common:Name>
+                    <common:Description>Ioannina regional unit in Epirus.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="19">
+                    <common:Name>ARTA</common:Name>
+                    <common:Description>Arta regional unit in Epirus.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="20">
+                    <common:Name>THESPROTIA</common:Name>
+                    <common:Description>Thesprotia regional unit in Epirus.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="21">
+                    <common:Name>PREVEZA</common:Name>
+                    <common:Description>Preveza regional unit in Epirus.</common:Description>
+                </structure:Code>
+                
+                <!-- Thessaly (EL14) -->
+                <structure:Code id="22">
+                    <common:Name>LARISA</common:Name>
+                    <common:Description>Larisa regional unit in Thessaly.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="23">
+                    <common:Name>KARDITSA</common:Name>
+                    <common:Description>Karditsa regional unit in Thessaly.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="24">
+                    <common:Name>MAGNISIA</common:Name>
+                    <common:Description>Magnisia regional unit in Thessaly.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="25">
+                    <common:Name>SPORADES</common:Name>
+                    <common:Description>Sporades regional unit in Thessaly.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="26">
+                    <common:Name>TRIKALA</common:Name>
+                    <common:Description>Trikala regional unit in Thessaly.</common:Description>
+                </structure:Code>
+                
+                <!-- Central Greece (EL24) -->
+                <structure:Code id="27">
+                    <common:Name>VOIOTIA</common:Name>
+                    <common:Description>Voiotia regional unit in Central Greece.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="28">
+                    <common:Name>EVOIA</common:Name>
+                    <common:Description>Evoia regional unit in Central Greece.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="29">
+                    <common:Name>FOKIDA</common:Name>
+                    <common:Description>Fokida regional unit in Central Greece.</common:Description>
+                </structure:Code>
+                
+                <!-- Ionian Islands (EL22) -->
+                <structure:Code id="30">
+                    <common:Name>KERKYRA</common:Name>
+                    <common:Description>Kerkyra regional unit in Ionian Islands.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="31">
+                    <common:Name>ZAKYNTHOS</common:Name>
+                    <common:Description>Zakynthos regional unit in Ionian Islands.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="32">
+                    <common:Name>ITHAKI</common:Name>
+                    <common:Description>Ithaki regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="33">
+                    <common:Name>KEFALLINIA</common:Name>
+                    <common:Description>Kefallinia regional unit in Ionian Islands.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="34">
+                    <common:Name>LEFKADA</common:Name>
+                    <common:Description>Lefkada regional unit in Ionian Islands.</common:Description>
+                </structure:Code>
+                
+                <!-- Western Greece (EL23) -->
+                <structure:Code id="35">
+                    <common:Name>ACHAIA</common:Name>
+                    <common:Description>Achaia regional unit in Western Greece.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="36">
+                    <common:Name>ETOLOAKARNANIA</common:Name>
+                    <common:Description>Etoloakarnania regional unit in Western Greece.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="37">
+                    <common:Name>ILEIA</common:Name>
+                    <common:Description>Ileia regional unit in Western Greece.</common:Description>
+                </structure:Code>
+                
+                <!-- Peloponnese (EL25) -->
+                <structure:Code id="38">
+                    <common:Name>ARKADIA</common:Name>
+                    <common:Description>Arkadia regional unit in Peloponnese.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="39">
+                    <common:Name>ARGOLIDA</common:Name>
+                    <common:Description>Argolida regional unit in Peloponnese.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="40">
+                    <common:Name>KORINTHIA</common:Name>
+                    <common:Description>Korinthia regional unit in Peloponnese.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="41">
+                    <common:Name>LAKONIA</common:Name>
+                    <common:Description>Lakonia regional unit in Peloponnese.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="42">
+                    <common:Name>MESSINIA</common:Name>
+                    <common:Description>Messinia regional unit in Peloponnese.</common:Description>
+                </structure:Code>
+                
+                <!-- Attiki (EL30) -->
+                <structure:Code id="43">
+                    <common:Name>KENTRIKOS TOMEAS ATHINON (CENTRAL SECTOR OF ATHENS)</common:Name>
+                    <common:Description>Central sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="44">
+                    <common:Name>VOREIOS TOMEAS ATHINON (NORTH SECTOR OF ATHENS)</common:Name>
+                    <common:Description>North sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="45">
+                    <common:Name>NOTIOS TOMEAS ATHINON (SOUTH SECTOR OF ATHENS)</common:Name>
+                    <common:Description>South sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="46">
+                    <common:Name>DYTIKOS TOMEAS ATHINON (WEST SECTOR OF ATHENS)</common:Name>
+                    <common:Description>West sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="47">
+                    <common:Name>ANATOLIKOS TOMEAS ATHINON (EAST SECTOR OF ATHENS)</common:Name>
+                    <common:Description>East sector of Athens regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="48">
+                    <common:Name>ANATOLIKI ATTIKI</common:Name>
+                    <common:Description>Eastern Attiki regional unit.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="49">
+                    <common:Name>DYTIKI ATTIKI</common:Name>
+                    <common:Description>Western Attiki regional unit.</common:Description>
+                </structure:Code>
+                <structure:Code id="50">
+                    <common:Name>PIREAS</common:Name>
+                    <common:Description>Pireas regional unit in Attiki.</common:Description>
+                </structure:Code>
+                
+                <!-- North Aegean (EL41) -->
+                <structure:Code id="51">
+                    <common:Name>NISIA (ISLANDS)</common:Name>
+                    <common:Description>Islands regional unit in North Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="52">
+                    <common:Name>LIMNOS</common:Name>
+                    <common:Description>Limnos regional unit in North Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="53">
+                    <common:Name>SAMOS</common:Name>
+                    <common:Description>Samos regional unit in North Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="54">
+                    <common:Name>CHIOS</common:Name>
+                    <common:Description>Chios regional unit in North Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="55">
+                    <common:Name>THIRA</common:Name>
+                    <common:Description>Thira regional unit in North Aegean.</common:Description>
+                </structure:Code>
+                
+                <!-- South Aegean (EL42) -->
+                <structure:Code id="56">
+                    <common:Name>KALYMNOS</common:Name>
+                    <common:Description>Kalymnos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="57">
+                    <common:Name>KEA - KYTHNOS</common:Name>
+                    <common:Description>Kea-Kythnos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="58">
+                    <common:Name>KOS</common:Name>
+                    <common:Description>Kos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="59">
+                    <common:Name>MILOS</common:Name>
+                    <common:Description>Milos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="60">
+                    <common:Name>MYKONOS</common:Name>
+                    <common:Description>Mykonos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="61">
+                    <common:Name>NAXOS</common:Name>
+                    <common:Description>Naxos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="62">
+                    <common:Name>PAROS</common:Name>
+                    <common:Description>Paros regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="63">
+                    <common:Name>RODOS</common:Name>
+                    <common:Description>Rodos regional unit in South Aegean.</common:Description>
+                </structure:Code>
+                
+                <!-- Crete (EL43) -->
+                <structure:Code id="64">
+                    <common:Name>IRAKLEIO</common:Name>
+                    <common:Description>Irakleio regional unit in Crete.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="65">
+                    <common:Name>LASITHI</common:Name>
+                    <common:Description>Lasithi regional unit in Crete.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="66">
+                    <common:Name>RETHYMNO</common:Name>
+                    <common:Description>Rethymno regional unit in Crete.</common:Description>
+                </structure:Code>
+                
+                <structure:Code id="67">
+                    <common:Name>CHANIA</common:Name>
+                    <common:Description>Chania regional unit in Crete.</common:Description>
+                </structure:Code>
+                
+                <!-- Additional regional units -->
+                <structure:Code id="68">
+                    <common:Name>PAROS</common:Name>
+                    <common:Description>Paros regional unit.</common:Description>
+                </structure:Code>
+                <structure:Code id="69">
+                    <common:Name>RODOS</common:Name>
+                    <common:Description>Rodos regional unit.</common:Description>
+                </structure:Code>
+                <structure:Code id="70">
+                    <common:Name>TINOS</common:Name>
+                    <common:Description>Tinos regional unit.</common:Description>
+                </structure:Code>
+                <structure:Code id="71">
+                    <common:Name>IRAKLEIO</common:Name>
+                    <common:Description>Irakleio regional unit in Crete.</common:Description>
+                </structure:Code>
+                <structure:Code id="72">
+                    <common:Name>LASITHI</common:Name>
+                    <common:Description>Lasithi regional unit in Crete.</common:Description>
+                </structure:Code>
+                <structure:Code id="73">
+                    <common:Name>RETHYMNO</common:Name>
+                    <common:Description>Rethymno regional unit in Crete.</common:Description>
+                </structure:Code>
+                <structure:Code id="74">
+                    <common:Name>CHANIA</common:Name>
+                    <common:Description>Chania regional unit in Crete.</common:Description>
+                </structure:Code>
+                <structure:Code id="99">
+                    <common:Name>AGIO OROS (AUTONOMOUS MONASTIC STATE)</common:Name>
+                    <common:Description>Agio Oros (Autonomous Monastic State).</common:Description>
+                </structure:Code>
+            </structure:Codelist>
+        </structure:Codelists>
+    </message:Structures>
+</message:Structure>
